@@ -167,7 +167,7 @@ function mapRelations(c){
 function renderMindMap(){
   const scopeCards=CARDS.filter(c=>(selectedScope==='ALL'||(selectedScope==='JOYO'?c.joyo===true:c.jlpt!=null))&&(selectedLevel==='ALL'||c.jlpt===selectedLevel));
   const q=(document.getElementById('mindSearch')?.value||'').trim().toLowerCase();
-  let center=scopeCards.find(c=>c.kanji===mindCenter)||scopeCards.find(c=>c.kanji.toLowerCase()===q)||scopeCards[0];
+  let center=CARDS.find(c=>c.kanji===mindCenter)||scopeCards.find(c=>c.kanji.toLowerCase()===q)||scopeCards[0];
   if(!center){mindmapView.innerHTML='<div class="empty">No kanji found in this scope.</div>';return}
   mindCenter=center.kanji;
   const allRel=mapRelations(center);
