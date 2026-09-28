@@ -198,13 +198,6 @@ function renderMindMap(){
     if(found){mindCenter=found.kanji;renderMindMap()}
   });
   kanjiInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();openKanji()}});
-  kanjiInput.addEventListener('input',e=>{
-    const value=e.target.value.trim();
-    if(value.length===1){
-      const exact=CARDS.find(c=>c.kanji===value);
-      if(exact){mindCenter=exact.kanji;renderMindMap()}
-    }
-  });
   document.getElementById('mindGo').addEventListener('click',openKanji);
     document.getElementById('mindReset').addEventListener('click',()=>{mindCenter=scopeCards[0]?.kanji||'';renderMindMap()});
   mindmapView.querySelectorAll('[data-map-kanji]').forEach(b=>b.addEventListener('click',()=>{
