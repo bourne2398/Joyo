@@ -135,7 +135,7 @@ function filteredCards(){
     const levelOK=selectedLevel==='ALL'||(c.jlpt===selectedLevel);
     if(!scopeOK)return false;
     const queryOK=!q||c.kanji.includes(q)||c.meaning.toLowerCase().includes(q)||[...c.on,...c.kun].some(x=>x.includes(q));
-    return levelOK&&radicalOK&&queryOK;
+    return levelOK&&queryOK;
   });
 }
 
