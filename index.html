@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020617">
+<title>Joyo — JLPT N5/N4 Kanji</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{background:#020617;color:#f8fafc;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif}
+button{min-height:48px} .glow{box-shadow:0 0 22px rgba(34,211,238,.12)}
+.card{background:linear-gradient(145deg,#0f172a,#111827);border:1px solid #334155}
+.safe{padding-bottom:max(20px,env(safe-area-inset-bottom));padding-top:max(8px,env(safe-area-inset-top))}
+</style>
+</head>
+<body>
+<div id="app" class="min-h-screen safe">
+<header class="sticky top-0 z-20 backdrop-blur-xl bg-slate-950/90 border-b border-cyan-400/20">
+<div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+<div><h1 class="text-2xl font-black tracking-tight">Joyo</h1><p class="text-xs text-slate-400">JLPT N5 • N4 Kanji</p></div>
+<button id="reset" class="px-4 rounded-xl border border-rose-400/40 text-rose-300">Reset</button>
+</div></header>
+<main class="max-w-5xl mx-auto px-4 py-4">
+<div class="grid grid-cols-2 gap-2 mb-4">
+<button class="tab rounded-xl border border-cyan-400/50 bg-cyan-400/10 font-bold" data-level="N5">JLPT N5</button>
+<button class="tab rounded-xl border border-slate-700 bg-slate-900 font-bold" data-level="N4">JLPT N4</button>
+</div>
+<section class="grid grid-cols-3 gap-2 mb-5">
+<div class="card rounded-2xl p-3 text-center glow"><b id="mastered">0</b><span class="block text-xs text-slate-400">Mastered</span></div>
+<div class="card rounded-2xl p-3 text-center glow"><b id="active">0</b><span class="block text-xs text-slate-400">Learning</span></div>
+<div class="card rounded-2xl p-3 text-center glow"><b id="daily">0</b><span class="block text-xs text-slate-400">Today</span></div>
+</section>
+<div class="grid grid-cols-3 gap-2 mb-5">
+<button id="learnBtn" class="rounded-xl bg-cyan-500 text-slate-950 font-black">Learn</button>
+<button id="reviewBtn" class="rounded-xl bg-violet-500 text-white font-black">Review</button>
+<button id="dictBtn" class="rounded-xl bg-slate-800 border border-slate-700 font-black">Dictionary</button>
+</div>
+<section id="panel"></section>
+</main></div>
+<script>
+const KEY='joyo-jlpt-progress-v1';
+const progress=JSON.parse(localStorage.getItem(KEY)||'{}');
+const save=()=>localStorage.setItem(KEY,JSON.stringify(progress));
+const starter=[
+{level:'N5',k:'日',meaning:'day; sun; Japan',radical:'日 (sun)',mnemonic:'Picture a bright SUN rising to begin a new DAY in Japan.',vocab:[['日本','にほん','Japan'],['毎日','まいにち','every day']]},
+{level:'N5',k:'人',meaning:'person',radical:'人 (person)',mnemonic:'A PERSON stands with two legs like the shape of 人.',vocab:[['人','ひと','person'],['日本人','にほんじん','Japanese person']]},
+{level:'N5',k:'大',meaning:'big; large',radical:'大 (big)',mnemonic:'A person stretches both arms and legs wide to show something BIG.',vocab:[['大きい','おおきい','big'],['大学','だいがく','university']]},
+{level:'N5',k:'小',meaning:'small; little',radical:'小 (small)',mnemonic:'Three tiny marks scatter like little crumbs: SMALL.',vocab:[['小さい','ちいさい','small'],['小学校','しょうがっこう','elementary school']]},
+{level:'N5',k:'中',meaning:'middle; inside',radical:'丨 (line)',mnemonic:'A line hits the exact CENTER of a box: 中.',vocab:[['中','なか','inside'],['中国','ちゅうごく','China']]},
+{level:'N5',k:'上',meaning:'up; above',radical:'一 (one)',mnemonic:'A short mark rises ABOVE a baseline: 上.',vocab:[['上','うえ','above'],['上手','じょうず','skillful']]},
+{level:'N5',k:'下',meaning:'down; below',radical:'一 (one)',mnemonic:'The mark hangs BELOW the line, showing DOWN.',vocab:[['下','した','below'],['下手','へた','unskillful']]},
+{level:'N5',k:'山',meaning:'mountain',radical:'山 (mountain)',mnemonic:'Three peaks form a MOUNTAIN skyline: 山.',vocab:[['山','やま','mountain'],['火山','かざん','volcano']]},
+{level:'N5',k:'川',meaning:'river',radical:'川 (river)',mnemonic:'Three flowing strokes look like channels of a RIVER.',vocab:[['川','かわ','river'],['小川','おがわ','stream']]},
+{level:'N5',k:'木',meaning:'tree; wood',radical:'木 (tree)',mnemonic:'The trunk and branches clearly form a TREE.',vocab:[['木','き','tree'],['木曜日','もくようび','Thursday']]},
+{level:'N5',k:'水',meaning:'water',radical:'水 (water)',mnemonic:'The center stream splashes into drops of WATER.',vocab:[['水','みず','water'],['水曜日','すいようび','Wednesday']]},
+{level:'N5',k:'火',meaning:'fire',radical:'火 (fire)',mnemonic:'Four strokes flare outward like dancing FIRE.',vocab:[['火','ひ','fire'],['火曜日','かようび','Tuesday']]},
+{level:'N5',k:'土',meaning:'earth; soil',radical:'土 (earth)',mnemonic:'A cross-shaped marker planted in the ground means EARTH.',vocab:[['土','つち','soil'],['土曜日','どようび','Saturday']]},
+{level:'N5',k:'金',meaning:'gold; money',radical:'金 (metal)',mnemonic:'Metal pieces shine under a roof: GOLD and MONEY.',vocab:[['お金','おかね','money'],['金曜日','きんようび','Friday']]},
+{level:'N5',k:'月',meaning:'month; moon',radical:'月 (moon)',mnemonic:'The curved shape resembles a MOON in the night sky.',vocab:[['月','つき','moon'],['月曜日','げつようび','Monday']]},
+{level:'N5',k:'年',meaning:'year',radical:'干 (dry)',mnemonic:'A harvest marker reminds you that another YEAR has passed.',vocab:[['今年','ことし','this year'],['来年','らいねん','next year']]},
+{level:'N5',k:'時',meaning:'time; hour',radical:'日 (sun)',mnemonic:'The SUN 日 beside a temple 土寺 marks TIME.',vocab:[['時間','じかん','time'],['時計','とけい','clock']]},
+{level:'N5',k:'行',meaning:'go; travel',radical:'行 (go)',mnemonic:'Two paths cross where you GO on a journey.',vocab:[['行く','いく','to go'],['旅行','りょこう','trip']]},
+{level:'N5',k:'見',meaning:'see; look',radical:'見 (see)',mnemonic:'A giant EYE-like shape with legs goes out to SEE.',vocab:[['見る','みる','to see'],['見せる','みせる','to show']]},
+{level:'N5',k:'学',meaning:'study; learning',radical:'子 (child)',mnemonic:'A CHILD learns under a roof, becoming a STUDENT.',vocab:[['学校','がっこう','school'],['学生','がくせい','student']]},
+{level:'N5',k:'先',meaning:'ahead; previous',radical:'儿 (legs)',mnemonic:'Someone walks ahead on two legs: 先 means AHEAD.',vocab:[['先生','せんせい','teacher'],['先週','せんしゅう','last week']]},
+{level:'N5',k:'食',meaning:'eat; food',radical:'食 (eat)',mnemonic:'A covered bowl suggests sitting down to EAT FOOD.',vocab:[['食べる','たべる','to eat'],['食事','しょくじ','meal']]},
+{level:'N5',k:'話',meaning:'talk; story',radical:'言 (speech)',mnemonic:'SPEECH 言 plus tongue 舌 creates a TALK or STORY.',vocab:[['話す','はなす','to speak'],['電話','でんわ','telephone']]},
+{level:'N5',k:'聞',meaning:'hear; listen; ask',radical:'耳 (ear)',mnemonic:'An EAR inside a gate listens to what is said: HEAR.',vocab:[['聞く','きく','to listen'],['新聞','しんぶん','newspaper']]},
+{level:'N5',k:'書',meaning:'write',radical:'聿 (brush)',mnemonic:'A writing BRUSH moves across a page: WRITE.',vocab:[['書く','かく','to write'],['図書館','としょかん','library']]},
+{level:'N4',k:'会',meaning:'meet; meeting',radical:'人 (person)',mnemonic:'People gather together under a roof to MEET.',vocab:[['会う','あう','to meet'],['会社','かいしゃ','company']]},
+{level:'N4',k:'同',meaning:'same; together',radical:'口 (mouth)',mnemonic:'The SAME words come from the mouths inside one frame.',vocab:[['同じ','おなじ','same'],['同時','どうじ','same time']]},
+{level:'N4',k:'事',meaning:'matter; thing',radical:'亅 (hook)',mnemonic:'A hand handles an important MATTER or THING.',vocab:[['仕事','しごと','work'],['大事','だいじ','important']]},
+{level:'N4',k:'自',meaning:'self; oneself',radical:'自 (self)',mnemonic:'Point to your own nose: SELF, oneself.',vocab:[['自分','じぶん','oneself'],['自然','しぜん','nature']]},
+{level:'N4',k:'社',meaning:'company; shrine',radical:'礻 (altar)',mnemonic:'An ALTAR marks a SHRINE; modern 社 also means COMPANY.',vocab:[['会社','かいしゃ','company'],['神社','じんじゃ','Shinto shrine']]},
+{level:'N4',k:'者',meaning:'person; someone',radical:'老 (old)',mnemonic:'An OLD-looking person represents a PERSON or someone.',vocab:[['医者','いしゃ','doctor'],['若者','わかもの','young person']]},
+{level:'N4',k:'地',meaning:'ground; earth',radical:'土 (earth)',mnemonic:'EARTH 土 spreads across the ground 地.',vocab:[['地図','ちず','map'],['地下','ちか','underground']]},
+{level:'N4',k:'業',meaning:'work; occupation',radical:'木 (tree)',mnemonic:'A heavy workbench reminds you of an OCCUPATION or WORK.',vocab:[['仕事','しごと','work'],['授業','じゅぎょう','class; lesson']]},
+{level:'N4',k:'方',meaning:'direction; way',radical:'方 (direction)',mnemonic:'An arrow-like shape points a DIRECTION or WAY.',vocab:[['方法','ほうほう','method'],['夕方','ゆうがた','evening']]},
+{level:'N4',k:'新',meaning:'new',radical:'斤 (axe)',mnemonic:'An AXE cuts fresh wood: something NEW.',vocab:[['新しい','あたらしい','new'],['新聞','しんぶん','newspaper']]},
+{level:'N4',k:'場',meaning:'place; location',radical:'土 (earth)',mnemonic:'A marked piece of ground becomes a PLACE or LOCATION.',vocab:[['場所','ばしょ','place'],['会場','かいじょう','venue']]},
+{level:'N4',k:'員',meaning:'member; employee',radical:'口 (mouth)',mnemonic:'A counted person inside an organization is a MEMBER or EMPLOYEE.',vocab:[['会社員','かいしゃいん','company employee'],['店員','てんいん','shop clerk']]},
+{level:'N4',k:'立',meaning:'stand',radical:'立 (stand)',mnemonic:'A person stands upright on a line: STAND.',vocab:[['立つ','たつ','to stand'],['立場','たちば','position; standpoint']]},
+{level:'N4',k:'開',meaning:'open',radical:'門 (gate)',mnemonic:'A GATE 門 swings OPEN.',vocab:[['開く','あく','to open'],['開ける','あける','to open something']]},
+{level:'N4',k:'手',meaning:'hand',radical:'手 (hand)',mnemonic:'The three fingers and palm make a HAND.',vocab:[['手','て','hand'],['上手','じょうず','skillful']]},
+{level:'N4',k:'強',meaning:'strong',radical:'弓 (bow)',mnemonic:'A taut BOW takes STRONG force to bend.',vocab:[['強い','つよい','strong'],['勉強','べんきょう','study']]},
+{level:'N4',k:'公',meaning:'public',radical:'八 (divide)',mnemonic:'Private things are divided outward into the PUBLIC.',vocab:[['公園','こうえん','park'],['公共','こうきょう','public']]},
+{level:'N4',k:'持',meaning:'hold; have',radical:'扌 (hand)',mnemonic:'A HAND holds something and keeps it: 持.',vocab:[['持つ','もつ','to hold'],['気持ち','きもち','feeling']]},
+{level:'N4',k:'野',meaning:'field; plain',radical:'里 (village)',mnemonic:'Beyond the village lies an open FIELD or PLAIN.',vocab:[['野菜','やさい','vegetables'],['野原','のはら','field']]},
+{level:'N4',k:'思',meaning:'think',radical:'心 (heart)',mnemonic:'The MIND 心 thinks inside the head 田: THINK.',vocab:[['思う','おもう','to think'],['思い出す','おもいだす','to remember']]},
+{level:'N4',k:'家',meaning:'house; home',radical:'宀 (roof)',mnemonic:'A ROOF shelters a family and a pig, forming a HOME.',vocab:[['家','いえ','house'],['家族','かぞく','family']]},
+{level:'N4',k:'世',meaning:'world; generation',radical:'一 (one)',mnemonic:'Many connected lines represent a whole WORLD or GENERATION.',vocab:[['世界','せかい','world'],['世紀','せいき','century']]},
+{level:'N4',k:'多',meaning:'many; much',radical:'夕 (evening)',mnemonic:'Two evening moons stack up: MANY, MUCH.',vocab:[['多い','おおい','many'],['多分','たぶん','probably']]},
+{level:'N4',k:'正',meaning:'correct; right',radical:'止 (stop)',mnemonic:'STOP at the correct line: 正 means CORRECT.',vocab:[['正しい','ただしい','correct'],['正月','しょうがつ','New Year']]},
+{level:'N4',k:'安',meaning:'cheap; safe; peaceful',radical:'宀 (roof)',mnemonic:'A woman 女 resting under a ROOF feels SAFE and PEACEFUL.',vocab:[['安い','やすい','cheap'],['安心','あんしん','peace of mind']]},
+{level:'N4',k:'院',meaning:'institution; hospital',radical:'阝 (place)',mnemonic:'A walled PLACE houses an INSTITUTION such as a hospital.',vocab:[['病院','びょういん','hospital'],['大学院','だいがくいん','graduate school']]},
+{level:'N4',k:'心',meaning:'heart; mind',radical:'心 (heart)',mnemonic:'The three drops and hook form the HEART and MIND.',vocab:[['心','こころ','heart; mind'],['安心','あんしん','peace of mind']]},
+{level:'N4',k:'界',meaning:'world; boundary',radical:'田 (field)',mnemonic:'A field divided by boundaries marks a WORLD or realm.',vocab:[['世界','せかい','world'],['限界','げんかい','limit']]},
+{level:'N4',k:'教',meaning:'teach; education',radical:'攵 (action)',mnemonic:'An elder guides a child through learning: TEACH.',vocab:[['教える','おしえる','to teach'],['教室','きょうしつ','classroom']]},
+{level:'N4',k:'文',meaning:'sentence; writing',radical:'文 (writing)',mnemonic:'Crossed lines resemble written characters: WRITING and SENTENCE.',vocab:[['作文','さくぶん','composition'],['文化','ぶんか','culture']]},
+{level:'N4',k:'元',meaning:'origin; former',radical:'儿 (legs)',mnemonic:'The first person at the beginning marks the ORIGIN.',vocab:[['元気','げんき','healthy; energetic'],['元々','もともと','originally']]},
+{level:'N4',k:'重',meaning:'heavy; important',radical:'里 (village)',mnemonic:'Layers piled high become HEAVY and IMPORTANT.',vocab:[['重い','おもい','heavy'],['重要','じゅうよう','important']]},
+{level:'N4',k:'近',meaning:'near; close',radical:'辶 (movement)',mnemonic:'Move along a path until something is NEAR and CLOSE.',vocab:[['近い','ちかい','near'],['最近','さいきん','recently']]},
+{level:'N4',k:'考',meaning:'think; consider',radical:'老 (old)',mnemonic:'An experienced elder THINKS and CONSIDERS carefully.',vocab:[['考える','かんがえる','to think'],['考え','かんがえ','idea']]},
+{level:'N4',k:'海',meaning:'sea; ocean',radical:'氵 (water)',mnemonic:'Water 氵 spreads beside every mother-like wave: the SEA.',vocab:[['海','うみ','sea'],['海外','かいがい','overseas']]}
+];
+let db=starter.slice(), level='N5', mode='learn', current=0, revealed=false;
+const state=k=>progress[k]||{stage:0,seen:0,last:0};
+function stats(){let a=db.filter(x=>x.level===level);let m=a.filter(x=>state(x.k).stage>=4).length,l=a.filter(x=>state(x.k).stage>0&&state(x.k).stage<4).length,d=a.filter(x=>{let s=state(x.k);return s.last&&new Date(s.last).toDateString()===new Date().toDateString()}).length;document.querySelector('#mastered').textContent=m;document.querySelector('#active').textContent=l;document.querySelector('#daily').textContent=d}
+function learn(){mode='learn';revealed=false;let a=db.filter(x=>x.level===level);current=Math.min(current,a.length-1);render()}
+function review(){mode='review';revealed=false;let a=db.filter(x=>x.level===level).filter(x=>{let s=state(x.k);return s.stage<4});if(!a.length)a=db.filter(x=>x.level===level);current=Math.floor(Math.random()*a.length);renderReview(a)}
+function render(){stats();let a=db.filter(x=>x.level===level),x=a[current];document.querySelector('#panel').innerHTML=`
+<div class="card rounded-3xl p-5 glow">
+<div class="flex justify-between items-center"><span class="text-cyan-300 font-bold">${x.level}</span><span class="text-slate-400">${current+1}/${a.length}</span></div>
+<div class="text-center py-5"><div class="text-[9rem] leading-none font-black">${x.k}</div><div class="text-2xl font-bold">${x.meaning}</div></div>
+<div class="grid gap-3">
+<div class="rounded-2xl bg-slate-900 p-4"><b>Radical</b><p class="text-slate-300 mt-1">${x.radical}</p></div>
+<div class="rounded-2xl bg-violet-950/40 border border-violet-400/30 p-4"><b>Mnemonic Story</b><p class="text-slate-200 mt-1">${x.mnemonic}</p></div>
+<div class="rounded-2xl bg-slate-900 p-4"><b>Real-world vocabulary</b><div class="mt-2 grid gap-2">${x.vocab.map(v=>`<div><span class="font-bold text-cyan-200">${v[0]}</span> <span class="text-slate-400">(${v[1]})</span> — ${v[2]}</div>`).join('')}</div></div>
+</div>
+<button id="next" class="w-full mt-4 rounded-xl bg-cyan-500 text-slate-950 font-black">Next Kanji</button>
+</div>`;document.querySelector('#next').onclick=()=>{current=(current+1)%a.length;render()}}
+function renderReview(a){stats();let x=a[current];document.querySelector('#panel').innerHTML=`
+<div class="card rounded-3xl p-6 text-center glow"><div class="text-violet-300 font-bold mb-3">SRS Review</div>
+<div class="text-[8rem] leading-none font-black">${x.k}</div>
+${revealed?`<div class="mt-4 text-2xl font-bold">${x.meaning}</div><div class="text-left mt-5 grid gap-2">${x.vocab.map(v=>`<div class="bg-slate-900 rounded-xl p-3"><b>${v[0]}</b> <span class="text-slate-400">(${v[1]})</span> — ${v[2]}</div>`).join('')}</div><div class="grid grid-cols-2 gap-2 mt-5"><button id="forgot" class="rounded-xl bg-rose-500 text-white font-black">❌ Forgot</button><button id="got" class="rounded-xl bg-emerald-500 text-slate-950 font-black">✅ Got It</button></div>`:`<button id="reveal" class="w-full mt-6 rounded-xl bg-violet-500 font-black">Tap to Reveal</button>`}</div>`;
+if(!revealed)document.querySelector('#reveal').onclick=()=>{revealed=true;renderReview(a)};
+else{document.querySelector('#forgot').onclick=()=>rate(x,false);document.querySelector('#got').onclick=()=>rate(x,true)}}
+function rate(x,got){let s=state(x.k);s.stage=got?Math.min(4,s.stage+1):0;s.seen++;s.last=Date.now();progress[x.k]=s;save();review()}
+function dictionary(){mode='dict';stats();let a=db.filter(x=>x.level===level);document.querySelector('#panel').innerHTML=`<div class="card rounded-3xl p-4"><div class="grid grid-cols-5 sm:grid-cols-8 gap-2">${a.map(x=>{let s=state(x.k),c=s.stage>=4?'bg-emerald-500 text-slate-950':s.stage?'bg-amber-400 text-slate-950':'bg-slate-900 text-white';return \`<button class="rounded-xl ${c} border border-slate-700 font-black text-2xl" data-k="${x.k}">${x.k}</button>\`}).join('')}</div></div>`;document.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{current=a.findIndex(x=>x.k===b.dataset.k);mode='learn';render()})}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{level=b.dataset.level;current=0;document.querySelectorAll('.tab').forEach(z=>z.className='tab rounded-xl border border-slate-700 bg-slate-900 font-bold');b.className='tab rounded-xl border border-cyan-400/50 bg-cyan-400/10 font-bold';learn()});
+document.querySelector('#learnBtn').onclick=learn;document.querySelector('#reviewBtn').onclick=review;document.querySelector('#dictBtn').onclick=dictionary;
+document.querySelector('#reset').onclick=()=>{if(confirm('Reset all local progress?')){localStorage.removeItem(KEY);location.reload()}};
+async function extendDatabase(){
+const urls=['https://raw.githubusercontent.com/evanclan/OpenJLPT/main/data/json/kanji/n5.json','https://raw.githubusercontent.com/evanclan/OpenJLPT/main/data/json/kanji/n4.json'];
+for(const url of urls){try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)continue;const data=await r.json();const rows=Array.isArray(data)?data:(data.kanji||data.data||[]);for(const q of rows){const k=q.kanji||q.character||q.char;if(!k||db.some(x=>x.k===k))continue;const lvl=(q.level||q.jlpt||'').toString().toUpperCase();db.push({level:lvl.includes('4')?'N4':'N5',k,meaning:Array.isArray(q.meanings)?q.meanings.join('; '):(q.meaning||q.description||'Kanji meaning'),radical:q.radical||q.radical_name||'See character components',mnemonic:q.mnemonic||`Connect the shape of ${k} with its meaning and read it in context.`,vocab:Array.isArray(q.vocab)&&q.vocab.length>=2?q.vocab.slice(0,2).map(v=>[v.word||v.kana||k,v.reading||v.read||'',Array.isArray(v.meanings)?v.meanings[0]:(v.meaning||'vocabulary')]):[[k,q.reading||'',q.meaning||'common use'],[k,q.onyomi||q.kunyomi||'',q.meaning||'common use']]})}}catch(e){console.warn('extended dataset unavailable',e)}}stats();if(mode==='learn')render()}
+extendDatabase();stats();render();
+</script>
+</body></html>
