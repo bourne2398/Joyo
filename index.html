@@ -76,7 +76,7 @@ button:active{transform:scale(.98)}
 /* Kanji mind map — touch-first, dependency-free */
 .mindmap-view{margin-top:14px}.mindmap-head{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 8px 24px rgba(15,23,42,.05)}
 .mindmap-title{font-size:19px;font-weight:850}.mindmap-sub{font-size:13px;color:var(--muted);line-height:1.45;margin-top:4px}
-.mindmap-tools{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:12px}.mindmap-tools input{padding:12px 14px}.mindmap-reset{padding:12px 14px}
+.mindmap-tools{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;margin-top:12px}.mindmap-tools input{padding:12px 14px;min-width:0}.mindmap-open,.mindmap-reset{padding:12px 14px}.mindmap-hint{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.4}
 .map-legend{display:flex;gap:7px;overflow:auto;scrollbar-width:none;margin-top:10px;padding-bottom:2px}.map-legend::-webkit-scrollbar{display:none}.legend-chip{white-space:nowrap;border:1px solid var(--line);background:var(--pill);border-radius:999px;padding:8px 11px;font-size:12px;font-weight:750}.legend-chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
 .mindmap-stage{position:relative;margin-top:12px;min-height:560px;height:min(74dvh,680px);overflow:hidden;border:1px solid var(--line);border-radius:22px;background:radial-gradient(circle at center,#fff 0,#f8fafc 58%,#f1f3f6 100%);touch-action:none}
 .mindmap-stage svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.map-edge{stroke:#cbd5e1;stroke-width:1.7}.map-edge.phonetic{stroke:#94a3b8;stroke-dasharray:5 4}.map-edge.component{stroke:#cbd5e1}
@@ -84,7 +84,7 @@ button:active{transform:scale(.98)}
 .map-node.center{width:92px;height:92px;font-size:48px;border-width:2px;box-shadow:0 10px 28px rgba(15,23,42,.18);z-index:4}.map-node small{position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%);font-family:system-ui,-apple-system,sans-serif;font-size:10px;font-weight:800;color:var(--muted);white-space:nowrap;pointer-events:none}
 .map-node .node-level{position:absolute;right:-3px;top:-3px;border-radius:999px;padding:2px 5px;background:#111827;color:#fff;font:800 9px system-ui,-apple-system,sans-serif}.map-node.center .node-level{right:3px;top:3px}
 .map-detail{background:#fff;border:1px solid var(--line);border-radius:20px;padding:15px;margin-top:12px}.map-detail-main{display:flex;align-items:center;gap:14px}.map-detail-kanji{font-family:"Noto Sans JP","Yu Gothic",sans-serif;font-size:58px;line-height:1}.map-detail-copy{min-width:0}.map-detail-meaning{font-size:19px;font-weight:850;line-height:1.25}.map-detail-reading{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.45}.map-detail-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:850;color:var(--muted);margin:12px 0 6px}.map-relations{display:grid;grid-template-columns:1fr 1fr;gap:8px}.relation-box{border:1px solid var(--line);border-radius:13px;padding:10px}.relation-box strong{display:block;font-size:12px}.relation-box span{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}
-@media(max-width:430px){.mindmap-tools{grid-template-columns:1fr}.mindmap-stage{min-height:500px;height:62dvh}.map-node{width:58px;height:58px;font-size:26px}.map-node.center{width:82px;height:82px;font-size:43px}.map-detail-kanji{font-size:50px}}
+@media(max-width:430px){.mindmap-tools{grid-template-columns:minmax(0,1fr) auto}.mindmap-tools .mindmap-reset{grid-column:1 / -1}.mindmap-stage{min-height:500px;height:62dvh}.map-node{width:58px;height:58px;font-size:26px}.map-node.center{width:82px;height:82px;font-size:43px}.map-detail-kanji{font-size:50px}}
 </style></head><body><div class="app">
 <header><div class="top"><div><div class="title">Jōyō Kanji</div><div class="count" id="count"></div></div><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span class="menu-icon"></span></button></div><div class="progress"><div class="bar" id="bar"></div></div></header>
 <div class="menu-backdrop" id="menuBackdrop"></div>
@@ -181,14 +181,23 @@ function renderMindMap(){
   const nodeHtml=nodes.map(n=>'<button class="map-node" data-map-kanji="'+esc(n.c.kanji)+'" style="left:'+n.x/10+'%;top:'+n.y/6.2+'%" aria-label="Open '+esc(n.c.kanji)+'"><span>'+esc(n.c.kanji)+'</span><span class="node-level">'+esc(n.c.level||'Jōyō')+'</span><small>'+(n.type==='phonetic'?'same reading':'shared part')+'</small></button>').join('');
   const readings=[...new Set([...center.on,...center.kun])].join('・')||'—';
   const components=componentTokens(center).join(' · ')||'—';
-  mindmapView.innerHTML='<div class="mindmap-head"><div class="mindmap-title">Kanji Mind Map</div><div class="mindmap-sub">Explore exact relationships in your data: shared written components and shared On’yomi. Components are learning clues, not claims about meaning or etymology.</div><div class="mindmap-tools"><input id="mindSearch" value="'+esc(q)+'" placeholder="Search kanji, meaning, or reading… Press Enter" autocomplete="off"><button class="mindmap-reset" id="mindReset">Reset</button></div><div class="map-legend"><button class="legend-chip active" type="button">● Related kanji</button><button class="legend-chip" type="button">— Shared component</button><button class="legend-chip" type="button">- - Same On’yomi</button></div></div><div class="mindmap-stage"><svg viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">'+edgeSvg+'</svg><button class="map-node center" data-map-kanji="'+esc(center.kanji)+'" style="left:50%;top:48%" aria-label="Selected '+esc(center.kanji)+'"><span>'+esc(center.kanji)+'</span><span class="node-level">'+esc(center.level||'Jōyō')+'</span><small>selected</small></button>'+nodeHtml+'</div><div class="map-detail"><div class="map-detail-main"><div class="map-detail-kanji">'+esc(center.kanji)+'</div><div class="map-detail-copy"><div class="map-detail-meaning">'+esc(center.meaning)+'</div><div class="map-detail-reading">'+esc(readings)+'</div></div></div><div class="map-detail-label">Verified data on this card</div><div class="map-relations"><div class="relation-box"><strong>Components</strong><span>'+esc(components)+'</span></div><div class="relation-box"><strong>Connections</strong><span>'+visible.length+' related kanji shown</span></div></div></div>';
+  mindmapView.innerHTML='<div class="mindmap-head"><div class="mindmap-title">Kanji Mind Map</div><div class="mindmap-sub">Explore exact relationships in your data: shared written components and shared On’yomi. Components are learning clues, not claims about meaning or etymology.</div><div class="mindmap-tools"><input id="mindSearch" value="'+esc(q)+'" placeholder="Type a kanji (例: 漢) or search meaning / reading" autocomplete="off" inputmode="text" enterkeyhint="search"><button class="mindmap-open" id="mindOpen" type="button">Open</button><button class="mindmap-reset" id="mindReset">Reset</button></div><div class="mindmap-hint">Type a kanji directly, then press <strong>Open</strong> or Enter. The kanji becomes the center of the map.</div><div class="map-legend"><button class="legend-chip active" type="button">● Related kanji</button><button class="legend-chip" type="button">— Shared component</button><button class="legend-chip" type="button">- - Same On’yomi</button></div></div><div class="mindmap-stage"><svg viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">'+edgeSvg+'</svg><button class="map-node center" data-map-kanji="'+esc(center.kanji)+'" style="left:50%;top:48%" aria-label="Selected '+esc(center.kanji)+'"><span>'+esc(center.kanji)+'</span><span class="node-level">'+esc(center.level||'Jōyō')+'</span><small>selected</small></button>'+nodeHtml+'</div><div class="map-detail"><div class="map-detail-main"><div class="map-detail-kanji">'+esc(center.kanji)+'</div><div class="map-detail-copy"><div class="map-detail-meaning">'+esc(center.meaning)+'</div><div class="map-detail-reading">'+esc(readings)+'</div></div></div><div class="map-detail-label">Verified data on this card</div><div class="map-relations"><div class="relation-box"><strong>Components</strong><span>'+esc(components)+'</span></div><div class="relation-box"><strong>Connections</strong><span>'+visible.length+' related kanji shown</span></div></div></div>';
   const input=document.getElementById('mindSearch');
-  input.addEventListener('keydown',e=>{
-    if(e.key!=='Enter')return;
-    const value=e.target.value.trim().toLowerCase();
-    const found=scopeCards.find(c=>c.kanji===e.target.value.trim())||scopeCards.find(c=>c.meaning.toLowerCase().includes(value)||[...c.on,...c.kun].some(r=>r.includes(value)));
+  const openKanji=()=>{
+    const raw=input.value.trim();
+    if(!raw)return;
+    const value=raw.toLowerCase();
+    const exact=scopeCards.find(c=>c.kanji===raw);
+    const found=exact||scopeCards.find(c=>c.meaning.toLowerCase().includes(value)||[...c.on,...c.kun].some(r=>r.toLowerCase().includes(value)));
     if(found){mindCenter=found.kanji;renderMindMap()}
-  });
+    else{
+      input.setCustomValidity('That kanji or search term is not in the current scope.');
+      input.reportValidity();
+      setTimeout(()=>input.setCustomValidity(''),1800);
+    }
+  };
+  input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();openKanji()}});
+  document.getElementById('mindOpen').addEventListener('click',openKanji);
   document.getElementById('mindReset').addEventListener('click',()=>{mindCenter=scopeCards[0]?.kanji||'';renderMindMap()});
   mindmapView.querySelectorAll('[data-map-kanji]').forEach(b=>b.addEventListener('click',()=>{
     mindCenter=b.dataset.mapKanji;renderMindMap();mindmapView.scrollIntoView({behavior:'smooth',block:'start'});
@@ -209,7 +218,7 @@ viewTabs.addEventListener('click',e=>{
 
 search.addEventListener('input',render);
 document.getElementById('reset').onclick=()=>{
-  selectedScope='JLPT';selectedLevel='ALL';selectedRadical='ALL';search.value='';
+  selectedScope='JLPT';selectedLevel='ALL';selectedRadical='ALL';mindCenter='';search.value='';
   document.querySelectorAll('.scope-tab').forEach(b=>b.classList.toggle('active',b.dataset.scope==='JLPT'));
   document.querySelectorAll('.level-btn').forEach(b=>b.classList.toggle('active',b.dataset.level==='ALL'));
   render();scrollTo({top:0,behavior:'smooth'});closeMenu();
