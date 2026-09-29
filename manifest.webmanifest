@@ -1,0 +1,12 @@
+{
+  "name":"JLPT N5・N4 漢字 Flashcards",
+  "short_name":"Joyo Kanji",
+  "description":"Offline JLPT N5 and N4 Kanji flashcards",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#111111",
+  "theme_color":"#111111",
+  "orientation":"any",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
