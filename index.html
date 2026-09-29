@@ -345,19 +345,11 @@ function recordAndMove(type, direction){
 }
 const $=id=>document.getElementById(id);
 const VOCAB_PAGE_SIZE=5;
-let vocabPages=[],vocabPageIndex=0,vocabStartX=0,vocabDragging=false;
+let vocabPages=[],vocabPageIndex=0,vocabStartX=0,vocabDragging=false,vocabData={};
 function buildVocabPages(c){
-  const rd=RADICAL_DATA[c.kanji]||{w:[]};
-  const entries=[{word:c.word,reading:c.wordReading,meaning:c.wordMeaning}];
-  rd.w.forEach(raw=>{
-    const parts=raw.split(' — ');
-    const word=parts[0].trim(), meaning=(parts.slice(1).join(' — ')||'').trim();
-    if(word && !entries.some(e=>e.word===word)) entries.push({word,reading:'',meaning});
-  });
-  const seen=new Set();
-  const clean=entries.filter(e=>{const k=e.word+'|'+e.meaning;if(seen.has(k))return false;seen.add(k);return true});
+  const entries=Array.isArray(vocabData[c.kanji])?vocabData[c.kanji]:[];
   vocabPages=[];
-  for(let i=0;i<clean.length;i+=VOCAB_PAGE_SIZE)vocabPages.push(clean.slice(i,i+VOCAB_PAGE_SIZE));
+  for(let i=0;i<entries.length;i+=VOCAB_PAGE_SIZE)vocabPages.push(entries.slice(i,i+VOCAB_PAGE_SIZE));
   if(!vocabPages.length)vocabPages=[[]];
 }
 function renderVocabPage(){
@@ -370,7 +362,7 @@ function renderVocabPage(){
 }
 function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function openVocab(){
-  const c=deck[index];if(!c)return;
+  const c=deck[index];if(!c||!vocabData[c.kanji])return;
   buildVocabPages(c);vocabPageIndex=0;
   $('vocabTitle').textContent=c.kanji+' — More vocabulary';
   $('vocabSubtitle').textContent=c.meaning+' · swipe left/right for more';
@@ -458,6 +450,8 @@ function showResults(type){
 }
 updateResultNav();
 setLevel('ALL');
+$('moreVocabBtn').disabled=true;
+loadVocabulary();
 if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}
 </script>
 </body>
