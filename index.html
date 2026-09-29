@@ -308,7 +308,7 @@ function getStudyCards(level){
     return !resultStore.knew.includes(key) && !resultStore.dontKnow.includes(key);
   });
 }
-let deck=[], index=0, flipped=false;
+let deck=[], index=0, flipped=false, currentStudyLevel='ALL';
 let swipeX=0, swipeY=0, dragging=false;
 const resultStore=JSON.parse(localStorage.getItem('joyoKanjiResults')||'{"knew":[],"dontKnow":[]}');
 function saveResult(type){
@@ -327,13 +327,24 @@ function updateResultNav(){
 }
 function recordAndMove(type, direction){
   saveResult(type);
-  move(direction);
+  if(currentStudyLevel==='ALL' || currentStudyLevel==='N5' || currentStudyLevel==='N4'){
+    deck=getStudyCards(currentStudyLevel);
+    if(deck.length){
+      index=Math.min(index,deck.length-1);
+      render();
+    }else{
+      index=0;
+      render();
+    }
+  }else{
+    move(direction);
+  }
 }
 const $=id=>document.getElementById(id);
 function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.kanji;$('backKanji').textContent=c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.reading;$('meaning').textContent=c.meaning;$('word').textContent=c.word;$('wordInfo').textContent=c.wordReading+' — '+c.wordMeaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
 function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
 function move(n){index=(index+n+deck.length)%deck.length;render()}
-function setLevel(level){deck=getStudyCards(level);index=0;document.querySelectorAll('.level button').forEach(b=>b.classList.remove('active'));$(level.toLowerCase()).classList.add('active');render()}
+function setLevel(level){currentStudyLevel=level;deck=getStudyCards(level);index=0;document.querySelectorAll('.level button').forEach(b=>b.classList.remove('active'));$(level.toLowerCase()).classList.add('active');render()}
 $('flip').onclick=flip;$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('know').onclick=()=>recordAndMove('knew',1);$('miss').onclick=()=>recordAndMove('dontKnow',1);$('knewNav').onclick=()=>showResults('knew');$('dontNav').onclick=()=>showResults('dontKnow');$('n5').onclick=()=>setLevel('N5');$('n4').onclick=()=>setLevel('N4');$('all').onclick=()=>setLevel('ALL');
 let sx=0,sy=0,swiping=false,suppressClick=false;
 $('card').addEventListener('pointerdown',e=>{
@@ -387,6 +398,7 @@ function showResults(type){
   }
   deck=matches;
   index=0;
+  currentStudyLevel=null;
   flipped=false;
   document.querySelectorAll('.level button').forEach(b=>b.classList.remove('active'));
   render();
