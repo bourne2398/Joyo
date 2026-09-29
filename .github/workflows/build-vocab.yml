@@ -1,5 +1,9 @@
 name: Build Joyo vocabulary
 
+concurrency:
+  group: joyo-vocabulary-build
+  cancel-in-progress: true
+
 on:
   push:
     branches: [main]
@@ -55,35 +59,38 @@ jobs:
           if not banks:
               raise SystemExit("No JMdict term banks found")
 
+          candidates={k:[] for k in targets}
+          target_set=set(targets)
+
+          for path in banks:
+              rows=json.loads(path.read_text(encoding="utf-8"))
+              for row in rows:
+                  if not isinstance(row,list) or len(row)<6: continue
+                  word=str(row[0] or "").strip()
+                  reading=hira(str(row[1] or "").strip())
+                  if not word or not reading or not re.fullmatch(r"[ぁ-ゖゝゞー]+",reading): continue
+                  if len(word)>12 or len(reading)>20: continue
+                  matched=target_set.intersection(word)
+                  if not matched: continue
+                  glosses=strings(row[5])
+                  if not glosses: continue
+                  gloss="; ".join(dict.fromkeys(glosses))[:180]
+                  try: score=float(row[4] or 0)
+                  except: score=0
+                  item=(score,word,reading,gloss)
+                  for k in matched: candidates[k].append(item)
+
           out={}
           for kanji in targets:
-              candidates=[]
-              for path in banks:
-                  rows=json.loads(path.read_text(encoding="utf-8"))
-                  for row in rows:
-                      if not isinstance(row,list) or len(row)<6: continue
-                      word=str(row[0] or "").strip()
-                      reading=hira(str(row[1] or "").strip())
-                      if kanji not in word: continue
-                      if not reading or not re.fullmatch(r"[ぁ-ゖゝゞー]+",reading): continue
-                      if len(word)>12 or len(reading)>20: continue
-                      glosses=strings(row[5])
-                      if not glosses: continue
-                      gloss="; ".join(dict.fromkeys(glosses))[:180]
-                      try: score=float(row[4] or 0)
-                      except: score=0
-                      candidates.append((score,word,reading,gloss))
-
-              candidates.sort(key=lambda x:(-x[0],len(x[1]),x[1],x[2]))
+              candidates[kanji].sort(key=lambda x:(-x[0],len(x[1]),x[1],x[2]))
               seen=set()
               words=[]
-              for score,word,reading,gloss in candidates:
+              for score,word,reading,gloss in candidates[kanji]:
                   key=(word,reading)
                   if key in seen: continue
                   seen.add(key)
                   words.append({"word":word,"reading":reading,"meaning":gloss})
                   if len(words)>=20: break
-
               if len(words)<20:
                   raise SystemExit(f"{kanji}: only {len(words)} verified vocabulary entries")
               out[kanji]=words
