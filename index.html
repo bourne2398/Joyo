@@ -354,7 +354,7 @@ function buildVocabPages(c){
 }
 function renderVocabPage(){
   const page=vocabPages[vocabPageIndex]||[];
-  $('vocabPage').innerHTML=page.map(v=>'<div class="vocab-item"><div class="vocab-word">'+escapeHtml(v.word)+'</div><div class="vocab-reading">'+(v.reading?escapeHtml(v.reading):'reading not available')+'</div><div class="vocab-meaning">'+escapeHtml(v.meaning||'')+'</div></div>').join('');
+  $('vocabPage').innerHTML=page.map(v=>'<div class="vocab-item"><div class="vocab-word">'+escapeHtml(v.word)+'</div><div class="vocab-reading">'+(v.reading?escapeHtml(v.reading):'')+'</div><div class="vocab-meaning">'+escapeHtml(v.meaning||'')+'</div></div>').join('');
   $('vocabPage').scrollTop=0;
   $('vocabPageCount').textContent=(vocabPageIndex+1)+' / '+vocabPages.length;
   $('vocabPrev').disabled=vocabPageIndex===0;
