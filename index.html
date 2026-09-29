@@ -373,9 +373,16 @@ $('card').addEventListener('click',e=>{
 });
 function showResults(type){
   const keys=new Set(resultStore[type]);
-  if(!keys.size){alert(type==='knew'?'No Knew it cards yet.':'No Don\'t know cards yet.');return;}
   const matches=cards.filter(c=>keys.has(c.level+'|'+c.kanji));
-  alert((type==='knew'?'Knew it':'Don\'t know')+' — '+matches.length+' cards\\n\\n'+matches.map(c=>c.kanji+'  '+c.reading).join('\\n'));
+  if(!matches.length){
+    alert(type==='knew'?'No Knew it cards yet.':"No Don't know cards yet.");
+    return;
+  }
+  deck=matches;
+  index=0;
+  flipped=false;
+  document.querySelectorAll('.level button').forEach(b=>b.classList.remove('active'));
+  render();
 }
 updateResultNav();
 render();
