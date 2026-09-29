@@ -41,7 +41,7 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 <section class="face back"><span class="leveltag" id="backLevel"></span><h2 id="backKanji"></h2><div class="info"><div class="label">Japanese reading</div><div class="value" id="reading"></div><div class="label">Radical / components</div><div class="value radical" id="radical"></div><div class="label">English</div><div class="value" id="meaning"></div><div class="label">Kanji word</div><div class="value" id="word"></div><div class="label">Word reading + English</div><div class="value" id="wordInfo"></div><div class="label">More vocabulary</div><div class="value words" id="moreWords"></div></div></section>
 </div></div></main>
 <footer class="controls">
-<button id="prev">←</button><button id="flip">Flip</button><button id="miss" class="missed">× Don't know</button><button id="know" class="known">✓ Knew it</button><button id="next">→</button>
+<button id="prev">←</button><button id="next">→</button>
 </footer>
 </div>
 <script>
@@ -343,9 +343,10 @@ function recordAndMove(type, direction){
 const $=id=>document.getElementById(id);
 function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.kanji;$('backKanji').textContent=c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.reading;$('meaning').textContent=c.meaning;$('word').textContent=c.word;$('wordInfo').textContent=c.wordReading+' — '+c.wordMeaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
 function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
+$('card').addEventListener('dblclick',e=>{e.preventDefault();flip();});
 function move(n){index=(index+n+deck.length)%deck.length;render()}
 function setLevel(level){currentStudyLevel=level;deck=getStudyCards(level);index=0;document.querySelectorAll('.level button').forEach(b=>b.classList.remove('active'));$(level.toLowerCase()).classList.add('active');render()}
-$('flip').onclick=flip;$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('know').onclick=()=>recordAndMove('knew',1);$('miss').onclick=()=>recordAndMove('dontKnow',1);$('knewNav').onclick=()=>showResults('knew');$('dontNav').onclick=()=>showResults('dontKnow');$('n5').onclick=()=>setLevel('N5');$('n4').onclick=()=>setLevel('N4');$('all').onclick=()=>setLevel('ALL');
+$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('knewNav').onclick=()=>showResults('knew');$('dontNav').onclick=()=>showResults('dontKnow');$('n5').onclick=()=>setLevel('N5');$('n4').onclick=()=>setLevel('N4');$('all').onclick=()=>setLevel('ALL');
 let sx=0,sy=0,swiping=false,suppressClick=false;
 $('card').addEventListener('pointerdown',e=>{
   if(e.pointerType==='mouse' && e.button!==0)return;
