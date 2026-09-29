@@ -18,7 +18,7 @@ jobs:
 
       - name: Download JMdict
         run: |
-          curl -L --fail --retry 3 -o /tmp/jmdict.zip "https://github.com/yomidevs/jmdict-yomitan/releases/download/4eefc7a/JMdict_english_without_proper_names.zip"
+          curl -L --fail --retry 3 -o /tmp/jmdict.zip "https://github.com/yomidevs/jmdict-yomitan/releases/download/2026-09-29/JMdict_english_without_proper_names.zip"
           unzip -o /tmp/jmdict.zip -d /tmp/jmdict
 
       - name: Build vocabulary
