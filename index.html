@@ -26,12 +26,12 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 .tap{position:absolute;bottom:22px;font-size:13px;color:#777}
 .back h2{font-size:clamp(3rem,14vw,7rem);margin:0 0 16px;font-family:"Noto Serif JP","Yu Mincho",serif;font-weight:500}
 .info{border-top:1px solid #ddd;padding-top:16px;margin-top:4px}
-.label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#777;font-weight:800}.value{font-size:clamp(1.05rem,4vw,1.5rem);font-weight:700;margin:4px 0 14px;line-height:1.35}.radical{font-size:clamp(1.1rem,4.5vw,1.6rem);font-family:"Noto Serif JP","Yu Mincho",serif;letter-spacing:.12em}.words{font-size:clamp(.9rem,3.5vw,1.15rem);font-weight:650;line-height:1.5;white-space:normal}
+.label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#777;font-weight:800}.value{font-size:clamp(1.05rem,4vw,1.5rem);font-weight:700;margin:4px 0 14px;line-height:1.35}.radical{font-size:clamp(1.1rem,4.5vw,1.6rem);font-family:"Noto Serif JP","Yu Mincho",serif;letter-spacing:.12em}.vocab-more-btn{margin-top:8px;border:1px solid #aaa;background:#fff;color:#111;border-radius:12px;padding:9px 12px;font-weight:800;font-size:13px}.words{font-size:clamp(.9rem,3.5vw,1.15rem);font-weight:650;line-height:1.5;white-space:normal}
 .controls{height:76px;flex:none;display:flex;gap:8px;align-items:center;justify-content:center;padding:8px 10px;border-top:1px solid #333;background:#111}
 .controls button{min-width:72px}.shuffle.active{background:#fff;color:#111}.known{border-color:#2f8a4c!important}.missed{border-color:#a83d3d!important}
 .level{display:flex;gap:4px;grid-column:2;grid-row:1 / span 2}.level button{padding:7px 9px}.level button.active{background:#fff;color:#111}
 @media (orientation:landscape) and (max-height:600px){.top{height:58px;grid-template-rows:1fr 1fr}.controls{height:62px}.face{padding:12px}.kanji{font-size:clamp(5rem,25vh,10rem)}.back h2{font-size:clamp(2.5rem,15vh,5rem)}.value{margin-bottom:7px}}
-</style>
+.vocab-modal{position:fixed;inset:0;z-index:50;display:none;background:rgba(0,0,0,.78);padding:env(safe-area-inset-top) 12px env(safe-area-inset-bottom)}.vocab-modal.open{display:flex;align-items:center;justify-content:center}.vocab-panel{position:relative;width:min(100%,680px);height:min(82dvh,680px);background:#f7f7f7;color:#111;border-radius:24px;border:1px solid #444;display:flex;flex-direction:column;overflow:hidden;touch-action:none}.vocab-head{flex:none;padding:18px 56px 14px 20px;border-bottom:1px solid #ddd}.vocab-title{font-size:clamp(1.35rem,5vw,2rem);font-weight:850}.vocab-subtitle{font-size:13px;color:#666;margin-top:3px}.vocab-close{position:absolute;right:12px;top:12px;width:42px;height:42px;border:1px solid #bbb;border-radius:50%;background:#fff;color:#111;font-size:25px;line-height:1;font-weight:700;z-index:2}.vocab-body{position:relative;flex:1;min-height:0;overflow:hidden}.vocab-page{height:100%;padding:18px 20px 54px;overflow:auto;touch-action:pan-y}.vocab-item{padding:15px 4px;border-bottom:1px solid #ddd}.vocab-word{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(1.45rem,6vw,2.2rem);font-weight:650}.vocab-reading{font-size:clamp(1rem,4vw,1.25rem);color:#555;margin-top:3px}.vocab-meaning{font-size:clamp(.95rem,3.8vw,1.15rem);font-weight:650;margin-top:5px;line-height:1.35}.vocab-nav{position:absolute;left:0;right:0;bottom:0;height:48px;display:flex;justify-content:space-between;align-items:center;padding:0 14px;background:linear-gradient(transparent,#f7f7f7 35%)}.vocab-nav button{border:1px solid #bbb;background:#fff;color:#111;border-radius:10px;padding:7px 13px;font-weight:800}.vocab-page-count{font-size:12px;color:#666;font-weight:750}@media (orientation:landscape) and (max-height:600px){.vocab-panel{height:88dvh}.vocab-page{padding-top:10px}.vocab-item{padding:9px 4px}}</style>
 </head>
 <body>
 <div class="app">
@@ -41,12 +41,12 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 </header>
 <main><div class="card-wrap"><div class="card" id="card">
 <section class="face front"><span class="leveltag" id="frontLevel"></span><div class="kanji" id="frontKanji"></div><div class="tap">TAP TO REVEAL</div></section>
-<section class="face back"><span class="leveltag" id="backLevel"></span><h2 id="backKanji"></h2><div class="info"><div class="label">Japanese reading</div><div class="value" id="reading"></div><div class="label">Radical / components</div><div class="value radical" id="radical"></div><div class="label">English</div><div class="value" id="meaning"></div><div class="label">Kanji word</div><div class="value" id="word"></div><div class="label">Word reading + English</div><div class="value" id="wordInfo"></div><div class="label">More vocabulary</div><div class="value words" id="moreWords"></div></div></section>
+<section class="face back"><span class="leveltag" id="backLevel"></span><h2 id="backKanji"></h2><div class="info"><div class="label">Japanese reading</div><div class="value" id="reading"></div><div class="label">Radical / components</div><div class="value radical" id="radical"></div><div class="label">English</div><div class="value" id="meaning"></div><div class="label">Kanji word</div><div class="value" id="word"></div><div class="label">Word reading + English</div><div class="value" id="wordInfo"></div><div class="label">More vocabulary</div><div class="value words" id="moreWords"></div><button class="vocab-more-btn" id="moreVocabBtn" type="button">📖 More vocabulary</button></div></section>
 </div></div></main>
 <footer class="controls">
 <button id="prev">←</button><button id="shuffle" class="shuffle" aria-label="Shuffle">⇄ Shuffle</button><button id="next">→</button>
 </footer>
-</div>
+<div class="vocab-modal" id="vocabModal" aria-hidden="true"><div class="vocab-panel" id="vocabPanel"><button class="vocab-close" id="vocabClose" aria-label="Close">×</button><div class="vocab-head"><div class="vocab-title" id="vocabTitle">More vocabulary</div><div class="vocab-subtitle" id="vocabSubtitle"></div></div><div class="vocab-body" id="vocabBody"><div class="vocab-page" id="vocabPage"></div><div class="vocab-nav"><button id="vocabPrev">← Previous</button><span class="vocab-page-count" id="vocabPageCount"></span><button id="vocabNext">Next →</button></div></div></div></div></div>
 <script>
 const N5 = `
 日|ニチ・ひ|day, sun, Japan|日本|にほん|Japan
@@ -344,6 +344,45 @@ function recordAndMove(type, direction){
   }
 }
 const $=id=>document.getElementById(id);
+const VOCAB_PAGE_SIZE=5;
+let vocabPages=[],vocabPageIndex=0,vocabStartX=0,vocabDragging=false;
+function buildVocabPages(c){
+  const rd=RADICAL_DATA[c.kanji]||{w:[]};
+  const entries=[{word:c.word,reading:c.wordReading,meaning:c.wordMeaning}];
+  rd.w.forEach(raw=>{
+    const parts=raw.split(' — ');
+    const word=parts[0].trim(), meaning=(parts.slice(1).join(' — ')||'').trim();
+    if(word && !entries.some(e=>e.word===word)) entries.push({word,reading:'',meaning});
+  });
+  const seen=new Set();
+  const clean=entries.filter(e=>{const k=e.word+'|'+e.meaning;if(seen.has(k))return false;seen.add(k);return true});
+  vocabPages=[];
+  for(let i=0;i<clean.length;i+=VOCAB_PAGE_SIZE)vocabPages.push(clean.slice(i,i+VOCAB_PAGE_SIZE));
+  if(!vocabPages.length)vocabPages=[[]];
+}
+function renderVocabPage(){
+  const page=vocabPages[vocabPageIndex]||[];
+  $('vocabPage').innerHTML=page.map(v=>'<div class="vocab-item"><div class="vocab-word">'+escapeHtml(v.word)+'</div><div class="vocab-reading">'+(v.reading?escapeHtml(v.reading):'reading not available')+'</div><div class="vocab-meaning">'+escapeHtml(v.meaning||'')+'</div></div>').join('');
+  $('vocabPage').scrollTop=0;
+  $('vocabPageCount').textContent=(vocabPageIndex+1)+' / '+vocabPages.length;
+  $('vocabPrev').disabled=vocabPageIndex===0;
+  $('vocabNext').disabled=vocabPageIndex===vocabPages.length-1;
+}
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function openVocab(){
+  const c=deck[index];if(!c)return;
+  buildVocabPages(c);vocabPageIndex=0;
+  $('vocabTitle').textContent=c.kanji+' — More vocabulary';
+  $('vocabSubtitle').textContent=c.meaning+' · swipe left/right for more';
+  $('vocabModal').classList.add('open');$('vocabModal').setAttribute('aria-hidden','false');
+  renderVocabPage();
+}
+function closeVocab(){$('vocabModal').classList.remove('open');$('vocabModal').setAttribute('aria-hidden','true')}
+function vocabMove(n){const next=vocabPageIndex+n;if(next<0||next>=vocabPages.length)return;vocabPageIndex=next;renderVocabPage()}
+$('moreVocabBtn').onclick=openVocab;$('vocabClose').onclick=closeVocab;$('vocabPrev').onclick=()=>vocabMove(-1);$('vocabNext').onclick=()=>vocabMove(1);
+$('vocabPanel').addEventListener('pointerdown',e=>{vocabStartX=e.clientX;vocabDragging=true});
+$('vocabPanel').addEventListener('pointerup',e=>{if(!vocabDragging)return;vocabDragging=false;const dx=e.clientX-vocabStartX;if(Math.abs(dx)>70){vocabMove(dx<0?1:-1)}});
+$('vocabModal').addEventListener('click',e=>{if(e.target===$('vocabModal'))closeVocab()});
 function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.kanji;$('backKanji').textContent=c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.reading;$('meaning').textContent=c.meaning;$('word').textContent=c.word;$('wordInfo').textContent=c.wordReading+' — '+c.wordMeaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
 function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
 $('card').addEventListener('dblclick',e=>{e.preventDefault();flip();});
