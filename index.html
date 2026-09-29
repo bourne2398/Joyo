@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#111111">
+<title>JLPT N5・N4 Kanji Flashcards</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.app{height:100dvh;display:flex;flex-direction:column}
+.top{height:58px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid #333;background:#111}
+.top button,.controls button,.level button{border:1px solid #444;background:#1b1b1b;color:#fff;border-radius:12px;padding:9px 12px;font-weight:700}
+.title{font-size:14px;font-weight:800}.count{font-size:12px;color:#aaa}
+main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:10px}
+.card-wrap{width:min(100%,760px);height:100%;max-height:760px;perspective:1400px}
+.card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .32s ease;touch-action:none;cursor:pointer}
+.card.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid #444;border-radius:24px;background:#f7f7f7;color:#111;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
+.back{transform:rotateY(180deg);align-items:stretch;justify-content:center}
+.leveltag{position:absolute;top:18px;left:18px;font-size:12px;font-weight:800;background:#111;color:#fff;padding:6px 9px;border-radius:999px}
+.kanji{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(8rem,34vw,19rem);line-height:.95;font-weight:500}
+.tap{position:absolute;bottom:22px;font-size:13px;color:#777}
+.back h2{font-size:clamp(3rem,14vw,7rem);margin:0 0 16px;font-family:"Noto Serif JP","Yu Mincho",serif;font-weight:500}
+.info{border-top:1px solid #ddd;padding-top:16px;margin-top:4px}
+.label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#777;font-weight:800}.value{font-size:clamp(1.05rem,4vw,1.5rem);font-weight:700;margin:4px 0 14px;line-height:1.35}
+.controls{height:76px;flex:none;display:flex;gap:8px;align-items:center;justify-content:center;padding:8px 10px;border-top:1px solid #333;background:#111}
+.controls button{min-width:72px}.known{border-color:#2f8a4c!important}.missed{border-color:#a83d3d!important}
+.level{display:flex;gap:6px}.level button.active{background:#fff;color:#111}
+@media (orientation:landscape) and (max-height:600px){.top{height:48px}.controls{height:62px}.face{padding:12px}.kanji{font-size:clamp(5rem,25vh,10rem)}.back h2{font-size:clamp(2.5rem,15vh,5rem)}.value{margin-bottom:7px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+<div><div class="title">JLPT N5・N4 漢字 Flashcards</div><div class="count" id="count"></div></div>
+<div class="level"><button id="n5">N5</button><button id="n4">N4</button><button id="all" class="active">ALL</button></div>
+</header>
+<main><div class="card-wrap"><div class="card" id="card">
+<section class="face front"><span class="leveltag" id="frontLevel"></span><div class="kanji" id="frontKanji"></div><div class="tap">TAP TO REVEAL</div></section>
+<section class="face back"><span class="leveltag" id="backLevel"></span><h2 id="backKanji"></h2><div class="info"><div class="label">Japanese reading</div><div class="value" id="reading"></div><div class="label">English</div><div class="value" id="meaning"></div><div class="label">Kanji word</div><div class="value" id="word"></div><div class="label">Word reading + English</div><div class="value" id="wordInfo"></div></div></section>
+</div></div></main>
+<footer class="controls">
+<button id="prev">←</button><button id="flip">Flip</button><button id="miss" class="missed">× Don't know</button><button id="know" class="known">✓ Knew it</button><button id="next">→</button>
+</footer>
+</div>
+<script>
+const N5 = `
+日|ニチ・ひ|day, sun, Japan|日本|にほん|Japan
+一|イチ・ひとつ|one|一つ|ひとつ|one
+国|コク・くに|country|外国|がいこく|foreign country
+人|ジン・ひと|person|日本人|にほんじん|Japanese person
+年|ネン・とし|year|今年|ことし|this year
+大|ダイ・おおきい|big, large|大きい|おおきい|big
+十|ジュウ・とお|ten|十日|とおか|10th day
+二|ニ・ふたつ|two|二人|ふたり|two people
+本|ホン・もと|book, origin|本屋|ほんや|bookstore
+中|チュウ・なか|inside, middle|中学校|ちゅうがっこう|middle school
+長|チョウ・ながい|long|長い|ながい|long
+出|シュツ・でる|go out, leave|出口|でぐち|exit
+三|サン・みっつ|three|三人|さんにん|three people
+時|ジ・とき|time, hour|時間|じかん|time
+行|コウ・いく|go, carry out|銀行|ぎんこう|bank
+見|ケン・みる|see, look|見学|けんがく|study visit
+月|ゲツ・ガツ・つき|month, moon|月曜日|げつようび|Monday
+分|ブン・フン・わける|part, minute|半分|はんぶん|half
+後|ゴ・あと・うしろ|after, behind|後ろ|うしろ|behind
+前|ゼン・まえ|before, front|前|まえ|front, before
+生|セイ・いきる|life, birth|学生|がくせい|student
+五|ゴ・いつつ|five|五月|ごがつ|May
+間|カン・あいだ|interval, space|時間|じかん|time
+上|ジョウ・うえ|up, above|上手|じょうず|skillful
+東|トウ・ひがし|east|東京|とうきょう|Tokyo
+四|シ・よん|four|四月|しがつ|April
+今|コン・いま|now|今日|きょう|today
+金|キン・かね|gold, money|お金|おかね|money
+九|キュウ・ク・ここのつ|nine|九月|くがつ|September
+入|ニュウ・いる|enter|入口|いりぐち|entrance
+学|ガク・まなぶ|study|学校|がっこう|school
+高|コウ・たかい|high, expensive|高校|こうこう|high school
+円|エン・まるい|yen, circle|百円|ひゃくえん|100 yen
+子|シ・こ|child|子ども|こども|child
+外|ガイ・そと|outside|外国|がいこく|foreign country
+八|ハチ・やっつ|eight|八月|はちがつ|August
+六|ロク・むっつ|six|六月|ろくがつ|June
+下|カ・した|down, below|下手|へた|unskillful
+来|ライ・くる|come|来年|らいねん|next year
+気|キ・き|spirit, mood|元気|げんき|healthy, energetic
+小|ショウ・ちいさい|small|小学校|しょうがっこう|elementary school
+七|シチ・ななつ|seven|七月|しちがつ|July
+山|サン・やま|mountain|富士山|ふじさん|Mt. Fuji
+話|ワ・はなす|talk, story|電話|でんわ|telephone
+女|ジョ・おんな|woman, female|女の子|おんなのこ|girl
+北|ホク・きた|north|北口|きたぐち|north exit
+午|ゴ・うま|noon|午後|ごご|afternoon
+百|ヒャク・もも|hundred|百円|ひゃくえん|100 yen
+書|ショ・かく|write|図書館|としょかん|library
+先|セン・さき|ahead, previous|先生|せんせい|teacher
+名|メイ・な|name|名前|なまえ|name
+川|セン・かわ|river|川|かわ|river
+千|セン・ち|thousand|千円|せんえん|1000 yen
+水|スイ・みず|water|水曜日|すいようび|Wednesday
+半|ハン・なかば|half|半分|はんぶん|half
+男|ダン・おとこ|man, male|男の子|おとこのこ|boy
+西|セイ・にし|west|西口|にしぐち|west exit
+電|デン|electricity|電車|でんしゃ|train
+校|コウ|school|学校|がっこう|school
+語|ゴ・かたる|language, word|日本語|にほんご|Japanese language
+土|ド・つち|earth, soil|土曜日|どようび|Saturday
+木|モク・き|tree, wood|木曜日|もくようび|Thursday
+聞|ブン・きく|hear, ask|新聞|しんぶん|newspaper
+食|ショク・たべる|eat, food|食事|しょくじ|meal
+車|シャ・くるま|car, vehicle|電車|でんしゃ|train
+何|カ・なに|what|何時|なんじ|what time
+南|ナン・みなみ|south|南口|みなみぐち|south exit
+万|マン・バン|ten thousand|一万円|いちまんえん|10,000 yen
+毎|マイ|every|毎日|まいにち|every day
+白|ハク・しろい|white|白い|しろい|white
+天|テン・あめ|sky, heavens|天気|てんき|weather
+母|ボ・はは|mother|母の日|ははのひ|Mother's Day
+火|カ・ひ|fire|火曜日|かようび|Tuesday
+右|ウ・みぎ|right|右手|みぎて|right hand
+読|ドク・よむ|read|読書|どくしょ|reading
+友|ユウ・とも|friend|友達|ともだち|friend
+左|サ・ひだり|left|左手|ひだりて|left hand
+休|キュウ・やすむ|rest|休日|きゅうじつ|holiday
+父|フ・ちち|father|父の日|ちちのひ|Father's Day
+雨|ウ・あめ|rain|大雨|おおあめ|heavy rain
+`.trim().split('\\n');
+
+const N4 = `
+会|カイ・あう|meet, meeting|会社|かいしゃ|company
+同|ドウ・おなじ|same|同じ|おなじ|same
+事|ジ・こと|thing, matter|仕事|しごと|work
+自|ジ・みずから|self|自分|じぶん|oneself
+社|シャ|company, shrine|神社|じんじゃ|Shinto shrine
+発|ハツ|depart, emit|出発|しゅっぱつ|departure
+者|シャ・もの|person|医者|いしゃ|doctor
+地|チ・ジ|ground, earth|地下|ちか|underground
+業|ギョウ|work, business|授業|じゅぎょう|class, lesson
+方|ホウ・かた|direction, way|方法|ほうほう|method
+新|シン・あたらしい|new|新聞|しんぶん|newspaper
+場|ジョウ・ば|place|場所|ばしょ|place
+員|イン|member|会社員|かいしゃいん|company employee
+立|リツ・たつ|stand|立つ|たつ|stand
+開|カイ・あける|open|開ける|あける|open
+手|シュ・て|hand|手紙|てがみ|letter
+力|リキ・ちから|power|力持ち|ちからもち|strong person
+問|モン・とう|question, ask|問題|もんだい|problem
+代|ダイ・かわる|replace, generation|時代|じだい|era
+明|メイ・あかるい|bright, clear|明日|あした|tomorrow
+動|ドウ・うごく|move|動物|どうぶつ|animal
+京|キョウ|capital|東京|とうきょう|Tokyo
+目|モク・め|eye|目的|もくてき|purpose
+通|ツウ・とおる|pass, commute|交通|こうつう|traffic
+言|ゲン・いう|say, word|言葉|ことば|word
+理|リ|reason, logic|料理|りょうり|cooking
+体|タイ・からだ|body|体重|たいじゅう|body weight
+田|デン・た|rice field|田んぼ|たんぼ|rice field
+主|シュ・おも|main, owner|主人|しゅじん|husband, owner
+題|ダイ|topic, subject|問題|もんだい|problem
+意|イ|mind, intention|意味|いみ|meaning
+不|フ・ブ|not, un-|不便|ふべん|inconvenient
+作|サク・つくる|make|作文|さくぶん|composition
+用|ヨウ・もちいる|use|利用|りよう|use
+度|ド・たび|degree, time|一度|いちど|once
+強|キョウ・つよい|strong|勉強|べんきょう|study
+公|コウ|public|公園|こうえん|park
+持|ジ・もつ|hold, have|気持ち|きもち|feeling
+野|ヤ・の|field|野菜|やさい|vegetables
+以|イ|by means of, since|以上|いじょう|more than, above
+思|シ・おもう|think|思う|おもう|think
+家|カ・いえ|house, home|家族|かぞく|family
+世|セイ・よ|world, generation|世界|せかい|world
+多|タ・おおい|many|多い|おおい|many
+正|セイ・ただしい|correct|正しい|ただしい|correct
+安|アン・やすい|cheap, safe|安全|あんぜん|safe
+院|イン|institution|病院|びょういん|hospital
+心|シン・こころ|heart, mind|安心|あんしん|peace of mind
+界|カイ|world, boundary|世界|せかい|world
+教|キョウ・おしえる|teach|教室|きょうしつ|classroom
+文|ブン・ぶん|sentence, writing|作文|さくぶん|composition
+元|ゲン・もと|origin|元気|げんき|healthy
+重|ジュウ・おもい|heavy|重要|じゅうよう|important
+近|キン・ちかい|near|近所|きんじょ|neighborhood
+考|コウ・かんがえる|think, consider|考える|かんがえる|consider
+画|ガ・カク|picture, stroke|映画|えいが|movie
+海|カイ・うみ|sea|海外|かいがい|overseas
+売|バイ・うる|sell|売り場|うりば|sales floor
+知|チ・しる|know|知る|しる|know
+道|ドウ・みち|road, way|道具|どうぐ|tool
+集|シュウ・あつめる|gather|集める|あつめる|collect
+別|ベツ・わかれる|separate, different|別々|べつべつ|separately
+物|ブツ・もの|thing|買い物|かいもの|shopping
+使|シ・つかう|use|使う|つかう|use
+品|ヒン・しな|goods, article|商品|しょうひん|product
+計|ケイ・はかる|measure, plan|時計|とけい|clock
+死|シ・しぬ|die, death|死ぬ|しぬ|die
+特|トク|special|特別|とくべつ|special
+私|シ・わたし|I, private|私たち|わたしたち|we
+始|シ・はじめる|begin|始める|はじめる|begin
+朝|チョウ・あさ|morning|朝ご飯|あさごはん|breakfast
+運|ウン・はこぶ|carry, luck|運転|うんてん|driving
+終|シュウ・おわる|end|終わる|おわる|finish
+台|ダイ・タイ|stand, counter|台風|たいふう|typhoon
+広|コウ・ひろい|wide|広い|ひろい|wide
+住|ジュウ・すむ|live, reside|住所|じゅうしょ|address
+無|ム・ない|nothing, without|無料|むりょう|free of charge
+真|シン・ま|true|写真|しゃしん|photo
+有|ユウ・ある|have, exist|有名|ゆうめい|famous
+口|コウ・くち|mouth|入口|いりぐち|entrance
+少|ショウ・すくない|few, little|少し|すこし|a little
+町|チョウ・まち|town|町中|まちなか|downtown
+料|リョウ|fee, material|料理|りょうり|cooking
+工|コウ|craft, construction|工場|こうじょう|factory
+建|ケン・たてる|build|建物|たてもの|building
+空|クウ・そら|sky, empty|空港|くうこう|airport
+急|キュウ・いそぐ|hurry, urgent|急ぐ|いそぐ|hurry
+止|シ・とまる|stop|止まる|とまる|stop
+送|ソウ・おくる|send|送る|おくる|send
+切|セツ・きる|cut|大切|たいせつ|important
+転|テン・ころぶ|turn, fall|運転|うんてん|driving
+研|ケン・とぐ|polish, research|研究|けんきゅう|research
+足|ソク・あし|foot, sufficient|足りる|たりる|be enough
+究|キュウ|research|研究|けんきゅう|research
+楽|ガク・たのしい|music, enjoyable|楽しい|たのしい|fun
+起|キ・おきる|wake, rise|起きる|おきる|get up
+着|チャク・きる|arrive, wear|着る|きる|wear
+店|テン・みせ|shop|店員|てんいん|shop clerk
+病|ビョウ・やむ|illness|病気|びょうき|illness
+質|シツ|quality|質問|しつもん|question
+待|タイ・まつ|wait|待つ|まつ|wait
+試|シ・ためす|try, test|試験|しけん|exam
+族|ゾク|family, tribe|家族|かぞく|family
+銀|ギン|silver|銀行|ぎんこう|bank
+早|ソウ・はやい|early, fast|早い|はやい|early
+映|エイ・うつる|reflect, project|映画|えいが|movie
+親|シン・おや|parent, close|親切|しんせつ|kind
+験|ケン|test, experience|経験|けいけん|experience
+英|エイ|English, excellent|英語|えいご|English language
+医|イ・い|medicine, doctor|医者|いしゃ|doctor
+仕|シ・つかえる|serve, work|仕事|しごと|work
+去|キョ・さる|leave, past|去年|きょねん|last year
+味|ミ・あじ|taste|意味|いみ|meaning
+写|シャ・うつす|copy, photograph|写真|しゃしん|photograph
+字|ジ・じ|character, letter|漢字|かんじ|kanji
+答|トウ・こたえる|answer|答える|こたえる|answer
+夜|ヤ・よる|night|今夜|こんや|tonight
+音|オン・おと|sound|音楽|おんがく|music
+注|チュウ・そそぐ|pour, note|注意|ちゅうい|caution
+帰|キ・かえる|return|帰る|かえる|return home
+古|コ・ふるい|old|古い|ふるい|old
+歌|カ・うた|song, sing|歌う|うたう|sing
+買|バイ・かう|buy|買う|かう|buy
+悪|アク・わるい|bad|悪い|わるい|bad
+図|ズ・はかる|map, diagram|地図|ちず|map
+週|シュウ|week|今週|こんしゅう|this week
+室|シツ・むろ|room|教室|きょうしつ|classroom
+歩|ホ・あるく|walk|散歩|さんぽ|walk, stroll
+風|フウ・かぜ|wind|台風|たいふう|typhoon
+紙|シ・かみ|paper|手紙|てがみ|letter
+黒|コク・くろ|black|黒い|くろい|black
+花|カ・はな|flower|花火|はなび|fireworks
+春|シュン・はる|spring|春休み|はるやすみ|spring vacation
+赤|セキ・あかい|red|赤い|あかい|red
+青|セイ・あおい|blue|青い|あおい|blue
+館|カン・やかた|building, hall|図書館|としょかん|library
+屋|オク・や|roof, shop|本屋|ほんや|bookstore
+色|ショク・いろ|color|色々|いろいろ|various
+走|ソウ・はしる|run|走る|はしる|run
+秋|シュウ・あき|autumn|秋休み|あきやすみ|autumn vacation
+夏|カ・なつ|summer|夏休み|なつやすみ|summer vacation
+習|シュウ・ならう|learn|習う|ならう|learn
+駅|エキ|station|駅前|えきまえ|in front of station
+洋|ヨウ|Western style, ocean|洋服|ようふく|Western clothes
+旅|リョ・たび|travel|旅行|りょこう|trip
+服|フク|clothes|服|ふく|clothes
+夕|セキ・ゆう|evening|夕方|ゆうがた|evening
+借|シャク・かりる|borrow|借りる|かりる|borrow
+曜|ヨウ|weekday|曜日|ようび|day of week
+飲|イン・のむ|drink|飲む|のむ|drink
+肉|ニク|meat|牛肉|ぎゅうにく|beef
+貸|タイ・かす|lend|貸す|かす|lend
+堂|ドウ|hall|食堂|しょくどう|cafeteria
+鳥|チョウ・とり|bird|鳥肉|とりにく|chicken meat
+飯|ハン・めし|meal, rice|ご飯|ごはん|meal, cooked rice
+勉|ベン|effort, study|勉強|べんきょう|study
+冬|トウ・ふゆ|winter|冬休み|ふゆやすみ|winter vacation
+昼|チュウ・ひる|noon, daytime|昼ご飯|ひるごはん|lunch
+茶|チャ・サ|tea|お茶|おちゃ|tea
+弟|テイ・おとうと|younger brother|弟|おとうと|younger brother
+牛|ギュウ・うし|cow|牛肉|ぎゅうにく|beef
+魚|ギョ・さかな|fish|魚|さかな|fish
+兄|キョウ・あに|older brother|兄|あに|older brother
+犬|ケン・いぬ|dog|犬|いぬ|dog
+妹|マイ・いもうと|younger sister|妹|いもうと|younger sister
+姉|シ・あね|older sister|姉|あね|older sister
+漢|カン|Chinese character, Han|漢字|かんじ|kanji
+`.trim().split('\\n');
+
+function parse(rows,level){return rows.map(x=>{const a=x.split('|');return{level,kanji:a[0],reading:a[1],meaning:a[2],word:a[3],wordReading:a[4],wordMeaning:a[5]}})}
+const cards=[...parse(N5,'N5'),...parse(N4,'N4')];
+let deck=cards.slice(), index=0, flipped=false;
+const $=id=>document.getElementById(id);
+function render(){const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.kanji;$('backKanji').textContent=c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.reading;$('meaning').textContent=c.meaning;$('word').textContent=c.word;$('wordInfo').textContent=c.wordReading+' — '+c.wordMeaning;$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
+function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
+function move(n){index=(index+n+deck.length)%deck.length;render()}
+function setLevel(level){deck=level==='ALL'?cards.slice():cards.filter(c=>c.level===level);index=0;document.querySelectorAll('.level button').forEach(b=>b.classList.remove('active'));$(level.toLowerCase()).classList.add('active');render()}
+$('card').addEventListener('click',flip);$('flip').onclick=flip;$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('know').onclick=()=>move(1);$('miss').onclick=()=>move(1);$('n5').onclick=()=>setLevel('N5');$('n4').onclick=()=>setLevel('N4');$('all').onclick=()=>setLevel('ALL');
+let sx=0,sy=0;$('card').addEventListener('pointerdown',e=>{sx=e.clientX;sy=e.clientY;$('card').setPointerCapture(e.pointerId)});$('card').addEventListener('pointerup',e=>{const dx=e.clientX-sx,dy=e.clientY-sy;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)){move(dx<0?1:-1)}})
+render();
+</script>
+</body>
+</html>
