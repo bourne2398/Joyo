@@ -322,17 +322,18 @@ function saveResult(type){
   resultStore.dontKnow=resultStore.dontKnow.filter(x=>x!==key);
   resultStore[type].push(key);
   localStorage.setItem('joyoKanjiResults',JSON.stringify(resultStore));
-  async function loadVocabulary(){
+  updateResultNav();
+}
+async function loadVocabulary(){
   try{
     const response=await fetch('./vocabulary.json',{cache:'no-store'});
     if(!response.ok)throw new Error('Vocabulary file unavailable');
     vocabData=await response.json();
     $('moreVocabBtn').disabled=false;
   }catch(e){
-    $('moreVocabBtn').disabled=true;
+    console.error('Vocabulary load failed:',e);
+    $('moreVocabBtn').disabled=false;
   }
-}
-updateResultNav();
 }
 function updateResultNav(){
   $('knewCount').textContent=resultStore.knew.length;
