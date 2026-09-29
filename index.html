@@ -351,7 +351,7 @@ $('card').addEventListener('pointerup',e=>{
   const dx=e.clientX-sx,dy=e.clientY-sy;
   if(swiping && Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)){
     suppressClick=true;
-    const type=dx<0?'knew':'dontKnow';
+    const type=dx<0?'dontKnow':'knew';
     const direction=1;
     $('card').style.transition='transform .22s ease-out';
     const base=flipped?'rotateY(180deg) ':'';
