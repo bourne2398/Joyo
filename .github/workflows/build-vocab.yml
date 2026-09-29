@@ -1,0 +1,105 @@
+name: Build Joyo vocabulary
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/build-vocab.yml"
+      - "index.html"
+
+permissions:
+  contents: write
+
+jobs:
+  build-vocabulary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download JMdict
+        run: |
+          curl -L --fail --retry 3 -o /tmp/jmdict.zip "https://github.com/yomidevs/jmdict-yomitan/releases/download/4eefc7a/JMdict_english_without_proper_names.zip"
+          unzip -o /tmp/jmdict.zip -d /tmp/jmdict
+
+      - name: Build vocabulary
+        run: |
+          python - <<'PY'
+          import json, pathlib, re
+
+          html=pathlib.Path("index.html").read_text(encoding="utf-8")
+          m=re.search(r'const N5 = \`(.*?)\`\.trim\(\)\.split\(',html,re.S)
+          n5=set()
+          n4=set()
+          if m:
+              n5={line.split("|",1)[0] for line in m.group(1).strip().splitlines() if "|" in line}
+          m=re.search(r'const N4 = \`(.*?)\`\.trim\(\)\.split\(',html,re.S)
+          if m:
+              n4={line.split("|",1)[0] for line in m.group(1).strip().splitlines() if "|" in line}
+          targets=sorted(n5|n4)
+
+          files=list(pathlib.Path("/tmp/jmdict").rglob("*.json"))
+          if not files:
+              raise SystemExit("JMdict JSON was not found")
+          data=json.loads(files[0].read_text(encoding="utf-8"))
+
+          def pri(entry):
+              p=[]
+              for k in entry.get("kanji",[]):
+                  p += k.get("priorities",[]) or []
+              for k in entry.get("kana",[]):
+                  p += k.get("priorities",[]) or []
+              score=0
+              for x in p:
+                  score += {"news1":100,"ichi1":95,"spec1":85,"spec2":80,"gai1":70,"nf01":60}.get(x,10)
+              return score
+
+          out={}
+          for kanji in targets:
+              candidates=[]
+              for e in data:
+                  ks=[x.get("text","") for x in e.get("kanji",[])]
+                  if not any(kanji in x for x in ks):
+                      continue
+                  senses=e.get("sense",[])
+                  gloss=[]
+                  for s in senses:
+                      for g in s.get("glosses",[]):
+                          if isinstance(g,dict) and g.get("lang","eng")=="eng":
+                              t=g.get("text","").strip()
+                              if t and t not in gloss: gloss.append(t)
+                  if not gloss: continue
+                  for k in e.get("kana",[]):
+                      reading=k.get("text","").strip()
+                      if not reading or not re.fullmatch(r"[ぁ-ゖゝゞー]+",reading): continue
+                      writing=next((x for x in ks if x==k.get("appliesToKanji") or x==kanji or kanji in x),None)
+                      if not writing: writing=ks[0] if ks else reading
+                      if len(writing)>12 or len(reading)>16: continue
+                      candidates.append((pri(e),writing,reading,gloss[0]))
+                      break
+              candidates.sort(key=lambda x:(-x[0],len(x[1]),x[1]))
+              seen=set(); words=[]
+              for _,w,r,g in candidates:
+                  key=(w,r)
+                  if key in seen: continue
+                  seen.add(key)
+                  words.append({"word":w,"reading":r,"meaning":g})
+                  if len(words)>=20: break
+              if len(words)<20:
+                  raise SystemExit(f"{kanji}: only {len(words)} verified vocabulary entries")
+              out[kanji]=words
+
+          pathlib.Path("vocabulary.json").write_text(json.dumps(out,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
+          print("Built",len(out),"kanji and",sum(map(len,out.values())),"vocabulary entries")
+          PY
+
+      - name: Commit vocabulary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vocabulary.json
+          if git diff --cached --quiet; then
+            echo "No vocabulary changes"
+          else
+            git commit -m "Add 20 verified vocabulary entries per kanji"
+            git push
+          fi
