@@ -31,7 +31,7 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 .controls button{min-width:72px}.shuffle.active{background:#fff;color:#111}.known{border-color:#2f8a4c!important}.missed{border-color:#a83d3d!important}
 .level{display:flex;gap:4px;grid-column:2;grid-row:1 / span 2}.level button{padding:7px 9px}.level button.active{background:#fff;color:#111}
 @media (orientation:landscape) and (max-height:600px){.top{height:58px;grid-template-rows:1fr 1fr}.controls{height:62px}.face{padding:12px}.kanji{font-size:clamp(5rem,25vh,10rem)}.back h2{font-size:clamp(2.5rem,15vh,5rem)}.value{margin-bottom:7px}}
-.vocab-modal{position:fixed;inset:0;z-index:50;display:none;background:#f7f7f7;padding:0}.vocab-modal.open{display:flex;align-items:stretch;justify-content:stretch}.vocab-panel{position:relative;width:100%;height:100%;min-height:100%;background:#f7f7f7;color:#111;border-radius:0;border:0;display:flex;flex-direction:column;overflow:hidden;touch-action:none;transform:translate3d(0,0,0);will-change:transform}.vocab-head{flex:none;padding:18px 56px 14px 20px;border-bottom:1px solid #ddd}.vocab-title{font-size:clamp(1.35rem,5vw,2rem);font-weight:850}.vocab-subtitle{font-size:13px;color:#666;margin-top:3px}.vocab-close{position:absolute;right:12px;top:12px;width:42px;height:42px;border:1px solid #bbb;border-radius:50%;background:#fff;color:#111;font-size:25px;line-height:1;font-weight:700;z-index:2}.vocab-body{position:relative;flex:1;min-height:0;overflow:hidden}.vocab-page{height:100%;padding:18px 20px 54px;overflow:auto;touch-action:pan-y}.vocab-item{padding:15px 4px;border-bottom:1px solid #ddd}.vocab-word{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(1.45rem,6vw,2.2rem);font-weight:650}.vocab-reading{font-size:clamp(1rem,4vw,1.25rem);color:#555;margin-top:3px}.vocab-meaning{font-size:clamp(.95rem,3.8vw,1.15rem);font-weight:650;margin-top:5px;line-height:1.35}.vocab-nav{position:absolute;left:0;right:0;bottom:0;height:48px;display:flex;justify-content:space-between;align-items:center;padding:0 14px;background:linear-gradient(transparent,#f7f7f7 35%)}.vocab-nav button{border:1px solid #bbb;background:#fff;color:#111;border-radius:10px;padding:7px 13px;font-weight:800}.vocab-page-count{font-size:12px;color:#666;font-weight:750}@media (orientation:landscape) and (max-height:600px){.vocab-panel{width:100%;height:100%;border-radius:0}.vocab-page{padding-top:10px}.vocab-item{padding:9px 4px}}</style>
+.vocab-modal{position:fixed;inset:0;z-index:50;display:none;background:#f7f7f7;padding:0}.vocab-modal.open{display:flex;align-items:stretch;justify-content:stretch}.vocab-panel{position:relative;width:100%;height:100%;min-height:100%;background:#f7f7f7;color:#111;border-radius:0;border:0;display:flex;flex-direction:column;overflow:hidden;touch-action:none}.vocab-head{flex:none;padding:18px 56px 14px 20px;border-bottom:1px solid #ddd}.vocab-title{font-size:clamp(1.35rem,5vw,2rem);font-weight:850}.vocab-subtitle{font-size:13px;color:#666;margin-top:3px}.vocab-close{position:absolute;right:12px;top:12px;width:42px;height:42px;border:1px solid #bbb;border-radius:50%;background:#fff;color:#111;font-size:25px;line-height:1;font-weight:700;z-index:2}.vocab-body{position:relative;flex:1;min-height:0;overflow:hidden}.vocab-track{display:flex;width:300%;height:100%;transform:translate3d(-33.333333%,0,0);will-change:transform}.vocab-page{width:33.333333%;height:100%;flex:none;padding:18px 20px 24px;overflow:auto;touch-action:pan-y}.vocab-item{padding:15px 4px;border-bottom:1px solid #ddd}.vocab-word{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(1.45rem,6vw,2.2rem);font-weight:650}.vocab-reading{font-size:clamp(1rem,4vw,1.25rem);color:#555;margin-top:3px}.vocab-meaning{font-size:clamp(.95rem,3.8vw,1.15rem);font-weight:650;margin-top:5px;line-height:1.35}.vocab-page-count{font-size:12px;color:#666;font-weight:750}@media (orientation:landscape) and (max-height:600px){.vocab-panel{width:100%;height:100%;border-radius:0}.vocab-page{padding-top:10px}.vocab-item{padding:9px 4px}}</style>
 </head>
 <body>
 <div class="app">
@@ -46,7 +46,7 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 <footer class="controls">
 <button id="prev">←</button><button id="shuffle" class="shuffle" aria-label="Shuffle">⇄ Shuffle</button><button id="next">→</button>
 </footer>
-<div class="vocab-modal" id="vocabModal" aria-hidden="true"><div class="vocab-panel" id="vocabPanel"><button class="vocab-close" id="vocabClose" aria-label="Close">×</button><div class="vocab-head"><div class="vocab-title" id="vocabTitle">More vocabulary</div><div class="vocab-subtitle" id="vocabSubtitle"></div></div><div class="vocab-body" id="vocabBody"><div class="vocab-page" id="vocabPage"></div><div class="vocab-nav"><button id="vocabPrev">← Previous</button><span class="vocab-page-count" id="vocabPageCount"></span><button id="vocabNext">Next →</button></div></div></div></div></div>
+<div class="vocab-modal" id="vocabModal" aria-hidden="true"><div class="vocab-panel" id="vocabPanel"><button class="vocab-close" id="vocabClose" aria-label="Close">×</button><div class="vocab-head"><div class="vocab-title" id="vocabTitle">More vocabulary</div><div class="vocab-subtitle" id="vocabSubtitle"></div></div><div class="vocab-body" id="vocabBody"><div class="vocab-track" id="vocabTrack"><div class="vocab-page" id="vocabPagePrev"></div><div class="vocab-page" id="vocabPage"></div><div class="vocab-page" id="vocabPageNext"></div></div></div></div></div></div>
 <script>
 const N5 = `
 日|ニチ・ひ|day, sun, Japan|日本|にほん|Japan
@@ -363,14 +363,7 @@ function buildVocabPages(c){
   for(let i=0;i<entries.length;i+=VOCAB_PAGE_SIZE)vocabPages.push(entries.slice(i,i+VOCAB_PAGE_SIZE));
   if(!vocabPages.length)vocabPages=[[]];
 }
-function renderVocabPage(){
-  const page=vocabPages[vocabPageIndex]||[];
-  $('vocabPage').innerHTML=page.map(v=>'<div class="vocab-item"><div class="vocab-word">'+escapeHtml(v.word)+'</div><div class="vocab-reading">'+(v.reading?escapeHtml(v.reading):'')+'</div><div class="vocab-meaning">'+escapeHtml(v.meaning||'')+'</div></div>').join('');
-  $('vocabPage').scrollTop=0;
-  $('vocabPageCount').textContent=(vocabPageIndex+1)+' / '+vocabPages.length;
-  $('vocabPrev').disabled=vocabPageIndex===0;
-  $('vocabNext').disabled=vocabPageIndex===vocabPages.length-1;
-}
+function renderVocabPage(){const renderPage=(el,page)=>{el.innerHTML=(page||[]).map(v=>'<div class="vocab-item"><div class="vocab-word">'+escapeHtml(v.word)+'</div><div class="vocab-reading">'+(v.reading?escapeHtml(v.reading):'')+'</div><div class="vocab-meaning">'+escapeHtml(v.meaning||'')+'</div></div>').join('');el.scrollTop=0;};renderPage($('vocabPagePrev'),vocabPages[vocabPageIndex-1]);renderPage($('vocabPage'),vocabPages[vocabPageIndex]);renderPage($('vocabPageNext'),vocabPages[vocabPageIndex+1]);$('vocabTrack').style.transition='none';$('vocabTrack').style.transform='translate3d(-33.333333%,0,0)';}
 function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function openVocab(){
   const c=deck[index];if(!c||!vocabData[c.kanji])return;
@@ -382,7 +375,7 @@ function openVocab(){
 }
 function closeVocab(){$('vocabModal').classList.remove('open');$('vocabModal').setAttribute('aria-hidden','true')}
 function vocabMove(n){const next=vocabPageIndex+n;if(next<0||next>=vocabPages.length)return;vocabPageIndex=next;renderVocabPage()}
-$('moreVocabBtn').onclick=openVocab;$('vocabClose').onclick=closeVocab;$('vocabPrev').onclick=()=>vocabMove(-1);$('vocabNext').onclick=()=>vocabMove(1);
+$('moreVocabBtn').onclick=openVocab;$('vocabClose').onclick=closeVocab;
 $('vocabPanel').addEventListener('pointerdown',e=>{
   if(e.pointerType==='mouse' && e.button!==0)return;
   vocabStartX=e.clientX;vocabStartY=e.clientY;vocabDragging=true;vocabSwiping=false;
