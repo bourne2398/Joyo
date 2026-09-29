@@ -9,9 +9,9 @@
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
 .app{height:100dvh;display:flex;flex-direction:column}
-.top{height:58px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid #333;background:#111}
+.top{height:92px;flex:none;display:grid;grid-template-columns:1fr auto;grid-template-rows:1fr 1fr;align-items:center;gap:2px 8px;padding:6px 10px;border-bottom:1px solid #333;background:#111}
 .top button,.controls button,.level button{border:1px solid #444;background:#1b1b1b;color:#fff;border-radius:12px;padding:9px 12px;font-weight:700}
-.title{font-size:14px;font-weight:800}.count{font-size:12px;color:#aaa}
+.title{font-size:13px;font-weight:800}.count{font-size:11px;color:#aaa}.result-nav{display:flex;gap:5px;min-width:0}.result-nav button{border:1px solid #444;background:#1b1b1b;color:#fff;border-radius:10px;padding:6px 9px;font-size:12px;font-weight:800;white-space:nowrap}.result-nav .dont{border-color:#a83d3d}.result-nav .knew{border-color:#2f8a4c}
 main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:10px}
 .card-wrap{width:min(100%,760px);height:100%;max-height:760px;perspective:1400px}
 .card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .32s ease;touch-action:none;cursor:pointer;will-change:transform}
@@ -26,14 +26,14 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 .label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#777;font-weight:800}.value{font-size:clamp(1.05rem,4vw,1.5rem);font-weight:700;margin:4px 0 14px;line-height:1.35}
 .controls{height:76px;flex:none;display:flex;gap:8px;align-items:center;justify-content:center;padding:8px 10px;border-top:1px solid #333;background:#111}
 .controls button{min-width:72px}.known{border-color:#2f8a4c!important}.missed{border-color:#a83d3d!important}
-.level{display:flex;gap:6px}.level button.active{background:#fff;color:#111}
-@media (orientation:landscape) and (max-height:600px){.top{height:48px}.controls{height:62px}.face{padding:12px}.kanji{font-size:clamp(5rem,25vh,10rem)}.back h2{font-size:clamp(2.5rem,15vh,5rem)}.value{margin-bottom:7px}}
+.level{display:flex;gap:4px;grid-column:2;grid-row:1 / span 2}.level button{padding:7px 9px}.level button.active{background:#fff;color:#111}
+@media (orientation:landscape) and (max-height:600px){.top{height:58px;grid-template-rows:1fr 1fr}.controls{height:62px}.face{padding:12px}.kanji{font-size:clamp(5rem,25vh,10rem)}.back h2{font-size:clamp(2.5rem,15vh,5rem)}.value{margin-bottom:7px}}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="top">
-<div><div class="title">JLPT N5・N4 漢字 Flashcards</div><div class="count" id="count"></div></div><div style="display:flex;gap:6px"><button id="dontNav">× <span id="dontCount">0</span></button><button id="knewNav">✓ <span id="knewCount">0</span></button></div>
+<div><div class="title">JLPT N5・N4 漢字 Flashcards</div><div class="count" id="count"></div></div><div class="result-nav"><button class="dont" id="dontNav">× Don’t know <span id="dontCount">0</span></button><button class="knew" id="knewNav">✓ Knew it <span id="knewCount">0</span></button></div>
 <div class="level"><button id="n5">N5</button><button id="n4">N4</button><button id="all" class="active">ALL</button></div>
 </header>
 <main><div class="card-wrap"><div class="card" id="card">
@@ -322,38 +322,53 @@ function recordAndMove(type, direction){
   move(direction);
 }
 const $=id=>document.getElementById(id);
-function render(){const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.kanji;$('backKanji').textContent=c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.reading;$('meaning').textContent=c.meaning;$('word').textContent=c.word;$('wordInfo').textContent=c.wordReading+' — '+c.wordMeaning;$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
+function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.kanji;$('backKanji').textContent=c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.reading;$('meaning').textContent=c.meaning;$('word').textContent=c.word;$('wordInfo').textContent=c.wordReading+' — '+c.wordMeaning;$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
 function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
 function move(n){index=(index+n+deck.length)%deck.length;render()}
 function setLevel(level){deck=level==='ALL'?cards.slice():cards.filter(c=>c.level===level);index=0;document.querySelectorAll('.level button').forEach(b=>b.classList.remove('active'));$(level.toLowerCase()).classList.add('active');render()}
-$('card').addEventListener('click',flip);$('flip').onclick=flip;$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('know').onclick=()=>recordAndMove('knew',1);$('miss').onclick=()=>recordAndMove('dontKnow',1);$('knewNav').onclick=()=>showResults('knew');$('dontNav').onclick=()=>showResults('dontKnow');$('n5').onclick=()=>setLevel('N5');$('n4').onclick=()=>setLevel('N4');$('all').onclick=()=>setLevel('ALL');
-let sx=0,sy=0;
+$('flip').onclick=flip;$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('know').onclick=()=>recordAndMove('knew',1);$('miss').onclick=()=>recordAndMove('dontKnow',1);$('knewNav').onclick=()=>showResults('knew');$('dontNav').onclick=()=>showResults('dontKnow');$('n5').onclick=()=>setLevel('N5');$('n4').onclick=()=>setLevel('N4');$('all').onclick=()=>setLevel('ALL');
+let sx=0,sy=0,swiping=false,suppressClick=false;
 $('card').addEventListener('pointerdown',e=>{
-  sx=e.clientX;sy=e.clientY;swipeX=0;swipeY=0;dragging=true;
+  if(e.pointerType==='mouse' && e.button!==0)return;
+  sx=e.clientX;sy=e.clientY;swiping=false;suppressClick=false;dragging=true;
   $('card').style.transition='none';
   $('card').setPointerCapture(e.pointerId);
 });
 $('card').addEventListener('pointermove',e=>{
   if(!dragging)return;
-  swipeX=e.clientX-sx;swipeY=e.clientY-sy;
-  if(Math.abs(swipeX)>Math.abs(swipeY)){
-    $('card').style.transform='translateX('+swipeX+'px) rotateY('+(flipped?180:0)+'deg) rotateZ('+(swipeX/30)+'deg)';
+  const dx=e.clientX-sx,dy=e.clientY-sy;
+  if(Math.abs(dx)>8 && Math.abs(dx)>Math.abs(dy))swiping=true;
+  if(swiping){
+    e.preventDefault();
+    const base=flipped?'rotateY(180deg) ':'';
+    $('card').style.transform=base+'translate3d('+dx+'px,0,0) rotateZ('+(dx/28)+'deg)';
   }
 });
 $('card').addEventListener('pointerup',e=>{
   if(!dragging)return;
   dragging=false;
   const dx=e.clientX-sx,dy=e.clientY-sy;
-  $('card').style.transition='';
-  if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)){
-    if(dx<0) recordAndMove('knew',1);
-    else recordAndMove('dontKnow',1);
+  if(swiping && Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)){
+    suppressClick=true;
+    const type=dx<0?'knew':'dontKnow';
+    const direction=dx<0?1:-1;
+    $('card').style.transition='transform .22s ease-out';
+    const base=flipped?'rotateY(180deg) ':'';
+    $('card').style.transform=base+'translate3d('+(dx<0?window.innerWidth*1.2:-window.innerWidth*1.2)+'px,0,0) rotateZ('+(dx<0?25:-25)+'deg)';
+    setTimeout(()=>{ $('card').style.transition=''; $('card').style.transform=''; recordAndMove(type,direction); },220);
   }else{
-    $('card').style.transform='';
+    $('card').style.transition='transform .18s ease';
+    $('card').style.transform=flipped?'rotateY(180deg)':'';
+    setTimeout(()=>{$('card').style.transition='';},180);
   }
 });
 $('card').addEventListener('pointercancel',()=>{
-  dragging=false;$('card').style.transition='';$('card').style.transform='';
+  dragging=false;$('card').style.transition='transform .18s ease';$('card').style.transform=flipped?'rotateY(180deg)':'';
+  setTimeout(()=>{$('card').style.transition='';},180);
+});
+$('card').addEventListener('click',e=>{
+  if(suppressClick){suppressClick=false;return}
+  if(!dragging)flip();
 });
 function showResults(type){
   const keys=new Set(resultStore[type]);
