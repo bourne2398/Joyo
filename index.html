@@ -22,7 +22,7 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid #444;border-radius:24px;background:#f7f7f7;color:#111;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
 .back{transform:rotateY(180deg);align-items:stretch;justify-content:center}
 .leveltag{position:absolute;top:18px;left:18px;font-size:12px;font-weight:800;background:#111;color:#fff;padding:6px 9px;border-radius:999px}
-.kanji{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(8rem,34vw,19rem);line-height:.95;font-weight:500}
+.kanji{font-family:"Noto Serif JP","Yu Mincho",serif;font-size:clamp(8rem,34vw,19rem);line-height:.95;font-weight:500}.word-front{font-size:clamp(4rem,15vw,10rem);line-height:1.1;white-space:nowrap}
 .tap{position:absolute;bottom:22px;font-size:13px;color:#777}
 .back h2{font-size:clamp(3rem,14vw,7rem);margin:0 0 16px;font-family:"Noto Serif JP","Yu Mincho",serif;font-weight:500}
 .info{border-top:1px solid #ddd;padding-top:16px;margin-top:4px}
@@ -40,8 +40,8 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 <div class="level"><button id="n5">N5</button><button id="n4">N4</button><button id="all" class="active">ALL</button></div>
 </header>
 <main><div class="card-wrap"><div class="card" id="card">
-<section class="face front"><span class="leveltag" id="frontLevel"></span><div class="kanji" id="frontKanji"></div><div class="tap">TAP TO REVEAL</div></section>
-<section class="face back"><span class="leveltag" id="backLevel"></span><h2 id="backKanji"></h2><div class="info"><div class="label">Japanese reading</div><div class="value" id="reading"></div><div class="label">Radical / components</div><div class="value radical" id="radical"></div><div class="label">English</div><div class="value" id="meaning"></div><div class="label">Kanji word</div><div class="value" id="word"></div><div class="label">Word reading + English</div><div class="value" id="wordInfo"></div><div class="label">More vocabulary</div><div class="value words" id="moreWords"></div><button class="vocab-more-btn" id="moreVocabBtn" type="button">📖 More vocabulary</button></div></section>
+<section class="face front"><span class="leveltag" id="frontLevel"></span><div class="kanji word-front" id="frontKanji"></div><div class="tap">TAP TO REVEAL</div></section>
+<section class="face back"><span class="leveltag" id="backLevel"></span><h2 id="backKanji"></h2><div class="info"><div class="label">Complete reading</div><div class="value" id="reading"></div><div class="label">Radical / components</div><div class="value radical" id="radical"></div><div class="label">Meaning</div><div class="value" id="meaning"></div><div class="label">More vocabulary</div><div class="value words" id="moreWords"></div><button class="vocab-more-btn" id="moreVocabBtn" type="button">📖 More vocabulary</button></div></section>
 </div></div></main>
 <footer class="controls">
 <button id="prev">←</button><button id="shuffle" class="shuffle" aria-label="Shuffle">⇄ Shuffle</button><button id="next">→</button>
@@ -434,7 +434,7 @@ $('vocabPanel').addEventListener('pointercancel',()=>{
   $('vocabPanel').style.transform='translate3d(0,0,0)';
 });
 $('vocabModal').addEventListener('click',e=>{if(e.target===$('vocabModal'))closeVocab()});
-function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.kanji;$('backKanji').textContent=c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.reading;$('meaning').textContent=c.meaning;$('word').textContent=c.word;$('wordInfo').textContent=c.wordReading+' — '+c.wordMeaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
+function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.word||c.kanji;$('backKanji').textContent=c.word||c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.wordReading||c.reading;$('meaning').textContent=c.wordMeaning||c.meaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip')}
 function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
 $('card').addEventListener('dblclick',e=>{e.preventDefault();flip();});
 function move(n){if(!deck.length)return;index=(index+n+deck.length)%deck.length;render()}
