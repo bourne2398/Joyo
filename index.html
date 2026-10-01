@@ -387,8 +387,8 @@ async function loadVocabulary(){
     });
     $('n5words').disabled=false;
     $('moreVocabBtn').disabled=false;
-    if(currentStudyLevel==='N5WORDS'){
-      deck=getStudyCards('N5WORDS');
+    if(currentStudyLevel==='N5WORDS' || currentStudyLevel==='N5'){
+      deck=getStudyCards(currentStudyLevel);
       index=Math.min(index,Math.max(0,deck.length-1));
       render();
     }
