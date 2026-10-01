@@ -99,6 +99,61 @@
       "word": "一円",
       "reading": "いちえん",
       "meaning": "one yen"
+    },
+    {
+      "word": "一年生",
+      "reading": "いちねんせい",
+      "meaning": "一 year student"
+    },
+    {
+      "word": "一年間",
+      "reading": "いちねんかん",
+      "meaning": "一 years"
+    },
+    {
+      "word": "一時間",
+      "reading": "いちじかん",
+      "meaning": "一 hours"
+    },
+    {
+      "word": "一日間",
+      "reading": "いちにちかん",
+      "meaning": "一 days"
+    },
+    {
+      "word": "十一日",
+      "reading": "じゅういちにち",
+      "meaning": "11th day of the month"
+    },
+    {
+      "word": "二十一日",
+      "reading": "にじゅういちにち",
+      "meaning": "21th day of the month"
+    },
+    {
+      "word": "三十一日",
+      "reading": "さんじゅういちにち",
+      "meaning": "31th day of the month"
+    },
+    {
+      "word": "日本一",
+      "reading": "にほんいち",
+      "meaning": "number one in Japan; best in Japan"
+    },
+    {
+      "word": "一年後",
+      "reading": "いちねんご",
+      "meaning": "1 year later"
+    },
+    {
+      "word": "一年中",
+      "reading": "いちねんじゅう",
+      "meaning": "all year round"
+    },
+    {
+      "word": "一日中",
+      "reading": "いちにちじゅう",
+      "meaning": "all day"
     }
   ],
   "七": [
@@ -201,6 +256,61 @@
       "word": "七日",
       "reading": "なのか",
       "meaning": "7th day of the month"
+    },
+    {
+      "word": "七年生",
+      "reading": "ななねんせい",
+      "meaning": "七 year student"
+    },
+    {
+      "word": "七年間",
+      "reading": "ななねんかん",
+      "meaning": "七 years"
+    },
+    {
+      "word": "七時間",
+      "reading": "ななじかん",
+      "meaning": "七 hours"
+    },
+    {
+      "word": "七週間",
+      "reading": "ななしゅうかん",
+      "meaning": "七 weeks"
+    },
+    {
+      "word": "七日間",
+      "reading": "ななにちかん",
+      "meaning": "七 days"
+    },
+    {
+      "word": "七分",
+      "reading": "ななぷん",
+      "meaning": "七 minutes"
+    },
+    {
+      "word": "七人",
+      "reading": "ななにん",
+      "meaning": "七 people"
+    },
+    {
+      "word": "七本",
+      "reading": "ななほん",
+      "meaning": "七 long cylindrical objects"
+    },
+    {
+      "word": "七円",
+      "reading": "ななえん",
+      "meaning": "七 yen"
+    },
+    {
+      "word": "十七日",
+      "reading": "じゅうしちにち",
+      "meaning": "17th day of the month"
+    },
+    {
+      "word": "二十七日",
+      "reading": "にじゅうしちにち",
+      "meaning": "27th day of the month"
     }
   ],
   "万": [
@@ -303,6 +413,51 @@
       "word": "万端",
       "reading": "ばんたん",
       "meaning": "all; everything"
+    },
+    {
+      "word": "万本",
+      "reading": "まんほん",
+      "meaning": "long cylindrical objects (万)"
+    },
+    {
+      "word": "万円",
+      "reading": "まんえん",
+      "meaning": "yen (万)"
+    },
+    {
+      "word": "万日",
+      "reading": "まんにち",
+      "meaning": "days (万)"
+    },
+    {
+      "word": "万時間",
+      "reading": "まんじかん",
+      "meaning": "hours (万)"
+    },
+    {
+      "word": "万週間",
+      "reading": "まんしゅうかん",
+      "meaning": "weeks (万)"
+    },
+    {
+      "word": "万年間",
+      "reading": "まんねんかん",
+      "meaning": "years (万)"
+    },
+    {
+      "word": "万日間",
+      "reading": "まんにちかん",
+      "meaning": "days (万)"
+    },
+    {
+      "word": "万年後",
+      "reading": "まんねんご",
+      "meaning": "10,000 years later"
+    },
+    {
+      "word": "万年前",
+      "reading": "まんねんまえ",
+      "meaning": "10,000 years ago"
     }
   ],
   "三": [
@@ -415,6 +570,71 @@
       "word": "三十年前",
       "reading": "さんじゅうねんまえ",
       "meaning": "30 years ago"
+    },
+    {
+      "word": "三年生",
+      "reading": "さんねんせい",
+      "meaning": "三 year student"
+    },
+    {
+      "word": "三年間",
+      "reading": "さんねんかん",
+      "meaning": "三 years"
+    },
+    {
+      "word": "三時間",
+      "reading": "さんじかん",
+      "meaning": "三 hours"
+    },
+    {
+      "word": "三週間",
+      "reading": "さんしゅうかん",
+      "meaning": "三 weeks"
+    },
+    {
+      "word": "三日間",
+      "reading": "さんにちかん",
+      "meaning": "三 days"
+    },
+    {
+      "word": "三時",
+      "reading": "さんじ",
+      "meaning": "三 o'clock"
+    },
+    {
+      "word": "三分",
+      "reading": "さんぷん",
+      "meaning": "三 minutes"
+    },
+    {
+      "word": "三円",
+      "reading": "さんえん",
+      "meaning": "三 yen"
+    },
+    {
+      "word": "十三日",
+      "reading": "じゅうさんにち",
+      "meaning": "13th day of the month"
+    },
+    {
+      "word": "二十三日",
+      "reading": "にじゅうさんにち",
+      "meaning": "23th day of the month"
+    },
+    {
+      "word": "三十一日",
+      "reading": "さんじゅういちにち",
+      "meaning": "31th day of the month"
+    },
+    {
+      "word": "三年前",
+      "reading": "さんねんまえ",
+      "meaning": "3 years ago"
+    },
+    {
+      "word": "三年後",
+      "reading": "さんねんご",
+      "meaning": "3 years later"
     }
   ],
   "上": [
@@ -517,6 +737,16 @@
       "word": "上演",
       "reading": "じょうえん",
       "meaning": "performance (of a play, opera, etc.); staging; presentation"
+    },
+    {
+      "word": "上半分",
+      "reading": "じょうはんぶん",
+      "meaning": "upper half"
+    },
+    {
+      "word": "見上げる",
+      "reading": "みあげる",
+      "meaning": "to look up at"
     }
   ],
   "下": [
@@ -619,6 +849,31 @@
       "word": "下町",
       "reading": "したまち",
       "meaning": "low-lying part of a city (usu. containing shops, factories, etc.)"
+    },
+    {
+      "word": "下半分",
+      "reading": "かはんぶん",
+      "meaning": "lower half"
+    },
+    {
+      "word": "下水道",
+      "reading": "げすいどう",
+      "meaning": "sewer system"
+    },
+    {
+      "word": "下校",
+      "reading": "げこう",
+      "meaning": "leaving school"
+    },
+    {
+      "word": "下書き",
+      "reading": "したがき",
+      "meaning": "draft; rough copy"
+    },
+    {
+      "word": "見下ろす",
+      "reading": "みおろす",
+      "meaning": "to look down at"
     }
   ],
   "不": [
@@ -925,6 +1180,51 @@
       "word": "中島",
       "reading": "なかじま",
       "meaning": "island in a pond or river"
+    },
+    {
+      "word": "中火",
+      "reading": "ちゅうび",
+      "meaning": "medium heat"
+    },
+    {
+      "word": "電話中",
+      "reading": "でんわちゅう",
+      "meaning": "on the phone"
+    },
+    {
+      "word": "一年中",
+      "reading": "いちねんじゅう",
+      "meaning": "all year round"
+    },
+    {
+      "word": "一日中",
+      "reading": "いちにちじゅう",
+      "meaning": "all day"
+    },
+    {
+      "word": "今日中",
+      "reading": "きょうじゅう",
+      "meaning": "by the end of today"
+    },
+    {
+      "word": "今週中",
+      "reading": "こんしゅうじゅう",
+      "meaning": "within this week"
+    },
+    {
+      "word": "今月中",
+      "reading": "こんげつじゅう",
+      "meaning": "within this month"
+    },
+    {
+      "word": "今年中",
+      "reading": "ことしじゅう",
+      "meaning": "within this year"
+    },
+    {
+      "word": "日本中",
+      "reading": "にほんじゅう",
+      "meaning": "throughout Japan"
     }
   ],
   "主": [
@@ -1129,6 +1429,51 @@
       "word": "九一",
       "reading": "くっぴん",
       "meaning": "scoring combination of a 9 and a 1 in oicho-kabu; see:; おいちょかぶ; oicho-kabu (traditional gambling game)"
+    },
+    {
+      "word": "九年生",
+      "reading": "きゅうねんせい",
+      "meaning": "九 year student"
+    },
+    {
+      "word": "九年間",
+      "reading": "きゅうねんかん",
+      "meaning": "九 years"
+    },
+    {
+      "word": "九時間",
+      "reading": "きゅうじかん",
+      "meaning": "九 hours"
+    },
+    {
+      "word": "九週間",
+      "reading": "きゅうしゅうかん",
+      "meaning": "九 weeks"
+    },
+    {
+      "word": "九日間",
+      "reading": "きゅうにちかん",
+      "meaning": "九 days"
+    },
+    {
+      "word": "九時",
+      "reading": "きゅうじ",
+      "meaning": "九 o'clock"
+    },
+    {
+      "word": "九人",
+      "reading": "きゅうにん",
+      "meaning": "九 people"
+    },
+    {
+      "word": "九本",
+      "reading": "きゅうほん",
+      "meaning": "九 long cylindrical objects"
+    },
+    {
+      "word": "九円",
+      "reading": "きゅうえん",
+      "meaning": "九 yen"
     }
   ],
   "事": [
@@ -1343,6 +1688,101 @@
       "word": "二十年前",
       "reading": "にじゅうねんまえ",
       "meaning": "20 years ago"
+    },
+    {
+      "word": "二年生",
+      "reading": "にねんせい",
+      "meaning": "二 year student"
+    },
+    {
+      "word": "二年間",
+      "reading": "にねんかん",
+      "meaning": "二 years"
+    },
+    {
+      "word": "二時間",
+      "reading": "にじかん",
+      "meaning": "二 hours"
+    },
+    {
+      "word": "二週間",
+      "reading": "にしゅうかん",
+      "meaning": "二 weeks"
+    },
+    {
+      "word": "二日間",
+      "reading": "ににちかん",
+      "meaning": "二 days"
+    },
+    {
+      "word": "二時",
+      "reading": "にじ",
+      "meaning": "二 o'clock"
+    },
+    {
+      "word": "二本",
+      "reading": "にほん",
+      "meaning": "二 long cylindrical objects"
+    },
+    {
+      "word": "二円",
+      "reading": "にえん",
+      "meaning": "二 yen"
+    },
+    {
+      "word": "十二日",
+      "reading": "じゅうににち",
+      "meaning": "12th day of the month"
+    },
+    {
+      "word": "二十日",
+      "reading": "はつか",
+      "meaning": "20th day of the month"
+    },
+    {
+      "word": "二十一日",
+      "reading": "にじゅういちにち",
+      "meaning": "21th day of the month"
+    },
+    {
+      "word": "二十二日",
+      "reading": "にじゅうににち",
+      "meaning": "22th day of the month"
+    },
+    {
+      "word": "二十三日",
+      "reading": "にじゅうさんにち",
+      "meaning": "23th day of the month"
+    },
+    {
+      "word": "二十四日",
+      "reading": "にじゅうよっか",
+      "meaning": "24th day of the month"
+    },
+    {
+      "word": "二十五日",
+      "reading": "にじゅうごにち",
+      "meaning": "25th day of the month"
+    },
+    {
+      "word": "二十七日",
+      "reading": "にじゅうしちにち",
+      "meaning": "27th day of the month"
+    },
+    {
+      "word": "二十八日",
+      "reading": "にじゅうはちにち",
+      "meaning": "28th day of the month"
+    },
+    {
+      "word": "二年前",
+      "reading": "にねんまえ",
+      "meaning": "2 years ago"
+    },
+    {
+      "word": "二年後",
+      "reading": "にねんご",
+      "meaning": "2 years later"
     }
   ],
   "五": [
@@ -1455,6 +1895,71 @@
       "word": "五百円",
       "reading": "ごひゃくえん",
       "meaning": "500 yen"
+    },
+    {
+      "word": "五年生",
+      "reading": "ごねんせい",
+      "meaning": "五 year student"
+    },
+    {
+      "word": "五年間",
+      "reading": "ごねんかん",
+      "meaning": "五 years"
+    },
+    {
+      "word": "五時間",
+      "reading": "ごじかん",
+      "meaning": "五 hours"
+    },
+    {
+      "word": "五週間",
+      "reading": "ごしゅうかん",
+      "meaning": "五 weeks"
+    },
+    {
+      "word": "五日間",
+      "reading": "ごにちかん",
+      "meaning": "五 days"
+    },
+    {
+      "word": "五時",
+      "reading": "ごじ",
+      "meaning": "五 o'clock"
+    },
+    {
+      "word": "五人",
+      "reading": "ごにん",
+      "meaning": "五 people"
+    },
+    {
+      "word": "五本",
+      "reading": "ごほん",
+      "meaning": "五 long cylindrical objects"
+    },
+    {
+      "word": "五円",
+      "reading": "ごえん",
+      "meaning": "五 yen"
+    },
+    {
+      "word": "十五日",
+      "reading": "じゅうごにち",
+      "meaning": "15th day of the month"
+    },
+    {
+      "word": "二十五日",
+      "reading": "にじゅうごにち",
+      "meaning": "25th day of the month"
+    },
+    {
+      "word": "五年前",
+      "reading": "ごねんまえ",
+      "meaning": "5 years ago"
+    },
+    {
+      "word": "五年後",
+      "reading": "ごねんご",
+      "meaning": "5 years later"
     }
   ],
   "京": [
@@ -1659,6 +2164,51 @@
       "word": "人情",
       "reading": "にんじょう",
       "meaning": "humanity; empathy; kindness; sympathy"
+    },
+    {
+      "word": "四人",
+      "reading": "よんにん",
+      "meaning": "四 people"
+    },
+    {
+      "word": "五人",
+      "reading": "ごにん",
+      "meaning": "五 people"
+    },
+    {
+      "word": "七人",
+      "reading": "ななにん",
+      "meaning": "七 people"
+    },
+    {
+      "word": "八人",
+      "reading": "はちにん",
+      "meaning": "八 people"
+    },
+    {
+      "word": "九人",
+      "reading": "きゅうにん",
+      "meaning": "九 people"
+    },
+    {
+      "word": "十人",
+      "reading": "じゅうにん",
+      "meaning": "十 people"
+    },
+    {
+      "word": "百人",
+      "reading": "ひゃくにん",
+      "meaning": "people (百)"
+    },
+    {
+      "word": "千人",
+      "reading": "せんにん",
+      "meaning": "people (千)"
+    },
+    {
+      "word": "社会人",
+      "reading": "しゃかいじん",
+      "meaning": "working adult"
     }
   ],
   "今": [
@@ -1761,6 +2311,26 @@
       "word": "今週",
       "reading": "こんしゅう",
       "meaning": "this week"
+    },
+    {
+      "word": "今日中",
+      "reading": "きょうじゅう",
+      "meaning": "by the end of today"
+    },
+    {
+      "word": "今週中",
+      "reading": "こんしゅうじゅう",
+      "meaning": "within this week"
+    },
+    {
+      "word": "今月中",
+      "reading": "こんげつじゅう",
+      "meaning": "within this month"
+    },
+    {
+      "word": "今年中",
+      "reading": "ことしじゅう",
+      "meaning": "within this year"
     }
   ],
   "仕": [
@@ -2271,6 +2841,31 @@
       "word": "会食",
       "reading": "かいしょく",
       "meaning": "eating together; dining together; having a meal together"
+    },
+    {
+      "word": "社会人",
+      "reading": "しゃかいじん",
+      "meaning": "working adult"
+    },
+    {
+      "word": "出会う",
+      "reading": "であう",
+      "meaning": "to meet; encounter"
+    },
+    {
+      "word": "出会い",
+      "reading": "であい",
+      "meaning": "meeting; encounter"
+    },
+    {
+      "word": "学会",
+      "reading": "がっかい",
+      "meaning": "academic society; conference"
+    },
+    {
+      "word": "学生会",
+      "reading": "がくせいかい",
+      "meaning": "student council"
     }
   ],
   "住": [
@@ -2577,6 +3172,56 @@
       "word": "何だか",
       "reading": "なんだか",
       "meaning": "(a) little; somewhat; somehow"
+    },
+    {
+      "word": "何本",
+      "reading": "なんぼん",
+      "meaning": "how many long cylindrical objects"
+    },
+    {
+      "word": "何円",
+      "reading": "なんえん",
+      "meaning": "how many yen"
+    },
+    {
+      "word": "何年間",
+      "reading": "なんねんかん",
+      "meaning": "how many years"
+    },
+    {
+      "word": "何日間",
+      "reading": "なんにちかん",
+      "meaning": "how many days"
+    },
+    {
+      "word": "何週間",
+      "reading": "なんしゅうかん",
+      "meaning": "how many weeks"
+    },
+    {
+      "word": "何時間",
+      "reading": "なんじかん",
+      "meaning": "how many hours"
+    },
+    {
+      "word": "何年生",
+      "reading": "なんねんせい",
+      "meaning": "what year student"
+    },
+    {
+      "word": "何時",
+      "reading": "なんじ",
+      "meaning": "what time"
+    },
+    {
+      "word": "何月",
+      "reading": "なんがつ",
+      "meaning": "what month"
+    },
+    {
+      "word": "何日",
+      "reading": "なんにち",
+      "meaning": "what day; how many days"
     }
   ],
   "作": [
@@ -3189,6 +3834,16 @@
       "word": "先着",
       "reading": "せんちゃく",
       "meaning": "arriving first"
+    },
+    {
+      "word": "後先",
+      "reading": "あとさき",
+      "meaning": "before and after; consequences"
+    },
+    {
+      "word": "行き先",
+      "reading": "いきさき",
+      "meaning": "destination"
     }
   ],
   "入": [
@@ -3291,6 +3946,31 @@
       "word": "入浴",
       "reading": "にゅうよく",
       "meaning": "bathing; going in the bath"
+    },
+    {
+      "word": "出入り",
+      "reading": "でいり",
+      "meaning": "coming and going; entry and exit"
+    },
+    {
+      "word": "立入",
+      "reading": "たちいり",
+      "meaning": "entry; access"
+    },
+    {
+      "word": "手入れ",
+      "reading": "ていれ",
+      "meaning": "care; maintenance"
+    },
+    {
+      "word": "新入生",
+      "reading": "しんにゅうせい",
+      "meaning": "new student"
+    },
+    {
+      "word": "出入口",
+      "reading": "でいりぐち",
+      "meaning": "entrance and exit"
     }
   ],
   "八": [
@@ -3393,6 +4073,61 @@
       "word": "八千草",
       "reading": "やちぐさ",
       "meaning": "variety of plants; various herbs"
+    },
+    {
+      "word": "八年生",
+      "reading": "はちねんせい",
+      "meaning": "八 year student"
+    },
+    {
+      "word": "八年間",
+      "reading": "はちねんかん",
+      "meaning": "八 years"
+    },
+    {
+      "word": "八時間",
+      "reading": "はちじかん",
+      "meaning": "八 hours"
+    },
+    {
+      "word": "八週間",
+      "reading": "はちしゅうかん",
+      "meaning": "八 weeks"
+    },
+    {
+      "word": "八日間",
+      "reading": "はちにちかん",
+      "meaning": "八 days"
+    },
+    {
+      "word": "八時",
+      "reading": "はちじ",
+      "meaning": "八 o'clock"
+    },
+    {
+      "word": "八分",
+      "reading": "はっぷん",
+      "meaning": "八 minutes"
+    },
+    {
+      "word": "八人",
+      "reading": "はちにん",
+      "meaning": "八 people"
+    },
+    {
+      "word": "八円",
+      "reading": "はちえん",
+      "meaning": "八 yen"
+    },
+    {
+      "word": "十八日",
+      "reading": "じゅうはちにち",
+      "meaning": "18th day of the month"
+    },
+    {
+      "word": "二十八日",
+      "reading": "にじゅうはちにち",
+      "meaning": "28th day of the month"
     }
   ],
   "公": [
@@ -3597,6 +4332,51 @@
       "word": "六処",
       "reading": "ろくしょ",
       "meaning": "six sense organs (eyes, ears, nose, tongue, body, and mind)"
+    },
+    {
+      "word": "六年生",
+      "reading": "ろくねんせい",
+      "meaning": "六 year student"
+    },
+    {
+      "word": "六年間",
+      "reading": "ろくねんかん",
+      "meaning": "六 years"
+    },
+    {
+      "word": "六時間",
+      "reading": "ろくじかん",
+      "meaning": "六 hours"
+    },
+    {
+      "word": "六週間",
+      "reading": "ろくしゅうかん",
+      "meaning": "六 weeks"
+    },
+    {
+      "word": "六日間",
+      "reading": "ろくにちかん",
+      "meaning": "六 days"
+    },
+    {
+      "word": "六時",
+      "reading": "ろくじ",
+      "meaning": "六 o'clock"
+    },
+    {
+      "word": "六分",
+      "reading": "ろくぷん",
+      "meaning": "六 minutes"
+    },
+    {
+      "word": "六本",
+      "reading": "ろくほん",
+      "meaning": "六 long cylindrical objects"
+    },
+    {
+      "word": "六円",
+      "reading": "ろくえん",
+      "meaning": "六 yen"
     }
   ],
   "円": [
@@ -3709,6 +4489,76 @@
       "word": "五百円",
       "reading": "ごひゃくえん",
       "meaning": "500 yen"
+    },
+    {
+      "word": "二円",
+      "reading": "にえん",
+      "meaning": "二 yen"
+    },
+    {
+      "word": "三円",
+      "reading": "さんえん",
+      "meaning": "三 yen"
+    },
+    {
+      "word": "四円",
+      "reading": "よんえん",
+      "meaning": "四 yen"
+    },
+    {
+      "word": "五円",
+      "reading": "ごえん",
+      "meaning": "五 yen"
+    },
+    {
+      "word": "六円",
+      "reading": "ろくえん",
+      "meaning": "六 yen"
+    },
+    {
+      "word": "七円",
+      "reading": "ななえん",
+      "meaning": "七 yen"
+    },
+    {
+      "word": "八円",
+      "reading": "はちえん",
+      "meaning": "八 yen"
+    },
+    {
+      "word": "九円",
+      "reading": "きゅうえん",
+      "meaning": "九 yen"
+    },
+    {
+      "word": "十円",
+      "reading": "じゅうえん",
+      "meaning": "十 yen"
+    },
+    {
+      "word": "百円",
+      "reading": "ひゃくえん",
+      "meaning": "yen (百)"
+    },
+    {
+      "word": "千円",
+      "reading": "せんえん",
+      "meaning": "yen (千)"
+    },
+    {
+      "word": "万円",
+      "reading": "まんえん",
+      "meaning": "yen (万)"
+    },
+    {
+      "word": "何円",
+      "reading": "なんえん",
+      "meaning": "how many yen"
+    },
+    {
+      "word": "日本円",
+      "reading": "にほんえん",
+      "meaning": "Japanese yen"
     }
   ],
   "写": [
@@ -4015,6 +4865,26 @@
       "word": "出場",
       "reading": "しゅつじょう",
       "meaning": "participation (in a tournament, match, race, etc.); entry; taking part (in); competing (in); appearance"
+    },
+    {
+      "word": "出入り",
+      "reading": "でいり",
+      "meaning": "coming and going; entry and exit"
+    },
+    {
+      "word": "出会う",
+      "reading": "であう",
+      "meaning": "to meet; encounter"
+    },
+    {
+      "word": "出会い",
+      "reading": "であい",
+      "meaning": "meeting; encounter"
+    },
+    {
+      "word": "出入口",
+      "reading": "でいりぐち",
+      "meaning": "entrance and exit"
     }
   ],
   "分": [
@@ -4117,6 +4987,41 @@
       "word": "分校",
       "reading": "ぶんこう",
       "meaning": "branch school; see:; 本校; 1. main school; principal school"
+    },
+    {
+      "word": "三分",
+      "reading": "さんぷん",
+      "meaning": "三 minutes"
+    },
+    {
+      "word": "四分",
+      "reading": "よんぷん",
+      "meaning": "四 minutes"
+    },
+    {
+      "word": "六分",
+      "reading": "ろくぷん",
+      "meaning": "六 minutes"
+    },
+    {
+      "word": "七分",
+      "reading": "ななぷん",
+      "meaning": "七 minutes"
+    },
+    {
+      "word": "八分",
+      "reading": "はっぷん",
+      "meaning": "八 minutes"
+    },
+    {
+      "word": "上半分",
+      "reading": "じょうはんぶん",
+      "meaning": "upper half"
+    },
+    {
+      "word": "下半分",
+      "reading": "かはんぶん",
+      "meaning": "lower half"
     }
   ],
   "切": [
@@ -4433,6 +5338,51 @@
       "word": "三十年前",
       "reading": "さんじゅうねんまえ",
       "meaning": "30 years ago"
+    },
+    {
+      "word": "前月",
+      "reading": "ぜんげつ",
+      "meaning": "previous month"
+    },
+    {
+      "word": "手前",
+      "reading": "てまえ",
+      "meaning": "in front; this side"
+    },
+    {
+      "word": "百年前",
+      "reading": "ひゃくねんまえ",
+      "meaning": "100 years ago"
+    },
+    {
+      "word": "千年前",
+      "reading": "せんねんまえ",
+      "meaning": "1,000 years ago"
+    },
+    {
+      "word": "万年前",
+      "reading": "まんねんまえ",
+      "meaning": "10,000 years ago"
+    },
+    {
+      "word": "十年前",
+      "reading": "じゅうねんまえ",
+      "meaning": "10 years ago"
+    },
+    {
+      "word": "五年前",
+      "reading": "ごねんまえ",
+      "meaning": "5 years ago"
+    },
+    {
+      "word": "三年前",
+      "reading": "さんねんまえ",
+      "meaning": "3 years ago"
+    },
+    {
+      "word": "二年前",
+      "reading": "にねんまえ",
+      "meaning": "2 years ago"
     }
   ],
   "力": [
@@ -5070,6 +6020,141 @@
       "word": "五十円",
       "reading": "ごじゅうえん",
       "meaning": "50 yen"
+    },
+    {
+      "word": "十年生",
+      "reading": "じゅうねんせい",
+      "meaning": "十 year student"
+    },
+    {
+      "word": "十年間",
+      "reading": "じゅうねんかん",
+      "meaning": "十 years"
+    },
+    {
+      "word": "十時間",
+      "reading": "じゅうじかん",
+      "meaning": "十 hours"
+    },
+    {
+      "word": "十週間",
+      "reading": "じゅうしゅうかん",
+      "meaning": "十 weeks"
+    },
+    {
+      "word": "十日間",
+      "reading": "じゅうにちかん",
+      "meaning": "十 days"
+    },
+    {
+      "word": "十時",
+      "reading": "じゅうじ",
+      "meaning": "十 o'clock"
+    },
+    {
+      "word": "十人",
+      "reading": "じゅうにん",
+      "meaning": "十 people"
+    },
+    {
+      "word": "十本",
+      "reading": "じゅっほん",
+      "meaning": "十 long cylindrical objects"
+    },
+    {
+      "word": "十円",
+      "reading": "じゅうえん",
+      "meaning": "十 yen"
+    },
+    {
+      "word": "十一日",
+      "reading": "じゅういちにち",
+      "meaning": "11th day of the month"
+    },
+    {
+      "word": "十二日",
+      "reading": "じゅうににち",
+      "meaning": "12th day of the month"
+    },
+    {
+      "word": "十三日",
+      "reading": "じゅうさんにち",
+      "meaning": "13th day of the month"
+    },
+    {
+      "word": "十四日",
+      "reading": "じゅうよっか",
+      "meaning": "14th day of the month"
+    },
+    {
+      "word": "十五日",
+      "reading": "じゅうごにち",
+      "meaning": "15th day of the month"
+    },
+    {
+      "word": "十七日",
+      "reading": "じゅうしちにち",
+      "meaning": "17th day of the month"
+    },
+    {
+      "word": "十八日",
+      "reading": "じゅうはちにち",
+      "meaning": "18th day of the month"
+    },
+    {
+      "word": "二十日",
+      "reading": "はつか",
+      "meaning": "20th day of the month"
+    },
+    {
+      "word": "二十一日",
+      "reading": "にじゅういちにち",
+      "meaning": "21th day of the month"
+    },
+    {
+      "word": "二十二日",
+      "reading": "にじゅうににち",
+      "meaning": "22th day of the month"
+    },
+    {
+      "word": "二十三日",
+      "reading": "にじゅうさんにち",
+      "meaning": "23th day of the month"
+    },
+    {
+      "word": "二十四日",
+      "reading": "にじゅうよっか",
+      "meaning": "24th day of the month"
+    },
+    {
+      "word": "二十五日",
+      "reading": "にじゅうごにち",
+      "meaning": "25th day of the month"
+    },
+    {
+      "word": "二十七日",
+      "reading": "にじゅうしちにち",
+      "meaning": "27th day of the month"
+    },
+    {
+      "word": "二十八日",
+      "reading": "にじゅうはちにち",
+      "meaning": "28th day of the month"
+    },
+    {
+      "word": "三十一日",
+      "reading": "さんじゅういちにち",
+      "meaning": "31th day of the month"
+    },
+    {
+      "word": "十年前",
+      "reading": "じゅうねんまえ",
+      "meaning": "10 years ago"
+    },
+    {
+      "word": "十年後",
+      "reading": "じゅうねんご",
+      "meaning": "10 years later"
     }
   ],
   "千": [
@@ -5172,6 +6257,61 @@
       "word": "八千草",
       "reading": "やちぐさ",
       "meaning": "variety of plants; various herbs"
+    },
+    {
+      "word": "千人",
+      "reading": "せんにん",
+      "meaning": "people (千)"
+    },
+    {
+      "word": "千本",
+      "reading": "せんほん",
+      "meaning": "long cylindrical objects (千)"
+    },
+    {
+      "word": "千円",
+      "reading": "せんえん",
+      "meaning": "yen (千)"
+    },
+    {
+      "word": "千年",
+      "reading": "せんねん",
+      "meaning": "years (千)"
+    },
+    {
+      "word": "千日",
+      "reading": "せんにち",
+      "meaning": "days (千)"
+    },
+    {
+      "word": "千時間",
+      "reading": "せんじかん",
+      "meaning": "hours (千)"
+    },
+    {
+      "word": "千週間",
+      "reading": "せんしゅうかん",
+      "meaning": "weeks (千)"
+    },
+    {
+      "word": "千年間",
+      "reading": "せんねんかん",
+      "meaning": "years (千)"
+    },
+    {
+      "word": "千日間",
+      "reading": "せんにちかん",
+      "meaning": "days (千)"
+    },
+    {
+      "word": "千年後",
+      "reading": "せんねんご",
+      "meaning": "1,000 years later"
+    },
+    {
+      "word": "千年前",
+      "reading": "せんねんまえ",
+      "meaning": "1,000 years ago"
     }
   ],
   "午": [
@@ -5376,6 +6516,16 @@
       "word": "半額",
       "reading": "はんがく",
       "meaning": "half the amount (of money); half price; half fare"
+    },
+    {
+      "word": "上半分",
+      "reading": "じょうはんぶん",
+      "meaning": "upper half"
+    },
+    {
+      "word": "下半分",
+      "reading": "かはんぶん",
+      "meaning": "lower half"
     }
   ],
   "南": [
@@ -5784,6 +6934,11 @@
       "word": "口語",
       "reading": "こうご",
       "meaning": "spoken language; colloquial speech; see:; 文語; 1. written language; literary language"
+    },
+    {
+      "word": "出入口",
+      "reading": "でいりぐち",
+      "meaning": "entrance and exit"
     }
   ],
   "古": [
@@ -5886,6 +7041,11 @@
       "word": "太古",
       "reading": "たいこ",
       "meaning": "ancient times; prehistoric times"
+    },
+    {
+      "word": "古木",
+      "reading": "こぼく",
+      "meaning": "old tree"
     }
   ],
   "台": [
@@ -6804,6 +7964,61 @@
       "word": "四月",
       "reading": "しがつ",
       "meaning": "April"
+    },
+    {
+      "word": "四年生",
+      "reading": "よんねんせい",
+      "meaning": "四 year student"
+    },
+    {
+      "word": "四年間",
+      "reading": "よんねんかん",
+      "meaning": "四 years"
+    },
+    {
+      "word": "四時間",
+      "reading": "よんじかん",
+      "meaning": "四 hours"
+    },
+    {
+      "word": "四週間",
+      "reading": "よんしゅうかん",
+      "meaning": "四 weeks"
+    },
+    {
+      "word": "四日間",
+      "reading": "よんにちかん",
+      "meaning": "四 days"
+    },
+    {
+      "word": "四時",
+      "reading": "よんじ",
+      "meaning": "四 o'clock"
+    },
+    {
+      "word": "四分",
+      "reading": "よんぷん",
+      "meaning": "四 minutes"
+    },
+    {
+      "word": "四人",
+      "reading": "よんにん",
+      "meaning": "四 people"
+    },
+    {
+      "word": "四円",
+      "reading": "よんえん",
+      "meaning": "四 yen"
+    },
+    {
+      "word": "十四日",
+      "reading": "じゅうよっか",
+      "meaning": "14th day of the month"
+    },
+    {
+      "word": "二十四日",
+      "reading": "にじゅうよっか",
+      "meaning": "24th day of the month"
     }
   ],
   "図": [
@@ -8334,6 +9549,11 @@
       "word": "少女",
       "reading": "しょうじょ",
       "meaning": "girl (usu. between 7 and 17); young lady"
+    },
+    {
+      "word": "長女",
+      "reading": "ちょうじょ",
+      "meaning": "eldest daughter"
     }
   ],
   "妹": [
@@ -8946,6 +10166,21 @@
       "word": "大学",
       "reading": "だいがく",
       "meaning": "university; college"
+    },
+    {
+      "word": "学会",
+      "reading": "がっかい",
+      "meaning": "academic society; conference"
+    },
+    {
+      "word": "学生会",
+      "reading": "がくせいかい",
+      "meaning": "student council"
+    },
+    {
+      "word": "高学年",
+      "reading": "こうがくねん",
+      "meaning": "upper grades"
     }
   ],
   "安": [
@@ -9354,6 +10589,11 @@
       "word": "小差",
       "reading": "しょうさ",
       "meaning": "slight difference; narrow margin; antonym:; 大差; great difference; big difference; wide margin"
+    },
+    {
+      "word": "小道",
+      "reading": "こみち",
+      "meaning": "small path"
     }
   ],
   "少": [
@@ -10190,6 +11430,236 @@
       "word": "三十年前",
       "reading": "さんじゅうねんまえ",
       "meaning": "30 years ago"
+    },
+    {
+      "word": "一年生",
+      "reading": "いちねんせい",
+      "meaning": "一 year student"
+    },
+    {
+      "word": "一年間",
+      "reading": "いちねんかん",
+      "meaning": "一 years"
+    },
+    {
+      "word": "二年生",
+      "reading": "にねんせい",
+      "meaning": "二 year student"
+    },
+    {
+      "word": "二年間",
+      "reading": "にねんかん",
+      "meaning": "二 years"
+    },
+    {
+      "word": "三年生",
+      "reading": "さんねんせい",
+      "meaning": "三 year student"
+    },
+    {
+      "word": "三年間",
+      "reading": "さんねんかん",
+      "meaning": "三 years"
+    },
+    {
+      "word": "四年生",
+      "reading": "よんねんせい",
+      "meaning": "四 year student"
+    },
+    {
+      "word": "四年間",
+      "reading": "よんねんかん",
+      "meaning": "四 years"
+    },
+    {
+      "word": "五年生",
+      "reading": "ごねんせい",
+      "meaning": "五 year student"
+    },
+    {
+      "word": "五年間",
+      "reading": "ごねんかん",
+      "meaning": "五 years"
+    },
+    {
+      "word": "六年生",
+      "reading": "ろくねんせい",
+      "meaning": "六 year student"
+    },
+    {
+      "word": "六年間",
+      "reading": "ろくねんかん",
+      "meaning": "六 years"
+    },
+    {
+      "word": "七年生",
+      "reading": "ななねんせい",
+      "meaning": "七 year student"
+    },
+    {
+      "word": "七年間",
+      "reading": "ななねんかん",
+      "meaning": "七 years"
+    },
+    {
+      "word": "八年生",
+      "reading": "はちねんせい",
+      "meaning": "八 year student"
+    },
+    {
+      "word": "八年間",
+      "reading": "はちねんかん",
+      "meaning": "八 years"
+    },
+    {
+      "word": "九年生",
+      "reading": "きゅうねんせい",
+      "meaning": "九 year student"
+    },
+    {
+      "word": "九年間",
+      "reading": "きゅうねんかん",
+      "meaning": "九 years"
+    },
+    {
+      "word": "十年生",
+      "reading": "じゅうねんせい",
+      "meaning": "十 year student"
+    },
+    {
+      "word": "十年間",
+      "reading": "じゅうねんかん",
+      "meaning": "十 years"
+    },
+    {
+      "word": "百年",
+      "reading": "ひゃくねん",
+      "meaning": "years (百)"
+    },
+    {
+      "word": "百年間",
+      "reading": "ひゃくねんかん",
+      "meaning": "years (百)"
+    },
+    {
+      "word": "千年",
+      "reading": "せんねん",
+      "meaning": "years (千)"
+    },
+    {
+      "word": "千年間",
+      "reading": "せんねんかん",
+      "meaning": "years (千)"
+    },
+    {
+      "word": "万年間",
+      "reading": "まんねんかん",
+      "meaning": "years (万)"
+    },
+    {
+      "word": "何年間",
+      "reading": "なんねんかん",
+      "meaning": "how many years"
+    },
+    {
+      "word": "何年生",
+      "reading": "なんねんせい",
+      "meaning": "what year student"
+    },
+    {
+      "word": "長年",
+      "reading": "ながねん",
+      "meaning": "many years; long years"
+    },
+    {
+      "word": "高学年",
+      "reading": "こうがくねん",
+      "meaning": "upper grades"
+    },
+    {
+      "word": "百年後",
+      "reading": "ひゃくねんご",
+      "meaning": "100 years later"
+    },
+    {
+      "word": "千年後",
+      "reading": "せんねんご",
+      "meaning": "1,000 years later"
+    },
+    {
+      "word": "万年後",
+      "reading": "まんねんご",
+      "meaning": "10,000 years later"
+    },
+    {
+      "word": "百年前",
+      "reading": "ひゃくねんまえ",
+      "meaning": "100 years ago"
+    },
+    {
+      "word": "千年前",
+      "reading": "せんねんまえ",
+      "meaning": "1,000 years ago"
+    },
+    {
+      "word": "万年前",
+      "reading": "まんねんまえ",
+      "meaning": "10,000 years ago"
+    },
+    {
+      "word": "十年前",
+      "reading": "じゅうねんまえ",
+      "meaning": "10 years ago"
+    },
+    {
+      "word": "十年後",
+      "reading": "じゅうねんご",
+      "meaning": "10 years later"
+    },
+    {
+      "word": "五年前",
+      "reading": "ごねんまえ",
+      "meaning": "5 years ago"
+    },
+    {
+      "word": "五年後",
+      "reading": "ごねんご",
+      "meaning": "5 years later"
+    },
+    {
+      "word": "三年前",
+      "reading": "さんねんまえ",
+      "meaning": "3 years ago"
+    },
+    {
+      "word": "三年後",
+      "reading": "さんねんご",
+      "meaning": "3 years later"
+    },
+    {
+      "word": "二年前",
+      "reading": "にねんまえ",
+      "meaning": "2 years ago"
+    },
+    {
+      "word": "二年後",
+      "reading": "にねんご",
+      "meaning": "2 years later"
+    },
+    {
+      "word": "一年後",
+      "reading": "いちねんご",
+      "meaning": "1 year later"
+    },
+    {
+      "word": "一年中",
+      "reading": "いちねんじゅう",
+      "meaning": "all year round"
+    },
+    {
+      "word": "今年中",
+      "reading": "ことしじゅう",
+      "meaning": "within this year"
     }
   ],
   "広": [
@@ -11016,6 +12486,51 @@
       "word": "三十年後",
       "reading": "さんじゅうねんご",
       "meaning": "30 years later"
+    },
+    {
+      "word": "後先",
+      "reading": "あとさき",
+      "meaning": "before and after; consequences"
+    },
+    {
+      "word": "百年後",
+      "reading": "ひゃくねんご",
+      "meaning": "100 years later"
+    },
+    {
+      "word": "千年後",
+      "reading": "せんねんご",
+      "meaning": "1,000 years later"
+    },
+    {
+      "word": "万年後",
+      "reading": "まんねんご",
+      "meaning": "10,000 years later"
+    },
+    {
+      "word": "十年後",
+      "reading": "じゅうねんご",
+      "meaning": "10 years later"
+    },
+    {
+      "word": "五年後",
+      "reading": "ごねんご",
+      "meaning": "5 years later"
+    },
+    {
+      "word": "三年後",
+      "reading": "さんねんご",
+      "meaning": "3 years later"
+    },
+    {
+      "word": "二年後",
+      "reading": "にねんご",
+      "meaning": "2 years later"
+    },
+    {
+      "word": "一年後",
+      "reading": "いちねんご",
+      "meaning": "1 year later"
     }
   ],
   "心": [
@@ -11628,6 +13143,21 @@
       "word": "手元",
       "reading": "てもと",
       "meaning": "at hand; on hand; nearby; close at hand"
+    },
+    {
+      "word": "手前",
+      "reading": "てまえ",
+      "meaning": "in front; this side"
+    },
+    {
+      "word": "手入れ",
+      "reading": "ていれ",
+      "meaning": "care; maintenance"
+    },
+    {
+      "word": "手書き",
+      "reading": "てがき",
+      "meaning": "handwritten"
     }
   ],
   "持": [
@@ -12138,6 +13668,11 @@
       "word": "新居",
       "reading": "しんきょ",
       "meaning": "new home"
+    },
+    {
+      "word": "新入生",
+      "reading": "しんにゅうせい",
+      "meaning": "new student"
     }
   ],
   "方": [
@@ -12546,6 +14081,206 @@
       "word": "抗日",
       "reading": "こうにち",
       "meaning": "resistance against Japanese aggression; anti-Japanese (campaign, movement, etc.)"
+    },
+    {
+      "word": "一日間",
+      "reading": "いちにちかん",
+      "meaning": "一 days"
+    },
+    {
+      "word": "二日間",
+      "reading": "ににちかん",
+      "meaning": "二 days"
+    },
+    {
+      "word": "三日間",
+      "reading": "さんにちかん",
+      "meaning": "三 days"
+    },
+    {
+      "word": "四日間",
+      "reading": "よんにちかん",
+      "meaning": "四 days"
+    },
+    {
+      "word": "五日間",
+      "reading": "ごにちかん",
+      "meaning": "五 days"
+    },
+    {
+      "word": "六日間",
+      "reading": "ろくにちかん",
+      "meaning": "六 days"
+    },
+    {
+      "word": "七日間",
+      "reading": "ななにちかん",
+      "meaning": "七 days"
+    },
+    {
+      "word": "八日間",
+      "reading": "はちにちかん",
+      "meaning": "八 days"
+    },
+    {
+      "word": "九日間",
+      "reading": "きゅうにちかん",
+      "meaning": "九 days"
+    },
+    {
+      "word": "十日間",
+      "reading": "じゅうにちかん",
+      "meaning": "十 days"
+    },
+    {
+      "word": "十一日",
+      "reading": "じゅういちにち",
+      "meaning": "11th day of the month"
+    },
+    {
+      "word": "十二日",
+      "reading": "じゅうににち",
+      "meaning": "12th day of the month"
+    },
+    {
+      "word": "十三日",
+      "reading": "じゅうさんにち",
+      "meaning": "13th day of the month"
+    },
+    {
+      "word": "十四日",
+      "reading": "じゅうよっか",
+      "meaning": "14th day of the month"
+    },
+    {
+      "word": "十五日",
+      "reading": "じゅうごにち",
+      "meaning": "15th day of the month"
+    },
+    {
+      "word": "十七日",
+      "reading": "じゅうしちにち",
+      "meaning": "17th day of the month"
+    },
+    {
+      "word": "十八日",
+      "reading": "じゅうはちにち",
+      "meaning": "18th day of the month"
+    },
+    {
+      "word": "二十日",
+      "reading": "はつか",
+      "meaning": "20th day of the month"
+    },
+    {
+      "word": "二十一日",
+      "reading": "にじゅういちにち",
+      "meaning": "21th day of the month"
+    },
+    {
+      "word": "二十二日",
+      "reading": "にじゅうににち",
+      "meaning": "22th day of the month"
+    },
+    {
+      "word": "二十三日",
+      "reading": "にじゅうさんにち",
+      "meaning": "23th day of the month"
+    },
+    {
+      "word": "二十四日",
+      "reading": "にじゅうよっか",
+      "meaning": "24th day of the month"
+    },
+    {
+      "word": "二十五日",
+      "reading": "にじゅうごにち",
+      "meaning": "25th day of the month"
+    },
+    {
+      "word": "二十七日",
+      "reading": "にじゅうしちにち",
+      "meaning": "27th day of the month"
+    },
+    {
+      "word": "二十八日",
+      "reading": "にじゅうはちにち",
+      "meaning": "28th day of the month"
+    },
+    {
+      "word": "三十一日",
+      "reading": "さんじゅういちにち",
+      "meaning": "31th day of the month"
+    },
+    {
+      "word": "百日",
+      "reading": "ひゃくにち",
+      "meaning": "days (百)"
+    },
+    {
+      "word": "百日間",
+      "reading": "ひゃくにちかん",
+      "meaning": "days (百)"
+    },
+    {
+      "word": "千日",
+      "reading": "せんにち",
+      "meaning": "days (千)"
+    },
+    {
+      "word": "千日間",
+      "reading": "せんにちかん",
+      "meaning": "days (千)"
+    },
+    {
+      "word": "万日",
+      "reading": "まんにち",
+      "meaning": "days (万)"
+    },
+    {
+      "word": "万日間",
+      "reading": "まんにちかん",
+      "meaning": "days (万)"
+    },
+    {
+      "word": "何日間",
+      "reading": "なんにちかん",
+      "meaning": "how many days"
+    },
+    {
+      "word": "何日",
+      "reading": "なんにち",
+      "meaning": "what day; how many days"
+    },
+    {
+      "word": "日本一",
+      "reading": "にほんいち",
+      "meaning": "number one in Japan; best in Japan"
+    },
+    {
+      "word": "日本円",
+      "reading": "にほんえん",
+      "meaning": "Japanese yen"
+    },
+    {
+      "word": "日本食",
+      "reading": "にほんしょく",
+      "meaning": "Japanese food"
+    },
+    {
+      "word": "一日中",
+      "reading": "いちにちじゅう",
+      "meaning": "all day"
+    },
+    {
+      "word": "今日中",
+      "reading": "きょうじゅう",
+      "meaning": "by the end of today"
+    },
+    {
+      "word": "日本中",
+      "reading": "にほんじゅう",
+      "meaning": "throughout Japan"
     }
   ],
   "早": [
@@ -13158,6 +14893,126 @@
       "word": "時宜",
       "reading": "じぎ",
       "meaning": "right time; appropriate time; season's greetings"
+    },
+    {
+      "word": "一時間",
+      "reading": "いちじかん",
+      "meaning": "一 hours"
+    },
+    {
+      "word": "二時間",
+      "reading": "にじかん",
+      "meaning": "二 hours"
+    },
+    {
+      "word": "二時",
+      "reading": "にじ",
+      "meaning": "二 o'clock"
+    },
+    {
+      "word": "三時間",
+      "reading": "さんじかん",
+      "meaning": "三 hours"
+    },
+    {
+      "word": "三時",
+      "reading": "さんじ",
+      "meaning": "三 o'clock"
+    },
+    {
+      "word": "四時間",
+      "reading": "よんじかん",
+      "meaning": "四 hours"
+    },
+    {
+      "word": "四時",
+      "reading": "よんじ",
+      "meaning": "四 o'clock"
+    },
+    {
+      "word": "五時間",
+      "reading": "ごじかん",
+      "meaning": "五 hours"
+    },
+    {
+      "word": "五時",
+      "reading": "ごじ",
+      "meaning": "五 o'clock"
+    },
+    {
+      "word": "六時間",
+      "reading": "ろくじかん",
+      "meaning": "六 hours"
+    },
+    {
+      "word": "六時",
+      "reading": "ろくじ",
+      "meaning": "六 o'clock"
+    },
+    {
+      "word": "七時間",
+      "reading": "ななじかん",
+      "meaning": "七 hours"
+    },
+    {
+      "word": "八時間",
+      "reading": "はちじかん",
+      "meaning": "八 hours"
+    },
+    {
+      "word": "八時",
+      "reading": "はちじ",
+      "meaning": "八 o'clock"
+    },
+    {
+      "word": "九時間",
+      "reading": "きゅうじかん",
+      "meaning": "九 hours"
+    },
+    {
+      "word": "九時",
+      "reading": "きゅうじ",
+      "meaning": "九 o'clock"
+    },
+    {
+      "word": "十時間",
+      "reading": "じゅうじかん",
+      "meaning": "十 hours"
+    },
+    {
+      "word": "十時",
+      "reading": "じゅうじ",
+      "meaning": "十 o'clock"
+    },
+    {
+      "word": "百時間",
+      "reading": "ひゃくじかん",
+      "meaning": "hours (百)"
+    },
+    {
+      "word": "千時間",
+      "reading": "せんじかん",
+      "meaning": "hours (千)"
+    },
+    {
+      "word": "万時間",
+      "reading": "まんじかん",
+      "meaning": "hours (万)"
+    },
+    {
+      "word": "何時間",
+      "reading": "なんじかん",
+      "meaning": "how many hours"
+    },
+    {
+      "word": "何時",
+      "reading": "なんじ",
+      "meaning": "what time"
+    },
+    {
+      "word": "長時間",
+      "reading": "ちょうじかん",
+      "meaning": "long time"
     }
   ],
   "曜": [
@@ -13362,6 +15217,16 @@
       "word": "書留",
       "reading": "かきとめ",
       "meaning": "registered mail; registered post; registration (of mail); see:; 書留郵便; registered mail; registered post"
+    },
+    {
+      "word": "下書き",
+      "reading": "したがき",
+      "meaning": "draft; rough copy"
+    },
+    {
+      "word": "手書き",
+      "reading": "てがき",
+      "meaning": "handwritten"
     }
   ],
   "月": [
@@ -13464,6 +15329,21 @@
       "word": "月謝",
       "reading": "げっしゃ",
       "meaning": "monthly tuition fee"
+    },
+    {
+      "word": "何月",
+      "reading": "なんがつ",
+      "meaning": "what month"
+    },
+    {
+      "word": "前月",
+      "reading": "ぜんげつ",
+      "meaning": "previous month"
+    },
+    {
+      "word": "今月中",
+      "reading": "こんげつじゅう",
+      "meaning": "within this month"
     }
   ],
   "有": [
@@ -13872,6 +15752,11 @@
       "word": "本木",
       "reading": "もとき",
       "meaning": "original stock"
+    },
+    {
+      "word": "古木",
+      "reading": "こぼく",
+      "meaning": "old tree"
     }
   ],
   "本": [
@@ -13974,6 +15859,86 @@
       "word": "本土",
       "reading": "ほんど",
       "meaning": "mainland; the country proper"
+    },
+    {
+      "word": "二本",
+      "reading": "にほん",
+      "meaning": "二 long cylindrical objects"
+    },
+    {
+      "word": "五本",
+      "reading": "ごほん",
+      "meaning": "五 long cylindrical objects"
+    },
+    {
+      "word": "六本",
+      "reading": "ろくほん",
+      "meaning": "六 long cylindrical objects"
+    },
+    {
+      "word": "七本",
+      "reading": "ななほん",
+      "meaning": "七 long cylindrical objects"
+    },
+    {
+      "word": "九本",
+      "reading": "きゅうほん",
+      "meaning": "九 long cylindrical objects"
+    },
+    {
+      "word": "十本",
+      "reading": "じゅっほん",
+      "meaning": "十 long cylindrical objects"
+    },
+    {
+      "word": "百本",
+      "reading": "ひゃくほん",
+      "meaning": "long cylindrical objects (百)"
+    },
+    {
+      "word": "千本",
+      "reading": "せんほん",
+      "meaning": "long cylindrical objects (千)"
+    },
+    {
+      "word": "万本",
+      "reading": "まんほん",
+      "meaning": "long cylindrical objects (万)"
+    },
+    {
+      "word": "何本",
+      "reading": "なんぼん",
+      "meaning": "how many long cylindrical objects"
+    },
+    {
+      "word": "日本一",
+      "reading": "にほんいち",
+      "meaning": "number one in Japan; best in Japan"
+    },
+    {
+      "word": "日本円",
+      "reading": "にほんえん",
+      "meaning": "Japanese yen"
+    },
+    {
+      "word": "日本食",
+      "reading": "にほんしょく",
+      "meaning": "Japanese food"
+    },
+    {
+      "word": "本気",
+      "reading": "ほんき",
+      "meaning": "seriousness; earnestness"
+    },
+    {
+      "word": "見本",
+      "reading": "みほん",
+      "meaning": "sample; model"
+    },
+    {
+      "word": "日本中",
+      "reading": "にほんじゅう",
+      "meaning": "throughout Japan"
     }
   ],
   "来": [
@@ -14280,6 +16245,11 @@
       "word": "登校",
       "reading": "とうこう",
       "meaning": "attendance (at school); going to school"
+    },
+    {
+      "word": "下校",
+      "reading": "げこう",
+      "meaning": "leaving school"
     }
   ],
   "業": [
@@ -15300,6 +17270,11 @@
       "word": "景気",
       "reading": "けいき",
       "meaning": "business conditions; the market; economic activity; economic climate"
+    },
+    {
+      "word": "本気",
+      "reading": "ほんき",
+      "meaning": "seriousness; earnestness"
     }
   ],
   "水": [
@@ -15402,6 +17377,11 @@
       "word": "水域",
       "reading": "すいいき",
       "meaning": "waters; water area"
+    },
+    {
+      "word": "下水道",
+      "reading": "げすいどう",
+      "meaning": "sewer system"
     }
   ],
   "注": [
@@ -15912,6 +17892,11 @@
       "word": "火花",
       "reading": "ひばな",
       "meaning": "spark"
+    },
+    {
+      "word": "中火",
+      "reading": "ちゅうび",
+      "meaning": "medium heat"
     }
   ],
   "無": [
@@ -16728,6 +18713,76 @@
       "word": "更生",
       "reading": "こうせい",
       "meaning": "rehabilitation; remaking one's life; starting life anew"
+    },
+    {
+      "word": "一年生",
+      "reading": "いちねんせい",
+      "meaning": "一 year student"
+    },
+    {
+      "word": "二年生",
+      "reading": "にねんせい",
+      "meaning": "二 year student"
+    },
+    {
+      "word": "三年生",
+      "reading": "さんねんせい",
+      "meaning": "三 year student"
+    },
+    {
+      "word": "四年生",
+      "reading": "よんねんせい",
+      "meaning": "四 year student"
+    },
+    {
+      "word": "五年生",
+      "reading": "ごねんせい",
+      "meaning": "五 year student"
+    },
+    {
+      "word": "六年生",
+      "reading": "ろくねんせい",
+      "meaning": "六 year student"
+    },
+    {
+      "word": "七年生",
+      "reading": "ななねんせい",
+      "meaning": "七 year student"
+    },
+    {
+      "word": "八年生",
+      "reading": "はちねんせい",
+      "meaning": "八 year student"
+    },
+    {
+      "word": "九年生",
+      "reading": "きゅうねんせい",
+      "meaning": "九 year student"
+    },
+    {
+      "word": "十年生",
+      "reading": "じゅうねんせい",
+      "meaning": "十 year student"
+    },
+    {
+      "word": "何年生",
+      "reading": "なんねんせい",
+      "meaning": "what year student"
+    },
+    {
+      "word": "長生き",
+      "reading": "ながいき",
+      "meaning": "long life; longevity"
+    },
+    {
+      "word": "学生会",
+      "reading": "がくせいかい",
+      "meaning": "student council"
+    },
+    {
+      "word": "新入生",
+      "reading": "しんにゅうせい",
+      "meaning": "new student"
     }
   ],
   "用": [
@@ -17753,6 +19808,61 @@
       "word": "五百円",
       "reading": "ごひゃくえん",
       "meaning": "500 yen"
+    },
+    {
+      "word": "百人",
+      "reading": "ひゃくにん",
+      "meaning": "people (百)"
+    },
+    {
+      "word": "百本",
+      "reading": "ひゃくほん",
+      "meaning": "long cylindrical objects (百)"
+    },
+    {
+      "word": "百円",
+      "reading": "ひゃくえん",
+      "meaning": "yen (百)"
+    },
+    {
+      "word": "百年",
+      "reading": "ひゃくねん",
+      "meaning": "years (百)"
+    },
+    {
+      "word": "百日",
+      "reading": "ひゃくにち",
+      "meaning": "days (百)"
+    },
+    {
+      "word": "百時間",
+      "reading": "ひゃくじかん",
+      "meaning": "hours (百)"
+    },
+    {
+      "word": "百週間",
+      "reading": "ひゃくしゅうかん",
+      "meaning": "weeks (百)"
+    },
+    {
+      "word": "百年間",
+      "reading": "ひゃくねんかん",
+      "meaning": "years (百)"
+    },
+    {
+      "word": "百日間",
+      "reading": "ひゃくにちかん",
+      "meaning": "days (百)"
+    },
+    {
+      "word": "百年後",
+      "reading": "ひゃくねんご",
+      "meaning": "100 years later"
+    },
+    {
+      "word": "百年前",
+      "reading": "ひゃくねんまえ",
+      "meaning": "100 years ago"
     }
   ],
   "目": [
@@ -18365,6 +20475,11 @@
       "word": "社外",
       "reading": "しゃがい",
       "meaning": "outside the company"
+    },
+    {
+      "word": "社会人",
+      "reading": "しゃかいじん",
+      "meaning": "working adult"
     }
   ],
   "私": [
@@ -18875,6 +20990,11 @@
       "word": "林立",
       "reading": "りんりつ",
       "meaning": "standing close together; bristling (with)"
+    },
+    {
+      "word": "立入",
+      "reading": "たちいり",
+      "meaning": "entry; access"
     }
   ],
   "答": [
@@ -20405,6 +22525,11 @@
       "word": "慣行",
       "reading": "かんこう",
       "meaning": "customary practice; habit; traditional event"
+    },
+    {
+      "word": "行き先",
+      "reading": "いきさき",
+      "meaning": "destination"
     }
   ],
   "西": [
@@ -20609,6 +22734,21 @@
       "word": "見事",
       "reading": "みごと",
       "meaning": "splendid; magnificent; excellent; fine; superb; beautiful; admirable"
+    },
+    {
+      "word": "見上げる",
+      "reading": "みあげる",
+      "meaning": "to look up at"
+    },
+    {
+      "word": "見下ろす",
+      "reading": "みおろす",
+      "meaning": "to look down at"
+    },
+    {
+      "word": "見本",
+      "reading": "みほん",
+      "meaning": "sample; model"
     }
   ],
   "親": [
@@ -21119,6 +23259,16 @@
       "word": "お話中",
       "reading": "おはなしちゅう",
       "meaning": "busy (phone); see:; 話中; 1. busy (phone)"
+    },
+    {
+      "word": "長話",
+      "reading": "ながばなし",
+      "meaning": "long talk"
+    },
+    {
+      "word": "電話中",
+      "reading": "でんわちゅう",
+      "meaning": "on the phone"
     }
   ],
   "語": [
@@ -22139,6 +24289,11 @@
       "word": "車中",
       "reading": "しゃちゅう",
       "meaning": "in a train (car, bus, etc.); on a train"
+    },
+    {
+      "word": "車道",
+      "reading": "しゃどう",
+      "meaning": "roadway"
     }
   ],
   "転": [
@@ -22649,6 +24804,76 @@
       "word": "週刊誌",
       "reading": "しゅうかんし",
       "meaning": "weekly (publication); weekly magazine; weekly journal"
+    },
+    {
+      "word": "二週間",
+      "reading": "にしゅうかん",
+      "meaning": "二 weeks"
+    },
+    {
+      "word": "三週間",
+      "reading": "さんしゅうかん",
+      "meaning": "三 weeks"
+    },
+    {
+      "word": "四週間",
+      "reading": "よんしゅうかん",
+      "meaning": "四 weeks"
+    },
+    {
+      "word": "五週間",
+      "reading": "ごしゅうかん",
+      "meaning": "五 weeks"
+    },
+    {
+      "word": "六週間",
+      "reading": "ろくしゅうかん",
+      "meaning": "六 weeks"
+    },
+    {
+      "word": "七週間",
+      "reading": "ななしゅうかん",
+      "meaning": "七 weeks"
+    },
+    {
+      "word": "八週間",
+      "reading": "はちしゅうかん",
+      "meaning": "八 weeks"
+    },
+    {
+      "word": "九週間",
+      "reading": "きゅうしゅうかん",
+      "meaning": "九 weeks"
+    },
+    {
+      "word": "十週間",
+      "reading": "じゅうしゅうかん",
+      "meaning": "十 weeks"
+    },
+    {
+      "word": "百週間",
+      "reading": "ひゃくしゅうかん",
+      "meaning": "weeks (百)"
+    },
+    {
+      "word": "千週間",
+      "reading": "せんしゅうかん",
+      "meaning": "weeks (千)"
+    },
+    {
+      "word": "万週間",
+      "reading": "まんしゅうかん",
+      "meaning": "weeks (万)"
+    },
+    {
+      "word": "何週間",
+      "reading": "なんしゅうかん",
+      "meaning": "how many weeks"
+    },
+    {
+      "word": "今週中",
+      "reading": "こんしゅうじゅう",
+      "meaning": "within this week"
     }
   ],
   "運": [
@@ -22853,6 +25078,21 @@
       "word": "柔道",
       "reading": "じゅうどう",
       "meaning": "judo"
+    },
+    {
+      "word": "小道",
+      "reading": "こみち",
+      "meaning": "small path"
+    },
+    {
+      "word": "下水道",
+      "reading": "げすいどう",
+      "meaning": "sewer system"
+    },
+    {
+      "word": "車道",
+      "reading": "しゃどう",
+      "meaning": "roadway"
     }
   ],
   "重": [
@@ -23363,6 +25603,31 @@
       "word": "悠長",
       "reading": "ゆうちょう",
       "meaning": "leisurely; slow; deliberate; easygoing"
+    },
+    {
+      "word": "長女",
+      "reading": "ちょうじょ",
+      "meaning": "eldest daughter"
+    },
+    {
+      "word": "長時間",
+      "reading": "ちょうじかん",
+      "meaning": "long time"
+    },
+    {
+      "word": "長年",
+      "reading": "ながねん",
+      "meaning": "many years; long years"
+    },
+    {
+      "word": "長生き",
+      "reading": "ながいき",
+      "meaning": "long life; longevity"
+    },
+    {
+      "word": "長話",
+      "reading": "ながばなし",
+      "meaning": "long talk"
     }
   ],
   "開": [
@@ -23567,6 +25832,286 @@
       "word": "洋間",
       "reading": "ようま",
       "meaning": "Western-style room"
+    },
+    {
+      "word": "一年間",
+      "reading": "いちねんかん",
+      "meaning": "一 years"
+    },
+    {
+      "word": "一時間",
+      "reading": "いちじかん",
+      "meaning": "一 hours"
+    },
+    {
+      "word": "一日間",
+      "reading": "いちにちかん",
+      "meaning": "一 days"
+    },
+    {
+      "word": "二年間",
+      "reading": "にねんかん",
+      "meaning": "二 years"
+    },
+    {
+      "word": "二時間",
+      "reading": "にじかん",
+      "meaning": "二 hours"
+    },
+    {
+      "word": "二週間",
+      "reading": "にしゅうかん",
+      "meaning": "二 weeks"
+    },
+    {
+      "word": "二日間",
+      "reading": "ににちかん",
+      "meaning": "二 days"
+    },
+    {
+      "word": "三年間",
+      "reading": "さんねんかん",
+      "meaning": "三 years"
+    },
+    {
+      "word": "三時間",
+      "reading": "さんじかん",
+      "meaning": "三 hours"
+    },
+    {
+      "word": "三週間",
+      "reading": "さんしゅうかん",
+      "meaning": "三 weeks"
+    },
+    {
+      "word": "三日間",
+      "reading": "さんにちかん",
+      "meaning": "三 days"
+    },
+    {
+      "word": "四年間",
+      "reading": "よんねんかん",
+      "meaning": "四 years"
+    },
+    {
+      "word": "四時間",
+      "reading": "よんじかん",
+      "meaning": "四 hours"
+    },
+    {
+      "word": "四週間",
+      "reading": "よんしゅうかん",
+      "meaning": "四 weeks"
+    },
+    {
+      "word": "四日間",
+      "reading": "よんにちかん",
+      "meaning": "四 days"
+    },
+    {
+      "word": "五年間",
+      "reading": "ごねんかん",
+      "meaning": "五 years"
+    },
+    {
+      "word": "五時間",
+      "reading": "ごじかん",
+      "meaning": "五 hours"
+    },
+    {
+      "word": "五週間",
+      "reading": "ごしゅうかん",
+      "meaning": "五 weeks"
+    },
+    {
+      "word": "五日間",
+      "reading": "ごにちかん",
+      "meaning": "五 days"
+    },
+    {
+      "word": "六年間",
+      "reading": "ろくねんかん",
+      "meaning": "六 years"
+    },
+    {
+      "word": "六時間",
+      "reading": "ろくじかん",
+      "meaning": "六 hours"
+    },
+    {
+      "word": "六週間",
+      "reading": "ろくしゅうかん",
+      "meaning": "六 weeks"
+    },
+    {
+      "word": "六日間",
+      "reading": "ろくにちかん",
+      "meaning": "六 days"
+    },
+    {
+      "word": "七年間",
+      "reading": "ななねんかん",
+      "meaning": "七 years"
+    },
+    {
+      "word": "七時間",
+      "reading": "ななじかん",
+      "meaning": "七 hours"
+    },
+    {
+      "word": "七週間",
+      "reading": "ななしゅうかん",
+      "meaning": "七 weeks"
+    },
+    {
+      "word": "七日間",
+      "reading": "ななにちかん",
+      "meaning": "七 days"
+    },
+    {
+      "word": "八年間",
+      "reading": "はちねんかん",
+      "meaning": "八 years"
+    },
+    {
+      "word": "八時間",
+      "reading": "はちじかん",
+      "meaning": "八 hours"
+    },
+    {
+      "word": "八週間",
+      "reading": "はちしゅうかん",
+      "meaning": "八 weeks"
+    },
+    {
+      "word": "八日間",
+      "reading": "はちにちかん",
+      "meaning": "八 days"
+    },
+    {
+      "word": "九年間",
+      "reading": "きゅうねんかん",
+      "meaning": "九 years"
+    },
+    {
+      "word": "九時間",
+      "reading": "きゅうじかん",
+      "meaning": "九 hours"
+    },
+    {
+      "word": "九週間",
+      "reading": "きゅうしゅうかん",
+      "meaning": "九 weeks"
+    },
+    {
+      "word": "九日間",
+      "reading": "きゅうにちかん",
+      "meaning": "九 days"
+    },
+    {
+      "word": "十年間",
+      "reading": "じゅうねんかん",
+      "meaning": "十 years"
+    },
+    {
+      "word": "十時間",
+      "reading": "じゅうじかん",
+      "meaning": "十 hours"
+    },
+    {
+      "word": "十週間",
+      "reading": "じゅうしゅうかん",
+      "meaning": "十 weeks"
+    },
+    {
+      "word": "十日間",
+      "reading": "じゅうにちかん",
+      "meaning": "十 days"
+    },
+    {
+      "word": "百時間",
+      "reading": "ひゃくじかん",
+      "meaning": "hours (百)"
+    },
+    {
+      "word": "百週間",
+      "reading": "ひゃくしゅうかん",
+      "meaning": "weeks (百)"
+    },
+    {
+      "word": "百年間",
+      "reading": "ひゃくねんかん",
+      "meaning": "years (百)"
+    },
+    {
+      "word": "百日間",
+      "reading": "ひゃくにちかん",
+      "meaning": "days (百)"
+    },
+    {
+      "word": "千時間",
+      "reading": "せんじかん",
+      "meaning": "hours (千)"
+    },
+    {
+      "word": "千週間",
+      "reading": "せんしゅうかん",
+      "meaning": "weeks (千)"
+    },
+    {
+      "word": "千年間",
+      "reading": "せんねんかん",
+      "meaning": "years (千)"
+    },
+    {
+      "word": "千日間",
+      "reading": "せんにちかん",
+      "meaning": "days (千)"
+    },
+    {
+      "word": "万時間",
+      "reading": "まんじかん",
+      "meaning": "hours (万)"
+    },
+    {
+      "word": "万週間",
+      "reading": "まんしゅうかん",
+      "meaning": "weeks (万)"
+    },
+    {
+      "word": "万年間",
+      "reading": "まんねんかん",
+      "meaning": "years (万)"
+    },
+    {
+      "word": "万日間",
+      "reading": "まんにちかん",
+      "meaning": "days (万)"
+    },
+    {
+      "word": "何年間",
+      "reading": "なんねんかん",
+      "meaning": "how many years"
+    },
+    {
+      "word": "何日間",
+      "reading": "なんにちかん",
+      "meaning": "how many days"
+    },
+    {
+      "word": "何週間",
+      "reading": "なんしゅうかん",
+      "meaning": "how many weeks"
+    },
+    {
+      "word": "何時間",
+      "reading": "なんじかん",
+      "meaning": "how many hours"
+    },
+    {
+      "word": "長時間",
+      "reading": "ちょうじかん",
+      "meaning": "long time"
     }
   ],
   "院": [
@@ -23975,6 +26520,11 @@
       "word": "電子",
       "reading": "でんし",
       "meaning": "electron"
+    },
+    {
+      "word": "電話中",
+      "reading": "でんわちゅう",
+      "meaning": "on the phone"
     }
   ],
   "青": [
@@ -24485,6 +27035,11 @@
       "word": "肉食",
       "reading": "にくしょく",
       "meaning": "meat eating; eating of meat; meat diet; see:; 菜食; vegetable diet"
+    },
+    {
+      "word": "日本食",
+      "reading": "にほんしょく",
+      "meaning": "Japanese food"
     }
   ],
   "飯": [
@@ -25097,6 +27652,11 @@
       "word": "高名",
       "reading": "こうめい",
       "meaning": "famous; well-known; renowned; distinguished; celebrated"
+    },
+    {
+      "word": "高学年",
+      "reading": "こうがくねん",
+      "meaning": "upper grades"
     }
   ],
   "魚": [
