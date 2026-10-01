@@ -1,4 +1,4 @@
-const CACHE_NAME="joyo-offline-v3";
+const CACHE_NAME="joyo-offline-v4";
 const APP_SHELL=["./","./index.html","./manifest.webmanifest","./icon.svg","./vocabulary.json"];
 
 self.addEventListener("install",event=>{
