@@ -38,7 +38,7 @@
     {
       "word": "一人",
       "reading": "ひとり",
-      "meaning": "one person; esp. 一人, １人"
+      "meaning": "one person"
     },
     {
       "word": "一代",
@@ -103,7 +103,7 @@
     {
       "word": "一年生",
       "reading": "いちねんせい",
-      "meaning": "一 year student"
+      "meaning": "first-year student"
     },
     {
       "word": "一年間",
@@ -118,7 +118,7 @@
     {
       "word": "一日間",
       "reading": "いちにちかん",
-      "meaning": "一 days"
+      "meaning": "one day"
     },
     {
       "word": "十一日",
@@ -260,7 +260,7 @@
     {
       "word": "七年生",
       "reading": "ななねんせい",
-      "meaning": "七 year student"
+      "meaning": "seventh-year student"
     },
     {
       "word": "七年間",
@@ -279,13 +279,13 @@
     },
     {
       "word": "七日間",
-      "reading": "ななにちかん",
-      "meaning": "七 days"
+      "reading": "なのかかん",
+      "meaning": "seven days"
     },
     {
       "word": "七分",
-      "reading": "ななぷん",
-      "meaning": "七 minutes"
+      "reading": "ななふん",
+      "meaning": "seven minutes"
     },
     {
       "word": "七人",
@@ -295,7 +295,7 @@
     {
       "word": "七本",
       "reading": "ななほん",
-      "meaning": "七 long cylindrical objects"
+      "meaning": "seven long cylindrical objects"
     },
     {
       "word": "七円",
@@ -514,7 +514,7 @@
     {
       "word": "三本",
       "reading": "さんぼん",
-      "meaning": "three (long cylindrical things)"
+      "meaning": "three long cylindrical objects"
     },
     {
       "word": "三枚",
@@ -574,7 +574,7 @@
     {
       "word": "三年生",
       "reading": "さんねんせい",
-      "meaning": "三 year student"
+      "meaning": "third-year student"
     },
     {
       "word": "三年間",
@@ -593,8 +593,8 @@
     },
     {
       "word": "三日間",
-      "reading": "さんにちかん",
-      "meaning": "三 days"
+      "reading": "みっかかん",
+      "meaning": "three days"
     },
     {
       "word": "三時",
@@ -604,7 +604,7 @@
     {
       "word": "三分",
       "reading": "さんぷん",
-      "meaning": "三 minutes"
+      "meaning": "three minutes"
     },
     {
       "word": "三円",
@@ -1382,8 +1382,8 @@
     },
     {
       "word": "九分",
-      "reading": "くぶ",
-      "meaning": "nine parts; ninety percent; mostly"
+      "reading": "きゅうふん",
+      "meaning": "nine minutes"
     },
     {
       "word": "九死",
@@ -1433,7 +1433,7 @@
     {
       "word": "九年生",
       "reading": "きゅうねんせい",
-      "meaning": "九 year student"
+      "meaning": "ninth-year student"
     },
     {
       "word": "九年間",
@@ -1452,8 +1452,8 @@
     },
     {
       "word": "九日間",
-      "reading": "きゅうにちかん",
-      "meaning": "九 days"
+      "reading": "ここのかかん",
+      "meaning": "nine days"
     },
     {
       "word": "九時",
@@ -1468,7 +1468,7 @@
     {
       "word": "九本",
       "reading": "きゅうほん",
-      "meaning": "九 long cylindrical objects"
+      "meaning": "nine long cylindrical objects"
     },
     {
       "word": "九円",
@@ -1602,12 +1602,12 @@
     {
       "word": "二人",
       "reading": "ふたり",
-      "meaning": "two persons; two people; pair; couple"
+      "meaning": "two people"
     },
     {
       "word": "二分",
-      "reading": "にぶん",
-      "meaning": "halving; dividing (into two parts); bisection"
+      "reading": "にふん",
+      "meaning": "two minutes"
     },
     {
       "word": "二号",
@@ -1692,7 +1692,7 @@
     {
       "word": "二年生",
       "reading": "にねんせい",
-      "meaning": "二 year student"
+      "meaning": "second-year student"
     },
     {
       "word": "二年間",
@@ -1711,8 +1711,8 @@
     },
     {
       "word": "二日間",
-      "reading": "ににちかん",
-      "meaning": "二 days"
+      "reading": "ふつかかん",
+      "meaning": "two days"
     },
     {
       "word": "二時",
@@ -1722,7 +1722,7 @@
     {
       "word": "二本",
       "reading": "にほん",
-      "meaning": "二 long cylindrical objects"
+      "meaning": "two long cylindrical objects"
     },
     {
       "word": "二円",
@@ -1803,8 +1803,8 @@
     },
     {
       "word": "五分",
-      "reading": "ごぶ",
-      "meaning": "half; 50%"
+      "reading": "ごふん",
+      "meaning": "five minutes"
     },
     {
       "word": "五感",
@@ -1899,7 +1899,7 @@
     {
       "word": "五年生",
       "reading": "ごねんせい",
-      "meaning": "五 year student"
+      "meaning": "fifth-year student"
     },
     {
       "word": "五年間",
@@ -1918,8 +1918,8 @@
     },
     {
       "word": "五日間",
-      "reading": "ごにちかん",
-      "meaning": "五 days"
+      "reading": "いつかかん",
+      "meaning": "five days"
     },
     {
       "word": "五時",
@@ -1934,7 +1934,7 @@
     {
       "word": "五本",
       "reading": "ごほん",
-      "meaning": "五 long cylindrical objects"
+      "meaning": "five long cylindrical objects"
     },
     {
       "word": "五円",
@@ -2068,7 +2068,7 @@
     {
       "word": "一人",
       "reading": "ひとり",
-      "meaning": "one person; esp. 一人, １人"
+      "meaning": "one person"
     },
     {
       "word": "三人",
@@ -2083,7 +2083,7 @@
     {
       "word": "二人",
       "reading": "ふたり",
-      "meaning": "two persons; two people; pair; couple"
+      "meaning": "two people"
     },
     {
       "word": "人々",
@@ -2167,8 +2167,8 @@
     },
     {
       "word": "四人",
-      "reading": "よんにん",
-      "meaning": "四 people"
+      "reading": "よにん",
+      "meaning": "four people"
     },
     {
       "word": "五人",
@@ -4066,8 +4066,8 @@
     },
     {
       "word": "八本",
-      "reading": "はちほん",
-      "meaning": "eight (long cylindrical things)"
+      "reading": "はっぽん",
+      "meaning": "eight long cylindrical objects"
     },
     {
       "word": "八千草",
@@ -4077,7 +4077,7 @@
     {
       "word": "八年生",
       "reading": "はちねんせい",
-      "meaning": "八 year student"
+      "meaning": "eighth-year student"
     },
     {
       "word": "八年間",
@@ -4096,8 +4096,8 @@
     },
     {
       "word": "八日間",
-      "reading": "はちにちかん",
-      "meaning": "八 days"
+      "reading": "ようかかん",
+      "meaning": "eight days"
     },
     {
       "word": "八時",
@@ -4107,7 +4107,7 @@
     {
       "word": "八分",
       "reading": "はっぷん",
-      "meaning": "八 minutes"
+      "meaning": "eight minutes"
     },
     {
       "word": "八人",
@@ -4336,7 +4336,7 @@
     {
       "word": "六年生",
       "reading": "ろくねんせい",
-      "meaning": "六 year student"
+      "meaning": "sixth-year student"
     },
     {
       "word": "六年間",
@@ -4355,8 +4355,8 @@
     },
     {
       "word": "六日間",
-      "reading": "ろくにちかん",
-      "meaning": "六 days"
+      "reading": "むいかかん",
+      "meaning": "six days"
     },
     {
       "word": "六時",
@@ -4365,13 +4365,13 @@
     },
     {
       "word": "六分",
-      "reading": "ろくぷん",
-      "meaning": "六 minutes"
+      "reading": "ろっぷん",
+      "meaning": "six minutes"
     },
     {
       "word": "六本",
-      "reading": "ろくほん",
-      "meaning": "六 long cylindrical objects"
+      "reading": "ろっぽん",
+      "meaning": "six long cylindrical objects"
     },
     {
       "word": "六円",
@@ -4890,18 +4890,18 @@
   "分": [
     {
       "word": "一分",
-      "reading": "いちぶ",
-      "meaning": "one tenth; one hundredth; one percent; one tenth of a sun; one quarter ryō (an old coin)"
+      "reading": "いっぷん",
+      "meaning": "one minute"
     },
     {
       "word": "二分",
-      "reading": "にぶん",
-      "meaning": "halving; dividing (into two parts); bisection"
+      "reading": "にふん",
+      "meaning": "two minutes"
     },
     {
       "word": "五分",
-      "reading": "ごぶ",
-      "meaning": "half; 50%"
+      "reading": "ごふん",
+      "meaning": "five minutes"
     },
     {
       "word": "何分",
@@ -4991,27 +4991,27 @@
     {
       "word": "三分",
       "reading": "さんぷん",
-      "meaning": "三 minutes"
+      "meaning": "three minutes"
     },
     {
       "word": "四分",
       "reading": "よんぷん",
-      "meaning": "四 minutes"
+      "meaning": "four minutes"
     },
     {
       "word": "六分",
-      "reading": "ろくぷん",
-      "meaning": "六 minutes"
+      "reading": "ろっぷん",
+      "meaning": "six minutes"
     },
     {
       "word": "七分",
-      "reading": "ななぷん",
-      "meaning": "七 minutes"
+      "reading": "ななふん",
+      "meaning": "seven minutes"
     },
     {
       "word": "八分",
       "reading": "はっぷん",
-      "meaning": "八 minutes"
+      "meaning": "eight minutes"
     },
     {
       "word": "上半分",
@@ -5958,8 +5958,8 @@
     },
     {
       "word": "十分",
-      "reading": "じゅうぶん",
-      "meaning": "enough; sufficient; plenty; adequate; satisfactory"
+      "reading": "じゅっぷん",
+      "meaning": "ten minutes"
     },
     {
       "word": "十四",
@@ -6024,7 +6024,7 @@
     {
       "word": "十年生",
       "reading": "じゅうねんせい",
-      "meaning": "十 year student"
+      "meaning": "tenth-year student"
     },
     {
       "word": "十年間",
@@ -6043,8 +6043,8 @@
     },
     {
       "word": "十日間",
-      "reading": "じゅうにちかん",
-      "meaning": "十 days"
+      "reading": "とおかかん",
+      "meaning": "ten days"
     },
     {
       "word": "十時",
@@ -6058,8 +6058,8 @@
     },
     {
       "word": "十本",
-      "reading": "じゅっほん",
-      "meaning": "十 long cylindrical objects"
+      "reading": "じゅっぽん",
+      "meaning": "ten long cylindrical objects"
     },
     {
       "word": "十円",
@@ -7888,7 +7888,7 @@
     {
       "word": "四本",
       "reading": "よんほん",
-      "meaning": "four (long cylindrical things)"
+      "meaning": "four long cylindrical objects"
     },
     {
       "word": "四球",
@@ -7967,8 +7967,8 @@
     },
     {
       "word": "四年生",
-      "reading": "よんねんせい",
-      "meaning": "四 year student"
+      "reading": "よねんせい",
+      "meaning": "fourth-year student"
     },
     {
       "word": "四年間",
@@ -7987,8 +7987,8 @@
     },
     {
       "word": "四日間",
-      "reading": "よんにちかん",
-      "meaning": "四 days"
+      "reading": "よっかかん",
+      "meaning": "four days"
     },
     {
       "word": "四時",
@@ -7998,12 +7998,12 @@
     {
       "word": "四分",
       "reading": "よんぷん",
-      "meaning": "四 minutes"
+      "meaning": "four minutes"
     },
     {
       "word": "四人",
-      "reading": "よんにん",
-      "meaning": "四 people"
+      "reading": "よにん",
+      "meaning": "four people"
     },
     {
       "word": "四円",
@@ -11434,7 +11434,7 @@
     {
       "word": "一年生",
       "reading": "いちねんせい",
-      "meaning": "一 year student"
+      "meaning": "first-year student"
     },
     {
       "word": "一年間",
@@ -11444,7 +11444,7 @@
     {
       "word": "二年生",
       "reading": "にねんせい",
-      "meaning": "二 year student"
+      "meaning": "second-year student"
     },
     {
       "word": "二年間",
@@ -11454,7 +11454,7 @@
     {
       "word": "三年生",
       "reading": "さんねんせい",
-      "meaning": "三 year student"
+      "meaning": "third-year student"
     },
     {
       "word": "三年間",
@@ -11463,8 +11463,8 @@
     },
     {
       "word": "四年生",
-      "reading": "よんねんせい",
-      "meaning": "四 year student"
+      "reading": "よねんせい",
+      "meaning": "fourth-year student"
     },
     {
       "word": "四年間",
@@ -11474,7 +11474,7 @@
     {
       "word": "五年生",
       "reading": "ごねんせい",
-      "meaning": "五 year student"
+      "meaning": "fifth-year student"
     },
     {
       "word": "五年間",
@@ -11484,7 +11484,7 @@
     {
       "word": "六年生",
       "reading": "ろくねんせい",
-      "meaning": "六 year student"
+      "meaning": "sixth-year student"
     },
     {
       "word": "六年間",
@@ -11494,7 +11494,7 @@
     {
       "word": "七年生",
       "reading": "ななねんせい",
-      "meaning": "七 year student"
+      "meaning": "seventh-year student"
     },
     {
       "word": "七年間",
@@ -11504,7 +11504,7 @@
     {
       "word": "八年生",
       "reading": "はちねんせい",
-      "meaning": "八 year student"
+      "meaning": "eighth-year student"
     },
     {
       "word": "八年間",
@@ -11514,7 +11514,7 @@
     {
       "word": "九年生",
       "reading": "きゅうねんせい",
-      "meaning": "九 year student"
+      "meaning": "ninth-year student"
     },
     {
       "word": "九年間",
@@ -11524,7 +11524,7 @@
     {
       "word": "十年生",
       "reading": "じゅうねんせい",
-      "meaning": "十 year student"
+      "meaning": "tenth-year student"
     },
     {
       "word": "十年間",
@@ -14085,52 +14085,52 @@
     {
       "word": "一日間",
       "reading": "いちにちかん",
-      "meaning": "一 days"
+      "meaning": "one day"
     },
     {
       "word": "二日間",
-      "reading": "ににちかん",
-      "meaning": "二 days"
+      "reading": "ふつかかん",
+      "meaning": "two days"
     },
     {
       "word": "三日間",
-      "reading": "さんにちかん",
-      "meaning": "三 days"
+      "reading": "みっかかん",
+      "meaning": "three days"
     },
     {
       "word": "四日間",
-      "reading": "よんにちかん",
-      "meaning": "四 days"
+      "reading": "よっかかん",
+      "meaning": "four days"
     },
     {
       "word": "五日間",
-      "reading": "ごにちかん",
-      "meaning": "五 days"
+      "reading": "いつかかん",
+      "meaning": "five days"
     },
     {
       "word": "六日間",
-      "reading": "ろくにちかん",
-      "meaning": "六 days"
+      "reading": "むいかかん",
+      "meaning": "six days"
     },
     {
       "word": "七日間",
-      "reading": "ななにちかん",
-      "meaning": "七 days"
+      "reading": "なのかかん",
+      "meaning": "seven days"
     },
     {
       "word": "八日間",
-      "reading": "はちにちかん",
-      "meaning": "八 days"
+      "reading": "ようかかん",
+      "meaning": "eight days"
     },
     {
       "word": "九日間",
-      "reading": "きゅうにちかん",
-      "meaning": "九 days"
+      "reading": "ここのかかん",
+      "meaning": "nine days"
     },
     {
       "word": "十日間",
-      "reading": "じゅうにちかん",
-      "meaning": "十 days"
+      "reading": "とおかかん",
+      "meaning": "ten days"
     },
     {
       "word": "十一日",
@@ -15763,12 +15763,12 @@
     {
       "word": "一本",
       "reading": "いっぽん",
-      "meaning": "one long cylindrical thing; one film, TV show, etc.; one goal, home run, etc.; one telephone call; see:; 本; （; ほん; ）; 5. counter for long, thin objects (sticks, tubes, strings, bot"
+      "meaning": "one long cylindrical object"
     },
     {
       "word": "三本",
       "reading": "さんぼん",
-      "meaning": "three (long cylindrical things)"
+      "meaning": "three long cylindrical objects"
     },
     {
       "word": "元本",
@@ -15793,7 +15793,7 @@
     {
       "word": "四本",
       "reading": "よんほん",
-      "meaning": "four (long cylindrical things)"
+      "meaning": "four long cylindrical objects"
     },
     {
       "word": "基本",
@@ -15863,32 +15863,32 @@
     {
       "word": "二本",
       "reading": "にほん",
-      "meaning": "二 long cylindrical objects"
+      "meaning": "two long cylindrical objects"
     },
     {
       "word": "五本",
       "reading": "ごほん",
-      "meaning": "五 long cylindrical objects"
+      "meaning": "five long cylindrical objects"
     },
     {
       "word": "六本",
-      "reading": "ろくほん",
-      "meaning": "六 long cylindrical objects"
+      "reading": "ろっぽん",
+      "meaning": "six long cylindrical objects"
     },
     {
       "word": "七本",
       "reading": "ななほん",
-      "meaning": "七 long cylindrical objects"
+      "meaning": "seven long cylindrical objects"
     },
     {
       "word": "九本",
       "reading": "きゅうほん",
-      "meaning": "九 long cylindrical objects"
+      "meaning": "nine long cylindrical objects"
     },
     {
       "word": "十本",
-      "reading": "じゅっほん",
-      "meaning": "十 long cylindrical objects"
+      "reading": "じゅっぽん",
+      "meaning": "ten long cylindrical objects"
     },
     {
       "word": "百本",
@@ -18717,52 +18717,52 @@
     {
       "word": "一年生",
       "reading": "いちねんせい",
-      "meaning": "一 year student"
+      "meaning": "first-year student"
     },
     {
       "word": "二年生",
       "reading": "にねんせい",
-      "meaning": "二 year student"
+      "meaning": "second-year student"
     },
     {
       "word": "三年生",
       "reading": "さんねんせい",
-      "meaning": "三 year student"
+      "meaning": "third-year student"
     },
     {
       "word": "四年生",
-      "reading": "よんねんせい",
-      "meaning": "四 year student"
+      "reading": "よねんせい",
+      "meaning": "fourth-year student"
     },
     {
       "word": "五年生",
       "reading": "ごねんせい",
-      "meaning": "五 year student"
+      "meaning": "fifth-year student"
     },
     {
       "word": "六年生",
       "reading": "ろくねんせい",
-      "meaning": "六 year student"
+      "meaning": "sixth-year student"
     },
     {
       "word": "七年生",
       "reading": "ななねんせい",
-      "meaning": "七 year student"
+      "meaning": "seventh-year student"
     },
     {
       "word": "八年生",
       "reading": "はちねんせい",
-      "meaning": "八 year student"
+      "meaning": "eighth-year student"
     },
     {
       "word": "九年生",
       "reading": "きゅうねんせい",
-      "meaning": "九 year student"
+      "meaning": "ninth-year student"
     },
     {
       "word": "十年生",
       "reading": "じゅうねんせい",
-      "meaning": "十 year student"
+      "meaning": "tenth-year student"
     },
     {
       "word": "何年生",
@@ -25846,7 +25846,7 @@
     {
       "word": "一日間",
       "reading": "いちにちかん",
-      "meaning": "一 days"
+      "meaning": "one day"
     },
     {
       "word": "二年間",
@@ -25865,8 +25865,8 @@
     },
     {
       "word": "二日間",
-      "reading": "ににちかん",
-      "meaning": "二 days"
+      "reading": "ふつかかん",
+      "meaning": "two days"
     },
     {
       "word": "三年間",
@@ -25885,8 +25885,8 @@
     },
     {
       "word": "三日間",
-      "reading": "さんにちかん",
-      "meaning": "三 days"
+      "reading": "みっかかん",
+      "meaning": "three days"
     },
     {
       "word": "四年間",
@@ -25905,8 +25905,8 @@
     },
     {
       "word": "四日間",
-      "reading": "よんにちかん",
-      "meaning": "四 days"
+      "reading": "よっかかん",
+      "meaning": "four days"
     },
     {
       "word": "五年間",
@@ -25925,8 +25925,8 @@
     },
     {
       "word": "五日間",
-      "reading": "ごにちかん",
-      "meaning": "五 days"
+      "reading": "いつかかん",
+      "meaning": "five days"
     },
     {
       "word": "六年間",
@@ -25945,8 +25945,8 @@
     },
     {
       "word": "六日間",
-      "reading": "ろくにちかん",
-      "meaning": "六 days"
+      "reading": "むいかかん",
+      "meaning": "six days"
     },
     {
       "word": "七年間",
@@ -25965,8 +25965,8 @@
     },
     {
       "word": "七日間",
-      "reading": "ななにちかん",
-      "meaning": "七 days"
+      "reading": "なのかかん",
+      "meaning": "seven days"
     },
     {
       "word": "八年間",
@@ -25985,8 +25985,8 @@
     },
     {
       "word": "八日間",
-      "reading": "はちにちかん",
-      "meaning": "八 days"
+      "reading": "ようかかん",
+      "meaning": "eight days"
     },
     {
       "word": "九年間",
@@ -26005,8 +26005,8 @@
     },
     {
       "word": "九日間",
-      "reading": "きゅうにちかん",
-      "meaning": "九 days"
+      "reading": "ここのかかん",
+      "meaning": "nine days"
     },
     {
       "word": "十年間",
@@ -26025,8 +26025,8 @@
     },
     {
       "word": "十日間",
-      "reading": "じゅうにちかん",
-      "meaning": "十 days"
+      "reading": "とおかかん",
+      "meaning": "ten days"
     },
     {
       "word": "百時間",
