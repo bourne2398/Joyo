@@ -549,7 +549,6 @@ const N4 = `日|ニチ・ひ|day, sun, Japan|日本|にほん|Japan
 顔|ガン・かお|face|顔|かお|face
 髪|ハツ・かみ|hair|髪|かみ|hair
 頭|トウ・あたま|head|頭|あたま|head
-`
 米|ベイ・こめ|rice|米|こめ|rice
 植|ショク・うえる|plant|植物|しょくぶつ|plant
 働|ドウ・はたらく|work|働く|はたらく|work
@@ -598,7 +597,8 @@ const N4 = `日|ニチ・ひ|day, sun, Japan|日本|にほん|Japan
 変|ヘン・かわる|change|変わる|かわる|change
 続|ゾク・つづく|continue|続く|つづく|continue
 進|シン・すすむ|advance|進む|すすむ|advance
-戻|レイ・もどる|return|戻る|もどる|return`.trim().split('\n');
+戻|レイ・もどる|return|戻る|もどる|return
+皿|ベイ・さら|plate|皿|さら|plate`.trim().split('\n');
 
 function parse(rows,level){return rows.map(x=>{const a=x.split('|');return{kind:'kanji',level,kanji:a[0],reading:a[1],meaning:a[2],word:a[3],wordReading:a[4],wordMeaning:a[5]}})}
 const cards=[...parse(N5,'N5'),...parse(N4,'N4')];
