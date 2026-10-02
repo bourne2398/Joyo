@@ -348,7 +348,15 @@ function getStudyCards(level){
 }
 let deck=[], index=0, flipped=false, currentStudyLevel='ALL';
 let swipeX=0, swipeY=0, dragging=false;
-const resultStore=JSON.parse(localStorage.getItem('joyoKanjiResults')||'{"knew":[],"dontKnow":[]}');
+let resultStore={knew:[],dontKnow:[]};
+try{
+  const saved=JSON.parse(localStorage.getItem('joyoKanjiResults')||'{}');
+  if(saved&&Array.isArray(saved.knew)&&Array.isArray(saved.dontKnow)){
+    resultStore={knew:saved.knew,dontKnow:saved.dontKnow};
+  }
+}catch(e){
+  localStorage.removeItem('joyoKanjiResults');
+}
 function saveResult(type){
   const item=deck[index];
   if(!item)return;
@@ -496,7 +504,7 @@ $('vocabPanel').addEventListener('pointercancel',()=>{
   $('vocabPanel').style.transform='translate3d(0,0,0)';
 });
 $('vocabModal').addEventListener('click',e=>{if(e.target===$('vocabModal'))closeVocab()});
-function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.word||c.kanji;$('backKanji').textContent=c.word||c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.wordReading||c.reading;$('meaning').textContent=c.wordMeaning||c.meaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip');scheduleLandscapeFit()}
+function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c){$('frontKanji').textContent='';$('backKanji').textContent='';$('frontLevel').textContent='';$('backLevel').textContent='';$('reading').textContent='';$('meaning').textContent='';$('radical').textContent='';$('moreWords').textContent='No cards remaining. Use Reset Knew or Reset Don’t know.';$('count').textContent='0 / 0';flipped=false;$('card').classList.remove('flip');return;} $('frontKanji').textContent=c.word||c.kanji;$('backKanji').textContent=c.word||c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.wordReading||c.reading;$('meaning').textContent=c.wordMeaning||c.meaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip');scheduleLandscapeFit()}
 function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
 async function enterImmersiveLandscape(){try{if(!document.fullscreenElement && document.documentElement.requestFullscreen){await document.documentElement.requestFullscreen({navigationUI:'hide'});}}catch(_){}}
 function fitLandscapeKanji(){const el=$('frontKanji');if(!el)return;const landscape=window.matchMedia('(orientation: landscape) and (max-height:600px)').matches;if(!landscape){el.style.fontSize='';return}const text=el.textContent||'';if(!text)return;const cs=getComputedStyle(el);const m=document.createElement('span');m.textContent=text;m.style.position='fixed';m.style.left='-100000px';m.style.top='-100000px';m.style.visibility='hidden';m.style.whiteSpace='nowrap';m.style.lineHeight='1';m.style.fontFamily=cs.fontFamily;m.style.fontWeight=cs.fontWeight;m.style.fontSize='1000px';m.style.letterSpacing='0';m.style.display='inline-block';document.body.appendChild(m);const r=m.getBoundingClientRect();m.remove();if(!r.width||!r.height)return;const vw=Math.max(1,window.innerWidth-24),vh=Math.max(1,window.innerHeight-24);const scale=Math.min(vw/r.width,vh/r.height);el.style.fontSize=Math.max(24,Math.min(2400,1000*scale))+'px';}function scheduleLandscapeFit(){requestAnimationFrame(()=>requestAnimationFrame(fitLandscapeKanji));}
