@@ -338,15 +338,18 @@ function cardKey(c){
 function getStudyCards(level){
   const source=level==='N5WORDS'
     ? wordCards
-    : level==='ALL'
-      ? cards
-      : cards.filter(c=>c.level===level);
+    : level==='N5'
+      ? [...cards.filter(c=>c.level==='N5'),...n5WordCards]
+      : level==='ALL'
+        ? cards
+        : cards.filter(c=>c.level===level);
   return source.filter(c=>{
     const key=cardKey(c);
     return !resultStore.knew.includes(key) && !resultStore.dontKnow.includes(key);
   });
 }
 let deck=[], index=0, flipped=false, currentStudyLevel='ALL';
+let n5WordCards=[];
 let swipeX=0, swipeY=0, dragging=false;
 let resultStore={knew:[],dontKnow:[]};
 try{
@@ -393,6 +396,32 @@ async function loadVocabulary(){
         });
       });
     });
+    // Build a dedicated 250-word JLPT N5 review set from the existing
+    // vocabulary data. Words are kept only when every kanji used is in
+    // this app's N5 set, then ranked toward short, common-looking forms.
+    const n5Set=new Set(cards.filter(c=>c.level==='N5').map(c=>c.kanji));
+    const seenN5=new Set();
+    const candidates=[];
+    wordCards.forEach(v=>{
+      const kanjiChars=(v.word||'').match(/[一-龯々]/g)||[];
+      if(!kanjiChars.length || kanjiChars.some(k=>!n5Set.has(k)))return;
+      const key=cardKey(v);
+      if(seenN5.has(key))return;
+      seenN5.add(key);
+      const kanaCount=(v.word||'').length-kanjiChars.length;
+      const kanjiCount=kanjiChars.length;
+      const len=(v.word||'').length;
+      let score=0;
+      if(kanjiCount===1)score+=8;
+      if(kanjiCount===2)score+=12;
+      if(kanjiCount===3)score+=6;
+      if(len<=4)score+=6;
+      if(len<=6)score+=3;
+      if(kanaCount<=2)score+=2;
+      candidates.push({v,score});
+    });
+    candidates.sort((a,b)=>b.score-a.score);
+    n5WordCards=candidates.slice(0,250).map(x=>x.v);
     $('n5words').disabled=false;
     $('moreVocabBtn').disabled=false;
     if(currentStudyLevel==='N5WORDS' || currentStudyLevel==='N5'){
