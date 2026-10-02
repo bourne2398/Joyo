@@ -836,5 +836,936 @@
       "meaning": "to arrive",
       "kanji": "着"
     }
+  ],
+  "私": [
+    {
+      "word": "私",
+      "reading": "わたし",
+      "meaning": "I; me"
+    }
+  ],
+  "あなた": [
+    {
+      "word": "あなた",
+      "reading": "あなた",
+      "meaning": "you"
+    }
+  ],
+  "人": [
+    {
+      "word": "人",
+      "reading": "ひと",
+      "meaning": "person"
+    }
+  ],
+  "男": [
+    {
+      "word": "男の人",
+      "reading": "おとこのひと",
+      "meaning": "man"
+    }
+  ],
+  "女": [
+    {
+      "word": "女の人",
+      "reading": "おんなのひと",
+      "meaning": "woman"
+    }
+  ],
+  "子": [
+    {
+      "word": "子ども",
+      "reading": "こども",
+      "meaning": "child"
+    }
+  ],
+  "友": [
+    {
+      "word": "友達",
+      "reading": "ともだち",
+      "meaning": "friend"
+    }
+  ],
+  "先": [
+    {
+      "word": "先生",
+      "reading": "せんせい",
+      "meaning": "teacher"
+    }
+  ],
+  "学": [
+    {
+      "word": "学生",
+      "reading": "がくせい",
+      "meaning": "student"
+    },
+    {
+      "word": "学校",
+      "reading": "がっこう",
+      "meaning": "school"
+    }
+  ],
+  "会": [
+    {
+      "word": "会社",
+      "reading": "かいしゃ",
+      "meaning": "company; office"
+    }
+  ],
+  "仕": [
+    {
+      "word": "仕事",
+      "reading": "しごと",
+      "meaning": "work; job"
+    }
+  ],
+  "家": [
+    {
+      "word": "家",
+      "reading": "いえ",
+      "meaning": "house; home"
+    }
+  ],
+  "部": [
+    {
+      "word": "部屋",
+      "reading": "へや",
+      "meaning": "room"
+    }
+  ],
+  "駅": [
+    {
+      "word": "駅",
+      "reading": "えき",
+      "meaning": "station"
+    }
+  ],
+  "電": [
+    {
+      "word": "電車",
+      "reading": "でんしゃ",
+      "meaning": "train"
+    },
+    {
+      "word": "電話",
+      "reading": "でんわ",
+      "meaning": "telephone"
+    }
+  ],
+  "車": [
+    {
+      "word": "車",
+      "reading": "くるま",
+      "meaning": "car"
+    }
+  ],
+  "自": [
+    {
+      "word": "自転車",
+      "reading": "じてんしゃ",
+      "meaning": "bicycle"
+    }
+  ],
+  "店": [
+    {
+      "word": "店",
+      "reading": "みせ",
+      "meaning": "shop; store"
+    }
+  ],
+  "銀": [
+    {
+      "word": "銀行",
+      "reading": "ぎんこう",
+      "meaning": "bank"
+    }
+  ],
+  "病": [
+    {
+      "word": "病院",
+      "reading": "びょういん",
+      "meaning": "hospital"
+    },
+    {
+      "word": "病気",
+      "reading": "びょうき",
+      "meaning": "illness; sickness"
+    }
+  ],
+  "名": [
+    {
+      "word": "名前",
+      "reading": "なまえ",
+      "meaning": "name"
+    }
+  ],
+  "住": [
+    {
+      "word": "住所",
+      "reading": "じゅうしょ",
+      "meaning": "address"
+    },
+    {
+      "word": "住む",
+      "reading": "すむ",
+      "meaning": "to live; reside"
+    }
+  ],
+  "時": [
+    {
+      "word": "時間",
+      "reading": "じかん",
+      "meaning": "time"
+    }
+  ],
+  "今": [
+    {
+      "word": "今日",
+      "reading": "きょう",
+      "meaning": "today"
+    },
+    {
+      "word": "今週",
+      "reading": "こんしゅう",
+      "meaning": "this week"
+    },
+    {
+      "word": "今年",
+      "reading": "ことし",
+      "meaning": "this year"
+    }
+  ],
+  "明": [
+    {
+      "word": "明日",
+      "reading": "あした",
+      "meaning": "tomorrow"
+    }
+  ],
+  "昨": [
+    {
+      "word": "昨日",
+      "reading": "きのう",
+      "meaning": "yesterday"
+    }
+  ],
+  "朝": [
+    {
+      "word": "朝",
+      "reading": "あさ",
+      "meaning": "morning"
+    },
+    {
+      "word": "朝ご飯",
+      "reading": "あさごはん",
+      "meaning": "breakfast"
+    }
+  ],
+  "昼": [
+    {
+      "word": "昼",
+      "reading": "ひる",
+      "meaning": "noon; daytime"
+    },
+    {
+      "word": "昼ご飯",
+      "reading": "ひるごはん",
+      "meaning": "lunch"
+    }
+  ],
+  "夜": [
+    {
+      "word": "夜",
+      "reading": "よる",
+      "meaning": "night; evening"
+    }
+  ],
+  "毎": [
+    {
+      "word": "毎日",
+      "reading": "まいにち",
+      "meaning": "every day"
+    }
+  ],
+  "来": [
+    {
+      "word": "来週",
+      "reading": "らいしゅう",
+      "meaning": "next week"
+    },
+    {
+      "word": "来年",
+      "reading": "らいねん",
+      "meaning": "next year"
+    },
+    {
+      "word": "来る",
+      "reading": "くる",
+      "meaning": "to come"
+    }
+  ],
+  "天": [
+    {
+      "word": "天気",
+      "reading": "てんき",
+      "meaning": "weather"
+    }
+  ],
+  "雨": [
+    {
+      "word": "雨",
+      "reading": "あめ",
+      "meaning": "rain"
+    }
+  ],
+  "水": [
+    {
+      "word": "水",
+      "reading": "みず",
+      "meaning": "water"
+    }
+  ],
+  "茶": [
+    {
+      "word": "お茶",
+      "reading": "おちゃ",
+      "meaning": "tea"
+    }
+  ],
+  "飯": [
+    {
+      "word": "ご飯",
+      "reading": "ごはん",
+      "meaning": "rice; meal"
+    }
+  ],
+  "晩": [
+    {
+      "word": "晩ご飯",
+      "reading": "ばんごはん",
+      "meaning": "dinner"
+    }
+  ],
+  "食": [
+    {
+      "word": "食べる",
+      "reading": "たべる",
+      "meaning": "to eat"
+    },
+    {
+      "word": "食事",
+      "reading": "しょくじ",
+      "meaning": "meal"
+    }
+  ],
+  "飲": [
+    {
+      "word": "飲む",
+      "reading": "のむ",
+      "meaning": "to drink"
+    },
+    {
+      "word": "飲み物",
+      "reading": "のみもの",
+      "meaning": "drink; beverage"
+    }
+  ],
+  "買": [
+    {
+      "word": "買う",
+      "reading": "かう",
+      "meaning": "to buy"
+    },
+    {
+      "word": "買い物",
+      "reading": "かいもの",
+      "meaning": "shopping"
+    }
+  ],
+  "見": [
+    {
+      "word": "見る",
+      "reading": "みる",
+      "meaning": "to see; watch"
+    }
+  ],
+  "聞": [
+    {
+      "word": "聞く",
+      "reading": "きく",
+      "meaning": "to hear; ask"
+    }
+  ],
+  "読": [
+    {
+      "word": "読む",
+      "reading": "よむ",
+      "meaning": "to read"
+    }
+  ],
+  "書": [
+    {
+      "word": "書く",
+      "reading": "かく",
+      "meaning": "to write"
+    }
+  ],
+  "行": [
+    {
+      "word": "行く",
+      "reading": "いく",
+      "meaning": "to go"
+    }
+  ],
+  "帰": [
+    {
+      "word": "帰る",
+      "reading": "かえる",
+      "meaning": "to return home"
+    }
+  ],
+  "話": [
+    {
+      "word": "話す",
+      "reading": "はなす",
+      "meaning": "to speak; talk"
+    }
+  ],
+  "する": [
+    {
+      "word": "する",
+      "reading": "する",
+      "meaning": "to do"
+    }
+  ],
+  "ある": [
+    {
+      "word": "ある",
+      "reading": "ある",
+      "meaning": "to exist; have"
+    }
+  ],
+  "いる": [
+    {
+      "word": "いる",
+      "reading": "いる",
+      "meaning": "to exist; be"
+    }
+  ],
+  "好": [
+    {
+      "word": "好き",
+      "reading": "すき",
+      "meaning": "like; favorite"
+    }
+  ],
+  "嫌": [
+    {
+      "word": "嫌い",
+      "reading": "きらい",
+      "meaning": "dislike"
+    }
+  ],
+  "大": [
+    {
+      "word": "大きい",
+      "reading": "おおきい",
+      "meaning": "big; large"
+    },
+    {
+      "word": "大切",
+      "reading": "たいせつ",
+      "meaning": "important; precious"
+    }
+  ],
+  "小": [
+    {
+      "word": "小さい",
+      "reading": "ちいさい",
+      "meaning": "small"
+    }
+  ],
+  "新": [
+    {
+      "word": "新しい",
+      "reading": "あたらしい",
+      "meaning": "new"
+    }
+  ],
+  "古": [
+    {
+      "word": "古い",
+      "reading": "ふるい",
+      "meaning": "old"
+    }
+  ],
+  "高": [
+    {
+      "word": "高い",
+      "reading": "たかい",
+      "meaning": "high; expensive"
+    }
+  ],
+  "安": [
+    {
+      "word": "安い",
+      "reading": "やすい",
+      "meaning": "cheap; inexpensive"
+    },
+    {
+      "word": "安全",
+      "reading": "あんぜん",
+      "meaning": "safe; safety"
+    },
+    {
+      "word": "安心",
+      "reading": "あんしん",
+      "meaning": "peace of mind"
+    }
+  ],
+  "おいしい": [
+    {
+      "word": "おいしい",
+      "reading": "おいしい",
+      "meaning": "delicious"
+    }
+  ],
+  "元": [
+    {
+      "word": "元気",
+      "reading": "げんき",
+      "meaning": "healthy; energetic"
+    }
+  ],
+  "忙": [
+    {
+      "word": "忙しい",
+      "reading": "いそがしい",
+      "meaning": "busy"
+    }
+  ],
+  "休": [
+    {
+      "word": "休む",
+      "reading": "やすむ",
+      "meaning": "to rest; take a day off"
+    }
+  ],
+  "約": [
+    {
+      "word": "約束",
+      "reading": "やくそく",
+      "meaning": "promise; appointment"
+    }
+  ],
+  "予": [
+    {
+      "word": "予定",
+      "reading": "よてい",
+      "meaning": "plan; schedule"
+    },
+    {
+      "word": "予約",
+      "reading": "よやく",
+      "meaning": "reservation"
+    }
+  ],
+  "準": [
+    {
+      "word": "準備",
+      "reading": "じゅんび",
+      "meaning": "preparation"
+    }
+  ],
+  "用": [
+    {
+      "word": "用事",
+      "reading": "ようじ",
+      "meaning": "errand; business"
+    }
+  ],
+  "生": [
+    {
+      "word": "生活",
+      "reading": "せいかつ",
+      "meaning": "daily life; living"
+    }
+  ],
+  "経": [
+    {
+      "word": "経験",
+      "reading": "けいけん",
+      "meaning": "experience"
+    }
+  ],
+  "必": [
+    {
+      "word": "必要",
+      "reading": "ひつよう",
+      "meaning": "necessary; needed"
+    }
+  ],
+  "簡": [
+    {
+      "word": "簡単",
+      "reading": "かんたん",
+      "meaning": "easy; simple"
+    }
+  ],
+  "便": [
+    {
+      "word": "便利",
+      "reading": "べんり",
+      "meaning": "convenient"
+    }
+  ],
+  "危": [
+    {
+      "word": "危険",
+      "reading": "きけん",
+      "meaning": "dangerous; danger"
+    }
+  ],
+  "注": [
+    {
+      "word": "注意",
+      "reading": "ちゅうい",
+      "meaning": "caution; attention"
+    },
+    {
+      "word": "注文",
+      "reading": "ちゅうもん",
+      "meaning": "order"
+    }
+  ],
+  "心": [
+    {
+      "word": "心配",
+      "reading": "しんぱい",
+      "meaning": "worry; concern"
+    }
+  ],
+  "理": [
+    {
+      "word": "理由",
+      "reading": "りゆう",
+      "meaning": "reason"
+    }
+  ],
+  "意": [
+    {
+      "word": "意味",
+      "reading": "いみ",
+      "meaning": "meaning"
+    }
+  ],
+  "方": [
+    {
+      "word": "方法",
+      "reading": "ほうほう",
+      "meaning": "method; way"
+    }
+  ],
+  "場": [
+    {
+      "word": "場合",
+      "reading": "ばあい",
+      "meaning": "case; situation"
+    },
+    {
+      "word": "場所",
+      "reading": "ばしょ",
+      "meaning": "place"
+    }
+  ],
+  "問": [
+    {
+      "word": "問題",
+      "reading": "もんだい",
+      "meaning": "problem; question"
+    }
+  ],
+  "答": [
+    {
+      "word": "答え",
+      "reading": "こたえ",
+      "meaning": "answer"
+    }
+  ],
+  "質": [
+    {
+      "word": "質問",
+      "reading": "しつもん",
+      "meaning": "question"
+    }
+  ],
+  "返": [
+    {
+      "word": "返事",
+      "reading": "へんじ",
+      "meaning": "reply; response"
+    }
+  ],
+  "説": [
+    {
+      "word": "説明",
+      "reading": "せつめい",
+      "meaning": "explanation"
+    }
+  ],
+  "案": [
+    {
+      "word": "案内",
+      "reading": "あんない",
+      "meaning": "guidance; information"
+    }
+  ],
+  "連": [
+    {
+      "word": "連絡",
+      "reading": "れんらく",
+      "meaning": "contact; communication"
+    }
+  ],
+  "相": [
+    {
+      "word": "相談",
+      "reading": "そうだん",
+      "meaning": "consultation; discussion"
+    }
+  ],
+  "紹": [
+    {
+      "word": "紹介",
+      "reading": "しょうかい",
+      "meaning": "introduction"
+    }
+  ],
+  "値": [
+    {
+      "word": "値段",
+      "reading": "ねだん",
+      "meaning": "price"
+    }
+  ],
+  "金": [
+    {
+      "word": "お金",
+      "reading": "おかね",
+      "meaning": "money"
+    }
+  ],
+  "財": [
+    {
+      "word": "財布",
+      "reading": "さいふ",
+      "meaning": "wallet"
+    }
+  ],
+  "荷": [
+    {
+      "word": "荷物",
+      "reading": "にもつ",
+      "meaning": "luggage; baggage"
+    }
+  ],
+  "料": [
+    {
+      "word": "料理",
+      "reading": "りょうり",
+      "meaning": "cooking; cuisine"
+    }
+  ],
+  "野": [
+    {
+      "word": "野菜",
+      "reading": "やさい",
+      "meaning": "vegetables"
+    }
+  ],
+  "果": [
+    {
+      "word": "果物",
+      "reading": "くだもの",
+      "meaning": "fruit"
+    }
+  ],
+  "薬": [
+    {
+      "word": "薬",
+      "reading": "くすり",
+      "meaning": "medicine"
+    }
+  ],
+  "熱": [
+    {
+      "word": "熱",
+      "reading": "ねつ",
+      "meaning": "fever; heat"
+    }
+  ],
+  "運": [
+    {
+      "word": "運動",
+      "reading": "うんどう",
+      "meaning": "exercise"
+    }
+  ],
+  "旅": [
+    {
+      "word": "旅行",
+      "reading": "りょこう",
+      "meaning": "travel; trip"
+    },
+    {
+      "word": "旅館",
+      "reading": "りょかん",
+      "meaning": "Japanese inn"
+    }
+  ],
+  "空": [
+    {
+      "word": "空港",
+      "reading": "くうこう",
+      "meaning": "airport"
+    }
+  ],
+  "地": [
+    {
+      "word": "地下鉄",
+      "reading": "ちかてつ",
+      "meaning": "subway"
+    }
+  ],
+  "乗": [
+    {
+      "word": "乗り換え",
+      "reading": "のりかえ",
+      "meaning": "transfer; changing trains"
+    },
+    {
+      "word": "乗る",
+      "reading": "のる",
+      "meaning": "to ride; get on"
+    }
+  ],
+  "近": [
+    {
+      "word": "近所",
+      "reading": "きんじょ",
+      "meaning": "neighborhood"
+    }
+  ],
+  "建": [
+    {
+      "word": "建物",
+      "reading": "たてもの",
+      "meaning": "building"
+    }
+  ],
+  "道": [
+    {
+      "word": "道",
+      "reading": "みち",
+      "meaning": "road; way"
+    }
+  ],
+  "信": [
+    {
+      "word": "信号",
+      "reading": "しんごう",
+      "meaning": "traffic light; signal"
+    }
+  ],
+  "始": [
+    {
+      "word": "始める",
+      "reading": "はじめる",
+      "meaning": "to begin"
+    }
+  ],
+  "終": [
+    {
+      "word": "終わる",
+      "reading": "おわる",
+      "meaning": "to finish"
+    }
+  ],
+  "続": [
+    {
+      "word": "続ける",
+      "reading": "つづける",
+      "meaning": "to continue"
+    }
+  ],
+  "決": [
+    {
+      "word": "決める",
+      "reading": "きめる",
+      "meaning": "to decide"
+    }
+  ],
+  "忘": [
+    {
+      "word": "忘れる",
+      "reading": "わすれる",
+      "meaning": "to forget"
+    }
+  ],
+  "覚": [
+    {
+      "word": "覚える",
+      "reading": "おぼえる",
+      "meaning": "to remember; memorize"
+    }
+  ],
+  "調": [
+    {
+      "word": "調べる",
+      "reading": "しらべる",
+      "meaning": "to check; investigate"
+    }
+  ],
+  "選": [
+    {
+      "word": "選ぶ",
+      "reading": "えらぶ",
+      "meaning": "to choose"
+    }
+  ],
+  "使": [
+    {
+      "word": "使う",
+      "reading": "つかう",
+      "meaning": "to use"
+    }
+  ],
+  "作": [
+    {
+      "word": "作る",
+      "reading": "つくる",
+      "meaning": "to make"
+    }
+  ],
+  "働": [
+    {
+      "word": "働く",
+      "reading": "はたらく",
+      "meaning": "to work"
+    }
+  ],
+  "降": [
+    {
+      "word": "降りる",
+      "reading": "おりる",
+      "meaning": "to get off"
+    }
+  ],
+  "着": [
+    {
+      "word": "着く",
+      "reading": "つく",
+      "meaning": "to arrive"
+    }
   ]
 }
