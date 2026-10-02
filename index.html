@@ -37,7 +37,7 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 <div class="app">
 <header class="top">
 <div class="brand"><div class="brand-icon" aria-label="字">字</div><div><div class="title">JLPT N5・N4 漢字 Flashcards</div><div class="count" id="count"></div></div></div><div class="result-nav"><button class="dont" id="dontNav">× Don’t know <span id="dontCount">0</span></button><button class="knew" id="knewNav">✓ Knew it <span id="knewCount">0</span></button><button class="reset-dont" id="resetDont" title="Reset Don’t know">↺</button><button class="reset-knew" id="resetKnew" title="Reset Knew it">↺</button></div>
-<div class="level"><button id="n5">N5</button><button id="n5words">N5 Vocabulary</button><button id="n4">N4</button><button id="all" class="active">ALL</button></div>
+<div class="level"><button id="n5">N5</button><button id="n5words">N5 Vocabs</button><button id="n4">N4</button><button id="n4words">N4 Vocabs</button><button id="all" class="active">ALL</button></div>
 </header>
 <main><div class="card-wrap"><div class="card" id="card">
 <section class="face front"><span class="leveltag" id="frontLevel"></span><div class="kanji word-front" id="frontKanji"></div><div class="tap">TAP TO REVEAL</div></section>
@@ -611,10 +611,12 @@ function cardKey(c){
 }
 function getStudyCards(level){
   const source=level==='N5WORDS'
-    ? wordCards
-    : level==='ALL'
-      ? cards
-      : cards.filter(c=>c.level===level);
+    ? wordCards.filter(c=>c.level==='N5')
+    : level==='N4WORDS'
+      ? wordCards.filter(c=>c.level==='N4')
+      : level==='ALL'
+        ? cards
+        : cards.filter(c=>c.level===level);
   return source.filter(c=>{
     const key=cardKey(c);
     return !resultStore.knew.includes(key) && !resultStore.dontKnow.includes(key);
@@ -646,19 +648,18 @@ async function loadVocabulary(){
     const response=await fetch('./vocabulary.json',{cache:'no-store'});
     if(!response.ok)throw new Error('Vocabulary file unavailable');
     vocabData=await response.json();
-    const n5Kanji=new Set(cards.filter(c=>c.level==='N5').map(c=>c.kanji));
-    const seen=new Set();
     wordCards=[];
-    n5Kanji.forEach(kanji=>{
-      const entries=Array.isArray(vocabData[kanji])?vocabData[kanji]:[];
+    const seen=new Set();
+    ['N5','N4'].forEach(level=>{
+      const entries=Array.isArray(vocabData['_'+level])?vocabData['_'+level]:[];
       entries.forEach(v=>{
-        const key=(v.word||'')+'|'+(v.reading||'');
+        const key=level+'|'+(v.word||'')+'|'+(v.reading||'');
         if(!v.word||!v.reading||seen.has(key))return;
         seen.add(key);
         wordCards.push({
           kind:'word',
-          level:'N5',
-          kanji,
+          level,
+          kanji:v.kanji||v.word,
           reading:v.reading,
           meaning:v.meaning||'',
           word:v.word,
@@ -668,8 +669,9 @@ async function loadVocabulary(){
       });
     });
     $('n5words').disabled=false;
+    $('n4words').disabled=false;
     $('moreVocabBtn').disabled=false;
-    if(currentStudyLevel==='N5WORDS' || currentStudyLevel==='N5'){
+    if(currentStudyLevel==='N5WORDS' || currentStudyLevel==='N4WORDS' || currentStudyLevel==='N5'){
       deck=getStudyCards(currentStudyLevel);
       index=Math.min(index,Math.max(0,deck.length-1));
       render();
@@ -685,7 +687,7 @@ function updateResultNav(){
 }
 function recordAndMove(type, direction){
   saveResult(type);
-  if(currentStudyLevel==='ALL' || currentStudyLevel==='N5' || currentStudyLevel==='N5WORDS' || currentStudyLevel==='N4'){
+  if(currentStudyLevel==='ALL' || currentStudyLevel==='N5' || currentStudyLevel==='N5WORDS' || currentStudyLevel==='N4' || currentStudyLevel==='N4WORDS'){
     deck=getStudyCards(currentStudyLevel);
     if(deck.length){
       index=Math.min(index,deck.length-1);
@@ -803,7 +805,7 @@ function setLevel(level){
   $(level.toLowerCase()).classList.add('active');
   render();
 }
-$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('shuffle').onclick=shuffleDeck;$('knewNav').onclick=()=>showResults('knew');$('dontNav').onclick=()=>showResults('dontKnow');$('n5').onclick=()=>setLevel('N5');$('n5words').onclick=()=>setLevel('N5WORDS');$('n4').onclick=()=>setLevel('N4');$('all').onclick=()=>setLevel('ALL');
+$('next').onclick=()=>move(1);$('prev').onclick=()=>move(-1);$('shuffle').onclick=shuffleDeck;$('knewNav').onclick=()=>showResults('knew');$('dontNav').onclick=()=>showResults('dontKnow');$('n5').onclick=()=>setLevel('N5');$('n5words').onclick=()=>setLevel('N5WORDS');$('n4').onclick=()=>setLevel('N4');$('n4words').onclick=()=>setLevel('N4WORDS');$('all').onclick=()=>setLevel('ALL');
 function resetResult(type){
   const label=type==='knew'?'Knew it':'Don’t know';
   if(!resultStore[type].length)return;
@@ -883,6 +885,7 @@ updateResultNav();
 setLevel('ALL');
 $('moreVocabBtn').disabled=true;
 $('n5words').disabled=true;
+$('n4words').disabled=true;
 loadVocabulary();
 if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}
 </script>
