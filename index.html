@@ -548,10 +548,18 @@ function resetResult(type){
 }
 $('resetKnew').onclick=()=>resetResult('knew');
 $('resetDont').onclick=()=>resetResult('dontKnow');
-let sx=0,sy=0,swiping=false,suppressClick=false;
+let sx=0,sy=0,swiping=false,suppressClick=false,swipeDx=0;
+function cardTransformForDrag(dx){
+  const flipPart=flipped?' rotateY(180deg)':'';
+  return 'translate3d('+dx+'px,0,0) rotateZ('+(dx/28)+'deg)'+flipPart;
+}
+function resetCardTransform(){
+  $('card').style.transition='';
+  $('card').style.transform=flipped?'rotateY(180deg)':'';
+}
 $('card').addEventListener('pointerdown',e=>{
   if(e.pointerType==='mouse' && e.button!==0)return;
-  sx=e.clientX;sy=e.clientY;swiping=false;suppressClick=false;dragging=true;
+  sx=e.clientX;sy=e.clientY;swiping=false;suppressClick=false;swipeDx=0;dragging=true;
   $('card').style.transition='none';
   $('card').setPointerCapture(e.pointerId);
 });
@@ -561,8 +569,8 @@ $('card').addEventListener('pointermove',e=>{
   if(Math.abs(dx)>8 && Math.abs(dx)>Math.abs(dy))swiping=true;
   if(swiping){
     e.preventDefault();
-    const base=flipped?'rotateY(180deg) ':'';
-    $('card').style.transform=base+'translate3d('+dx+'px,0,0) rotateZ('+(dx/28)+'deg)';
+    swipeDx=dx;
+    $('card').style.transform=cardTransformForDrag(dx);
   }
 });
 $('card').addEventListener('pointerup',e=>{
@@ -572,20 +580,28 @@ $('card').addEventListener('pointerup',e=>{
   if(swiping && Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)){
     suppressClick=true;
     const type=dx<0?'dontKnow':'knew';
-    const direction=1;
-    $('card').style.transition='transform .22s ease-out';
-    const base=flipped?'rotateY(180deg) ':'';
-    $('card').style.transform=base+'translate3d('+(dx<0?window.innerWidth*1.2:-window.innerWidth*1.2)+'px,0,0) rotateZ('+(dx<0?25:-25)+'deg)';
-    setTimeout(()=>{ $('card').style.transition=''; $('card').style.transform=''; recordAndMove(type,direction); },220);
+    const exitX=dx<0?-window.innerWidth*1.25:window.innerWidth*1.25;
+    const exitRotation=dx<0?-25:25;
+    $('card').style.transition='transform .24s cubic-bezier(.22,.8,.25,1)';
+    $('card').style.transform='translate3d('+exitX+'px,0,0) rotateZ('+exitRotation+'deg)';
+    setTimeout(()=>{
+      $('card').style.transition='none';
+      $('card').style.transform='none';
+      flipped=false;
+      recordAndMove(type,1);
+    },240);
   }else{
-    $('card').style.transition='transform .18s ease';
-    $('card').style.transform=flipped?'rotateY(180deg)':'';
-    setTimeout(()=>{$('card').style.transition='';},180);
+    $('card').style.transition='transform .2s ease-out';
+    resetCardTransform();
+    setTimeout(()=>{$('card').style.transition='';},200);
   }
 });
 $('card').addEventListener('pointercancel',()=>{
-  dragging=false;$('card').style.transition='transform .18s ease';$('card').style.transform=flipped?'rotateY(180deg)':'';
-  setTimeout(()=>{$('card').style.transition='';},180);
+  if(!dragging)return;
+  dragging=false;
+  $('card').style.transition='transform .2s ease-out';
+  resetCardTransform();
+  setTimeout(()=>{$('card').style.transition='';},200);
 });
 $('card').addEventListener('click',e=>{
   if(suppressClick){suppressClick=false;return}
