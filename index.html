@@ -49,10 +49,10 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 <div class="vocab-modal" id="vocabModal" aria-hidden="true"><div class="vocab-panel" id="vocabPanel"><button class="vocab-close" id="vocabClose" aria-label="Close">×</button><div class="vocab-head"><div class="vocab-title" id="vocabTitle">More vocabulary</div><div class="vocab-subtitle" id="vocabSubtitle"></div></div><div class="vocab-body" id="vocabBody"><div class="vocab-track" id="vocabTrack"><div class="vocab-page" id="vocabPagePrev"></div><div class="vocab-page" id="vocabPage"></div><div class="vocab-page" id="vocabPageNext"></div></div></div></div></div></div>
 <script src="./kanji-data.js"></script>
 <script>
-const N5 = window.JOYO_N5;
+const N5 = window.JOYO_N5_DATA;
 
 
-const N4 = window.JOYO_N4;
+const N4 = window.JOYO_N4_DATA;
 
 
 function parse(rows,level){return rows.map(x=>{const a=x.split('|');return{kind:'kanji',level,kanji:a[0],reading:a[1],meaning:a[2],word:a[3],wordReading:a[4],wordMeaning:a[5]}})}
