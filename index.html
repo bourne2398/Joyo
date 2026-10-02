@@ -48,8 +48,7 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 </footer>
 <div class="vocab-modal" id="vocabModal" aria-hidden="true"><div class="vocab-panel" id="vocabPanel"><button class="vocab-close" id="vocabClose" aria-label="Close">×</button><div class="vocab-head"><div class="vocab-title" id="vocabTitle">More vocabulary</div><div class="vocab-subtitle" id="vocabSubtitle"></div></div><div class="vocab-body" id="vocabBody"><div class="vocab-track" id="vocabTrack"><div class="vocab-page" id="vocabPagePrev"></div><div class="vocab-page" id="vocabPage"></div><div class="vocab-page" id="vocabPageNext"></div></div></div></div></div></div>
 <script>
-const N5 = `
-日|ニチ・ひ|day, sun, Japan|日本|にほん|Japan
+const N5 = `日|ニチ・ひ|day, sun, Japan|日本|にほん|Japan
 一|イチ・ひとつ|one|一つ|ひとつ|one
 国|コク・くに|country|外国|がいこく|foreign country
 人|ジン・ひと|person|日本人|にほんじん|Japanese person
@@ -153,10 +152,8 @@ const N5 = `
 飲|イン・のむ|drink|飲む|のむ|drink
 買|バイ・かう|buy|買う|かう|buy
 週|シュウ|week|今週|こんしゅう|this week
-曜|ヨウ|weekday|曜日|ようび|day of the week
-`.trim().split('\n');
-const N4 = `
-会|カイ・あう|meet, meeting|会社|かいしゃ|company
+曜|ヨウ|weekday|曜日|ようび|day of the week`.trim().split('\n');
+const N4 = `会|カイ・あう|meet, meeting|会社|かいしゃ|company
 同|ドウ・おなじ|same|同じ|おなじ|same
 事|ジ・こと|thing, matter|仕事|しごと|work
 自|ジ・みずから|self|自分|じぶん|oneself
@@ -404,7 +401,58 @@ const N4 = `
 買|バイ・かう|buy|買う|かう|buy
 週|シュウ|week|今週|こんしゅう|this week
 曜|ヨウ|weekday|曜日|ようび|day of the week
-`.trim().split('\n');
+米|ベイ・こめ|rice|米|こめ|rice
+植|ショク・うえる|plant|植物|しょくぶつ|plant
+働|ドウ・はたらく|work|働く|はたらく|work
+所|ショ・ところ|place|場所|ばしょ|place
+遠|エン・とおい|far|遠い|とおい|far
+遅|チ・おそい|late, slow|遅い|おそい|slow
+軽|ケイ・かるい|light|軽い|かるい|light
+弱|ジャク・よわい|weak|弱い|よわい|weak
+便|ベン・たより|convenience|便利|べんり|convenient
+必|ヒツ・かならず|certainly|必要|ひつよう|necessary
+要|ヨウ・いる|need|必要|ひつよう|necessary
+民|ミン・たみ|people|国民|こくみん|citizen
+県|ケン|prefecture|県|けん|prefecture
+市|シ・いち|city, market|市役所|しやくしょ|city hall
+村|ソン・むら|village|村|むら|village
+区|ク|ward, district|地区|ちく|district
+島|トウ・しま|island|島|しま|island
+湖|コ・みずうみ|lake|湖|みずうみ|lake
+港|コウ・みなと|port|空港|くうこう|airport
+橋|キョウ・はし|bridge|橋|はし|bridge
+門|モン・かど|gate|門|もん|gate
+戸|コ・と|door|戸|と|door
+階|カイ|floor|階段|かいだん|stairs
+段|ダン|step, level|階段|かいだん|stairs
+薬|ヤク・くすり|medicine|薬|くすり|medicine
+声|セイ・こえ|voice|声|こえ|voice
+顔|ガン・かお|face|顔|かお|face
+首|シュ・くび|neck|首|くび|neck
+指|シ・ゆび|finger|指|ゆび|finger
+鼻|ビ・はな|nose|鼻|はな|nose
+歯|シ・は|tooth|歯|は|tooth
+髪|ハツ・かみ|hair|髪|かみ|hair
+頭|トウ・あたま|head|頭|あたま|head
+胃|イ|stomach|胃|い|stomach
+酒|シュ・さけ|alcohol, sake|酒|さけ|sake
+料理|リョウリ|cooking|料理|りょうり|cooking
+菜|サイ・な|vegetable|野菜|やさい|vegetable
+果|カ・はたす|fruit, result|果物|くだもの|fruit
+形|ケイ・かたち|shape|形|かたち|shape
+線|セン|line|線|せん|line
+関|カン・せき|connection|関係|かんけい|relationship
+係|ケイ・かかる|relation|関係|かんけい|relationship
+感|カン|feeling|感謝|かんしゃ|gratitude
+情|ジョウ・なさけ|feeling, situation|情報|じょうほう|information
+報|ホウ・むくいる|report|情報|じょうほう|information
+覚|カク・おぼえる|remember|覚える|おぼえる|remember
+忘|ボウ・わすれる|forget|忘れる|わすれる|forget
+決|ケツ・きめる|decide|決める|きめる|decide
+変|ヘン・かわる|change|変わる|かわる|change
+続|ゾク・つづく|continue|続く|つづく|continue
+進|シン・すすむ|advance|進む|すすむ|advance
+戻|レイ・もどる|return|戻る|もどる|return`.trim().split('\n');
 const N4 = `
 会|カイ・あう|meet, meeting|会社|かいしゃ|company
 同|ドウ・おなじ|same|同じ|おなじ|same
