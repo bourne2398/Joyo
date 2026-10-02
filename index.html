@@ -154,7 +154,8 @@ const N5 = `
 買|バイ・かう|buy|買う|かう|buy
 週|シュウ|week|今週|こんしゅう|this week
 曜|ヨウ|weekday|曜日|ようび|day of the week
-`.trim().split('\n');
+`.trim().split('
+');
 
 const N4 = `
 会|カイ・あう|meet, meeting|会社|かいしゃ|company
@@ -324,7 +325,8 @@ const N4 = `
 妹|マイ・いもうと|younger sister|妹|いもうと|younger sister
 姉|シ・あね|older sister|姉|あね|older sister
 漢|カン|Chinese character, Han|漢字|かんじ|kanji
-`.trim().split('\n');
+`.trim().split('
+');
 
 function parse(rows,level){return rows.map(x=>{const a=x.split('|');return{kind:'kanji',level,kanji:a[0],reading:a[1],meaning:a[2],word:a[3],wordReading:a[4],wordMeaning:a[5]}})}
 const cards=[...parse(N5,'N5'),...parse(N4,'N4')];
@@ -498,7 +500,10 @@ $('vocabPanel').addEventListener('pointercancel',()=>{
 $('vocabModal').addEventListener('click',e=>{if(e.target===$('vocabModal'))closeVocab()});
 function render(){$('card').style.transition='';$('card').style.transform='';const c=deck[index]; if(!c)return; $('frontKanji').textContent=c.word||c.kanji;$('backKanji').textContent=c.word||c.kanji;$('frontLevel').textContent=c.level;$('backLevel').textContent=c.level;$('reading').textContent=c.wordReading||c.reading;$('meaning').textContent=c.wordMeaning||c.meaning;const rd=RADICAL_DATA[c.kanji]||{r:'—',w:[]};$('radical').textContent=rd.r;$('moreWords').textContent=rd.w.length?rd.w.join('  •  '):'—';$('count').textContent=(index+1)+' / '+deck.length;flipped=false;$('card').classList.remove('flip');scheduleLandscapeFit()}
 function flip(){flipped=!flipped;$('card').classList.toggle('flip',flipped)}
-async function enterImmersiveLandscape(){try{if(!document.fullscreenElement && document.documentElement.requestFullscreen){await document.documentElement.requestFullscreen({navigationUI:'hide'});}}catch(_){}}\nfunction fitLandscapeKanji(){const el=$('frontKanji');if(!el)return;const landscape=window.matchMedia('(orientation: landscape) and (max-height:600px)').matches;if(!landscape){el.style.fontSize='';return}const text=el.textContent||'';if(!text)return;const cs=getComputedStyle(el);const m=document.createElement('span');m.textContent=text;m.style.position='fixed';m.style.left='-100000px';m.style.top='-100000px';m.style.visibility='hidden';m.style.whiteSpace='nowrap';m.style.lineHeight='1';m.style.fontFamily=cs.fontFamily;m.style.fontWeight=cs.fontWeight;m.style.fontSize='1000px';m.style.letterSpacing='0';m.style.display='inline-block';document.body.appendChild(m);const r=m.getBoundingClientRect();m.remove();if(!r.width||!r.height)return;const vw=Math.max(1,window.innerWidth-24),vh=Math.max(1,window.innerHeight-24);const scale=Math.min(vw/r.width,vh/r.height);el.style.fontSize=Math.max(24,Math.min(2400,1000*scale))+'px';}function scheduleLandscapeFit(){requestAnimationFrame(()=>requestAnimationFrame(fitLandscapeKanji));}\n$('card').addEventListener('pointerdown',()=>{if(window.matchMedia('(orientation: landscape)').matches) enterImmersiveLandscape();},{once:false});\n$('card').addEventListener('dblclick',e=>{e.preventDefault();flip();});window.addEventListener('resize',scheduleLandscapeFit);window.addEventListener('orientationchange',()=>setTimeout(scheduleLandscapeFit,150));
+async function enterImmersiveLandscape(){try{if(!document.fullscreenElement && document.documentElement.requestFullscreen){await document.documentElement.requestFullscreen({navigationUI:'hide'});}}catch(_){}}
+function fitLandscapeKanji(){const el=$('frontKanji');if(!el)return;const landscape=window.matchMedia('(orientation: landscape) and (max-height:600px)').matches;if(!landscape){el.style.fontSize='';return}const text=el.textContent||'';if(!text)return;const cs=getComputedStyle(el);const m=document.createElement('span');m.textContent=text;m.style.position='fixed';m.style.left='-100000px';m.style.top='-100000px';m.style.visibility='hidden';m.style.whiteSpace='nowrap';m.style.lineHeight='1';m.style.fontFamily=cs.fontFamily;m.style.fontWeight=cs.fontWeight;m.style.fontSize='1000px';m.style.letterSpacing='0';m.style.display='inline-block';document.body.appendChild(m);const r=m.getBoundingClientRect();m.remove();if(!r.width||!r.height)return;const vw=Math.max(1,window.innerWidth-24),vh=Math.max(1,window.innerHeight-24);const scale=Math.min(vw/r.width,vh/r.height);el.style.fontSize=Math.max(24,Math.min(2400,1000*scale))+'px';}function scheduleLandscapeFit(){requestAnimationFrame(()=>requestAnimationFrame(fitLandscapeKanji));}
+$('card').addEventListener('pointerdown',()=>{if(window.matchMedia('(orientation: landscape)').matches) enterImmersiveLandscape();},{once:false});
+$('card').addEventListener('dblclick',e=>{e.preventDefault();flip();});window.addEventListener('resize',scheduleLandscapeFit);window.addEventListener('orientationchange',()=>setTimeout(scheduleLandscapeFit,150));
 function move(n){if(!deck.length)return;index=(index+n+deck.length)%deck.length;render()}
 function shuffleDeck(){
   if(deck.length<2)return;
