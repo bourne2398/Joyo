@@ -154,7 +154,7 @@ const N5 = `
 買|バイ・かう|buy|買う|かう|buy
 週|シュウ|week|今週|こんしゅう|this week
 曜|ヨウ|weekday|曜日|ようび|day of the week
-`.trim().split('\\n');
+`.trim().split('\n');
 
 const N4 = `
 会|カイ・あう|meet, meeting|会社|かいしゃ|company
@@ -324,7 +324,7 @@ const N4 = `
 妹|マイ・いもうと|younger sister|妹|いもうと|younger sister
 姉|シ・あね|older sister|姉|あね|older sister
 漢|カン|Chinese character, Han|漢字|かんじ|kanji
-`.trim().split('\\n');
+`.trim().split('\n');
 
 function parse(rows,level){return rows.map(x=>{const a=x.split('|');return{kind:'kanji',level,kanji:a[0],reading:a[1],meaning:a[2],word:a[3],wordReading:a[4],wordMeaning:a[5]}})}
 const cards=[...parse(N5,'N5'),...parse(N4,'N4')];
